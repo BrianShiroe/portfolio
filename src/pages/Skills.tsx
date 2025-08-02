@@ -20,7 +20,7 @@ const skills = {
     "Next.js",
   ],
   Services: ["Netlify", "Railway", "AWS"],
-  Databases: ["MySQL", "SQLite", "Firebase", "MongoDB"],
+  Databases: ["MySQL", "MariaDB", "SQLite", "Firebase", "MongoDB"],
   "Development and Machine Learning Tools": [
     "VSCode",
     "LLMs",
