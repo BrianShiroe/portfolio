@@ -207,7 +207,7 @@ const ProjectsPersonal: React.FC = () => {
   };
 
   return (
-    <div className="p-6 max-w-6xl mx-auto">
+    <div className="px-4 py-12 max-w-6xl mx-auto">
       <h1 className="animated bounce-in text-4xl font-bold mb-6 text-center">PERSONAL PROJECTS</h1>
       <div className="projects-container personal">
         {projectsPersonal.slice(0, visibleCount).map((project) => (

@@ -62,34 +62,34 @@ const App = () => {
       </div>
 
       <main className="pt-0">
-        <section id="home" className={`${getBgClass(0)} min-h-screen border-b border-gray-300 dark:border-gray-700`}>
+        <section id="home" className={`${getBgClass(0)} min-h-[70vh] border-b border-gray-300 dark:border-gray-700`}>
           <Home />
         </section>
         <section
           id="about"
-          className={`${getBgClass(1)} min-h-screen border-b border-gray-300 dark:border-gray-700 pt-12`}
+          className={`${getBgClass(1)} min-h-[70vh] border-b border-gray-300 dark:border-gray-700 pt-[5vh]`}
         >
           <About />
         </section>
         <section
           id="skills"
-          className={`${getBgClass(2)} min-h-screen border-b border-gray-300 dark:border-gray-700 pt-12`}
+          className={`${getBgClass(2)} min-h-[70vh] border-b border-gray-300 dark:border-gray-700 pt-[5vh]`}
         >
           <Skills />
         </section>
         <section
           id="projects-academic"
-          className={`${getBgClass(3)} min-h-screen border-b border-gray-300 dark:border-gray-700 pt-12`}
+          className={`${getBgClass(3)} min-h-[70vh] border-b border-gray-300 dark:border-gray-700 pt-[5vh]`}
         >
           <ProjectsAcademic />
         </section>
         <section
           id="projects-personal"
-          className={`${getBgClass(4)} min-h-screen border-b border-gray-300 dark:border-gray-700 pt-12`}
+          className={`${getBgClass(4)} min-h-[70vh] border-b border-gray-300 dark:border-gray-700 pt-[5vh]`}
         >
           <ProjectsPersonal />
         </section>
-        <section id="contact" className={`${getBgClass(5)} min-h-screen pt-12`}>
+        <section id="contact" className={`${getBgClass(5)} min-h-[70vh] pt-[5vh]`}>
           <Contact />
         </section>
       </main>

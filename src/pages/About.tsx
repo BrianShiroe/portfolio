@@ -45,7 +45,7 @@ const About = () => {
   ];
 
   return (
-    <div className="p-8 max-w-6xl mx-auto min-h-screen">
+    <div className="px-4 py-12 max-w-6xl mx-auto">
       <h2 className="text-4xl font-semibold mb-8 text-center">About Me</h2>
 
       <p className="mb-12 text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-4xl mx-auto text-justify">

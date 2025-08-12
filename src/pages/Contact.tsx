@@ -29,7 +29,7 @@ const Contact = () => {
   const age = calculateAge("2002-01-17");
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
+    <div className="px-4 py-12 max-w-6xl mx-auto">
       <h2 className="text-4xl font-bold mb-6 text-center text-green-700 dark:text-green-400">
         CONTACT INFORMATION!
       </h2>

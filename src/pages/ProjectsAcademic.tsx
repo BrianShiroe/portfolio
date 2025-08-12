@@ -92,81 +92,92 @@ const ProjectCard: React.FC<Project> = ({
   btnStyle,
   extraLink,
   hashtags,
-}) => (
-  <div
-    className="project animated bounce-in border rounded
-   shadow p-4 mb-6 flex flex-col gap-4 md:flex-row md:gap-6"
-  >
-    <img src={imgSrc} alt={title} className="w-full md:w-48 object-cover rounded" />
-    <div className="content flex flex-col justify-between">
-      <h2 className="text-2xl font-semibold flex items-center space-x-2 mb-2">
-        {icon}
-        <span>{title}</span>
-      </h2>
-      <p className="mb-4 text-justify">{description}</p>
+}) => {
+  const baseBtnClasses =
+    "inline-block px-4 py-2 rounded font-semibold transition-colors duration-300";
 
-      <div className="flex flex-wrap items-center justify-between">
-        <div>
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`btn inline-block px-4 py-2 rounded font-semibold transition-colors duration-300 ${
-              disabled
-                ? "bg-red-600 text-white cursor-not-allowed"
-                : "bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-400 dark:hover:bg-indigo-500"
-            }`}
-            style={btnStyle}
-            aria-disabled={disabled}
-            tabIndex={disabled ? -1 : undefined}
-            onClick={disabled ? (e) => e.preventDefault() : undefined}
-          >
-            <span>{linkText}</span>
-          </a>
-          {extraLink && (
+  const enabledClasses =
+    "bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-400 dark:hover:bg-indigo-500 cursor-pointer";
+
+  const disabledClasses = "bg-red-600 text-white cursor-not-allowed";
+
+  return (
+    <div
+      className="project border rounded shadow p-4 mb-6 flex flex-col gap-4 md:flex-row md:gap-6"
+      role="region"
+      aria-labelledby={`project-title-${title}`}
+    >
+      <img src={imgSrc} alt={title} className="w-full md:w-48 object-cover rounded" />
+      <div className="content flex flex-col justify-between">
+        <h2
+          id={`project-title-${title}`}
+          className="text-2xl font-semibold flex items-center space-x-2 mb-2"
+        >
+          {icon}
+          <span>{title}</span>
+        </h2>
+        <p className="mb-4 text-justify">{description}</p>
+
+        <div className="flex flex-wrap items-center justify-between">
+          <div>
             <a
-              href={extraLink.href}
+              href={disabled ? undefined : link}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn inline-block px-4 py-2 rounded text-white font-semibold ml-3 bg-blue-600 hover:bg-blue-700"
+              className={`${baseBtnClasses} ${disabled ? disabledClasses : enabledClasses}`}
+              style={btnStyle}
+              aria-disabled={disabled}
+              tabIndex={disabled ? -1 : 0}
+              onClick={disabled ? (e) => e.preventDefault() : undefined}
             >
-              {extraLink.text}
+              {linkText}
             </a>
-          )}
-        </div>
 
-        {hashtags && hashtags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-2 md:mt-0">
-            {hashtags.map((tag) => (
-              <span
-                key={tag}
-                className="inline-block px-2 py-1 text-base font-mono rounded transition-all duration-200 transform
+            {extraLink && (
+              <a
+                href={extraLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn inline-block px-4 py-2 rounded text-white font-semibold ml-3 bg-blue-600 hover:bg-blue-700"
+              >
+                {extraLink.text}
+              </a>
+            )}
+          </div>
+
+          {hashtags && hashtags.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-2 md:mt-0">
+              {hashtags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-block px-2 py-1 text-base font-mono rounded transition-all duration-200 transform
                           text-indigo-700 bg-indigo-100
                           dark:text-yellow-300 dark:bg-gray-800
                           hover:bg-blue-200
                           hover:text-blue-800 dark:hover:text-yellow-200
                           hover:scale-105"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const ProjectsAcademic: React.FC = () => {
-  const [visibleCount, setVisibleCount] = useState(3); // <-- DEFAULT TO 3 VISIBLE PROJECTS
+  const [visibleCount, setVisibleCount] = useState(3); // Default to 3 visible projects
 
   const handleToggle = () => {
     setVisibleCount((prev) => (prev === projectsAcademic.length ? 3 : projectsAcademic.length));
   };
 
   return (
-    <div className="p-6 max-w-6xl mx-auto">
-      <h1 className="animated bounce-in text-4xl font-bold mb-6 text-center">ACADEMIC PROJECTS</h1>
+    <div className="px-4 py-12 max-w-6xl mx-auto">
+      <h1 className="text-4xl font-bold mb-6 text-center">ACADEMIC PROJECTS</h1>
       <div className="projects-container academic">
         {projectsAcademic.slice(0, visibleCount).map((project) => (
           <ProjectCard key={project.id} {...project} />
@@ -177,8 +188,9 @@ const ProjectsAcademic: React.FC = () => {
           <button
             onClick={handleToggle}
             className="px-6 py-2 rounded
-            bg-gray-200 text-black hover:bg-gray-300
-            dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700"
+              bg-gray-200 text-black hover:bg-gray-300
+              dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700"
+            aria-expanded={visibleCount === projectsAcademic.length}
           >
             {visibleCount === projectsAcademic.length ? "Show Less" : "Show More"}
           </button>
