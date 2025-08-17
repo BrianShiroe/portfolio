@@ -17,21 +17,21 @@ const Home = () => {
     <>
       {/* SEO Metadata */}
       <Helmet>
-        <title>Brian O. Haw | Full Stack & ML Developer</title>
+        <title>brianshiroe | Full Stack Developer</title>
         <meta
           name="description"
-          content="Welcome to the official portfolio of Brian O. Haw – Full Stack Developer, Machine Learning enthusiast, and Python expert."
+          content="Welcome to the official portfolio of brian haw – Full Stack Developer, Machine Learning enthusiast, and Python expert."
         />
         <meta
           name="keywords"
-          content="Brian O. Haw, Software Developer, Full Stack Developer, Python Developer, Machine Learning, Portfolio, React Developer"
+          content="brianshiroe, Software Developer, Full Stack Developer, Python Developer, Machine Learning, Portfolio, React Developer"
         />
         <meta name="author" content="Brian O. Haw" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Brian O. Haw Portfolio" />
+        <meta property="og:title" content="brianshiroe Portfolio" />
         <meta
           property="og:description"
-          content="Explore the work and projects of Brian O. Haw, a full stack and ML developer."
+          content="Explore the work and projects of brianshiroe, a full stack and ML developer."
         />
         <meta property="og:image" content="/images/home-images/profile-picture.png" />
         <meta property="og:type" content="website" />
@@ -49,11 +49,11 @@ const Home = () => {
           {/* Profile Picture - MOVED HERE */}
           <div
             className="w-56 h-56 sm:w-54 sm:h-54 rounded-full overflow-hidden shadow-2xl my-6 transition-transform duration-300 ease-in-out hover:scale-105"
-            aria-label="Profile picture of Brian O. Haw"
+            aria-label="Profile picture of brian haw"
           >
             <img
               src="/images/home-images/profile-square.png"
-              alt="Brian O. Haw smiling"
+              alt="brianshiroe"
               className="w-full h-full object-cover"
               loading="lazy"
               decoding="async"
@@ -89,7 +89,7 @@ const Home = () => {
             className="mt-10 px-4 max-w-2xl text-lg sm:text-xl font-medium text-center"
           >
             <div className="inline-flex items-center justify-center space-x-2">
-              <span>· Software · Full Stack · Machine Learning · Python ·</span>
+              <span>· Full Stack · Software ·</span>
             </div>
 
             <hr className="my-2 border-t border-black dark:border-white w-36 sm:w-60 mx-auto" />
