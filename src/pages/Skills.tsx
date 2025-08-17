@@ -2,35 +2,12 @@
 // Skills section displaying categorized technical proficiencies.
 
 const skills = {
-  "Programming Languages": ["JavaScript", "TypeScript", "Python", "PHP", "GDScript", "C#"],
-  "Web Development": ["HTML", "CSS", "Bootstrap", "Tailwind", "Flask", "React.js", "Next.js"],
-  Services: ["Netlify", "Railway", "Supabase", "Firebase"],
-  Databases: ["MySQL", "SQLite", "MongoDB", "PostgreSQL", "Firestore"],
-  "Development and Machine Learning Tools": ["VSCode", "LLMs", "Git", "Jira", "Trello", "YOLO", "OpenCV"],
-  "Game Development": ["Unity", "Unreal Engine", "Roblox Studio", "Godot"],
-  Frontend: ["Component-based Architecture", "Virtual DOM", "props", "hooks", "useState", "useEffect", "skeleton loading"],
-  Backend: [
-    "HTTP",
-    "RESTful API",
-    "Authentication",
-    "Authorization",
-    "Error handling",
-    "Security basics",
-    "Testing",
-    "debugging",
-  ],
-  "Version Control": [
-    "git",
-    "add",
-    "commit",
-    "push",
-    "pull",
-    "reset --soft",
-    "reset --hard",
-    "checkout",
-    "checkout -b",
-    "stash",
-  ],
+  "Programming Languages": ["TypeScript", "C#", "Python", "JavaScript", "PHP", "GDScript"],
+  "Web Development": ["Next.js", "React.js", "Flask", "Bootstrap", "Tailwind", "CSS", "HTML"],
+  Services: ["Firebase", "Supabase", "Railway", "Netlify", "Figma"],
+  Databases: ["PostgreSQL", "MongoDB", "MySQL", "SQLite", "Firestore"],
+  "Development and Machine Learning Tools": ["YOLO", "OpenCV", "LLMs", "Git", "VSCode", "Jira", "Trello", "Clickup"],
+  "Game Development": ["Unreal Engine", "Unity", "Godot", "Roblox Studio"],
 };
 
 const Skills = () => (
