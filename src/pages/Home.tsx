@@ -17,7 +17,7 @@ const Home = () => {
     <>
       {/* SEO Metadata */}
       <Helmet>
-        <title>brianshiroe | Full Stack Developer</title>
+        <title>brianshiroe Portfolio</title>
         <meta
           name="description"
           content="Welcome to the official portfolio of brian haw – Full Stack Developer, Machine Learning enthusiast, and Python expert."
@@ -92,7 +92,7 @@ const Home = () => {
               <span>· Full Stack · Software ·</span>
             </div>
 
-            <hr className="my-2 border-t border-black dark:border-white w-36 sm:w-60 mx-auto" />
+            <hr className="my-2 border-t border-black dark:border-white w-36 sm:w-40 mx-auto" />
 
             <div className="inline-flex items-center justify-center mt-1">
               <span>Developer</span>

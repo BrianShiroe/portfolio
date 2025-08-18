@@ -2,12 +2,14 @@
 // Skills section displaying categorized technical proficiencies.
 
 const skills = {
-  "Programming Languages": ["TypeScript", "C#", "Python", "JavaScript", "PHP", "GDScript"],
-  "Web Development": ["Next.js", "React.js", "Flask", "Bootstrap", "Tailwind", "CSS", "HTML"],
-  Services: ["Firebase", "Supabase", "Railway", "Netlify", "Figma"],
+  "Frontend Development": ["Next.js", "React.js", "Tailwind", "Bootstrap", "CSS", "HTML"],
+  "Backend Development": ["Flask", "Node.js", "PHP"],
+  "Programming Languages": ["TypeScript", "JavaScript", "Python", "C#", "GDScript"],
   Databases: ["PostgreSQL", "MongoDB", "MySQL", "SQLite", "Firestore"],
-  "Development and Machine Learning Tools": ["YOLO", "OpenCV", "LLMs", "Git", "VSCode", "Jira", "Trello", "Clickup"],
-  "Game Development": ["Unreal Engine", "Unity", "Godot", "Roblox Studio"],
+  "DevOps & Cloud Services": ["Docker", "Firebase", "Supabase", "Railway", "Netlify"],
+  "Developer Tools": ["Git", "VSCode", "Jira", "Trello", "Clickup", "Figma"],
+  "Machine Learning & AI": ["YOLO", "OpenCV", "LLMs"],
+  "Game Development": ["Unity", "Unreal Engine", "Godot", "Roblox Studio"],
 };
 
 const Skills = () => (
