@@ -85,7 +85,7 @@ const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
               key={section.name}
               href={`#${section.name}`}
               onClick={(e) => handleSmoothScroll(e, section.name)}
-              className="text-base sm:text-lg text-gray-900 dark:text-gray-100 hover:underline px-2 py-1 flex items-center"
+              className="text-base sm:text-lg text-gray-900 dark:text-gray-100 hover:underline px-2 py-1 flex items-center transition-transform duration-200 hover:scale-105"
             >
               {section.icon}
               {renderLinkText(section)}
@@ -94,7 +94,7 @@ const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
           <button
             onClick={toggleTheme}
             aria-label="Toggle Theme"
-            className="text-base sm:text-lg px-3 py-1 text-gray-900 dark:text-gray-100 hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center"
+            className="text-base sm:text-lg px-3 py-1 text-gray-900 dark:text-gray-100 hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center transition-transform duration-200 hover:scale-105"
           >
             {theme === "light" ? <MoonIcon className="w-5 h-5 mr-1" /> : <SunIcon className="w-5 h-5 mr-1" />}
             {theme === "light" ? "Dark" : "Light"}
