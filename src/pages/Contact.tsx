@@ -30,16 +30,12 @@ const Contact = () => {
 
   return (
     <div className="px-4 py-12 max-w-6xl mx-auto">
-      <h2 className="text-4xl font-bold mb-6 text-center text-green-700 dark:text-green-400">
-        CONTACT INFORMATION!
-      </h2>
-      <p className="mb-6 text-center text-lg font-medium">
-        Contact me through these methods:
-      </p>
+      <h2 className="text-4xl font-bold mb-6 text-center text-green-700 dark:text-green-400">CONTACT INFORMATION!</h2>
+      <p className="mb-6 text-center text-lg font-medium">Contact me through these methods:</p>
 
-      <div className="flex flex-col md:flex-row md:space-x-12">
+      <div className="flex flex-col md:flex-row justify-center gap-12">
         {/* Left column - Contact Methods */}
-        <div className="flex-1 mb-8 md:mb-0">
+        <div className="">
           <h3 className="text-2xl font-semibold mb-4">Contact Methods</h3>
           <ul className="space-y-4 text-gray-800 dark:text-gray-200">
             <li>
@@ -88,10 +84,7 @@ const Contact = () => {
               <span className="inline-flex items-center space-x-2">
                 <FaEnvelope />
                 <strong>Email:</strong>
-                <a
-                  href="mailto:brianshiroe@gmail.com"
-                  className="hover:underline"
-                >
+                <a href="mailto:brianshiroe@gmail.com" className="hover:underline">
                   brianshiroe@gmail.com
                 </a>
               </span>
@@ -114,7 +107,7 @@ const Contact = () => {
         </div>
 
         {/* Right column - Personal Information */}
-        <div className="flex-1">
+        <div className="">
           <h3 className="text-2xl font-semibold mb-4">Information</h3>
           <ul className="space-y-4 text-gray-800 dark:text-gray-200">
             <li>
