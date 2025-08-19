@@ -81,7 +81,7 @@ const About = () => {
           </h3>
           <ul className="list-disc list-inside space-y-3 text-gray-700 dark:text-gray-300">
             {educationDetails.map((detail) => (
-              <li key={detail.name} className="flex items-center space-x-2">
+              <li key={detail.name} className="flex items-center space-x-2 group">
                 <AcademicCapIcon className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
                 {detail.url ? (
                   <a
@@ -95,6 +95,7 @@ const About = () => {
                 ) : (
                   <span>{detail.name}</span>
                 )}
+                <span className="invisible group-hover:visible mr-1">👈</span>
               </li>
             ))}
           </ul>
@@ -108,7 +109,7 @@ const About = () => {
           </h3>
           <ul className="list-disc list-inside space-y-3 text-gray-700 dark:text-gray-300">
             {achievements.map((achievement) => (
-              <li key={achievement.name} className="flex items-center space-x-2">
+              <li key={achievement.name} className="flex items-center space-x-2 group">
                 <TrophyIcon className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
                 {achievement.url ? (
                   <a
@@ -122,6 +123,7 @@ const About = () => {
                 ) : (
                   <span>{achievement.name}</span>
                 )}
+                <span className="invisible group-hover:visible mr-1">👈</span>
               </li>
             ))}
           </ul>
@@ -135,7 +137,7 @@ const About = () => {
           </h3>
           <ul className="list-disc list-inside space-y-3 text-gray-700 dark:text-gray-300">
             {Certificates.map((cert) => (
-              <li key={cert.name} className="flex items-center space-x-2">
+              <li key={cert.name} className="flex items-center space-x-2 group">
                 <CheckBadgeIcon className="w-5 h-5 text-yellow-600 dark:text-yellow-400 flex-shrink-0" />
                 {cert.url ? (
                   <a
@@ -149,6 +151,7 @@ const About = () => {
                 ) : (
                   <span>{cert.name}</span>
                 )}
+                <span className="invisible group-hover:visible mr-1">👈</span>
               </li>
             ))}
           </ul>
