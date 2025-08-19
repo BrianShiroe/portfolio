@@ -93,8 +93,7 @@ const ProjectCard: React.FC<Project> = ({
   extraLink,
   hashtags,
 }) => {
-  const baseBtnClasses =
-    "inline-block px-4 py-2 rounded font-semibold transition-colors duration-300";
+  const baseBtnClasses = "inline-block px-4 py-2 rounded font-semibold transition-colors duration-300";
 
   const enabledClasses =
     "bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-400 dark:hover:bg-indigo-500 cursor-pointer";
@@ -109,10 +108,7 @@ const ProjectCard: React.FC<Project> = ({
     >
       <img src={imgSrc} alt={title} className="w-full md:w-48 object-cover rounded" />
       <div className="content flex flex-col justify-between">
-        <h2
-          id={`project-title-${title}`}
-          className="text-2xl font-semibold flex items-center space-x-2 mb-2"
-        >
+        <h2 id={`project-title-${title}`} className="text-2xl font-semibold flex items-center space-x-2 mb-2">
           {icon}
           <span>{title}</span>
         </h2>
@@ -178,7 +174,7 @@ const ProjectsAcademic: React.FC = () => {
   return (
     <div className="px-4 py-12 max-w-6xl mx-auto">
       <h1 className="text-4xl font-bold mb-6 text-center">ACADEMIC PROJECTS</h1>
-      <div className="projects-container academic">
+      <div className="projects-container academic overflow-hidden">
         {projectsAcademic.slice(0, visibleCount).map((project) => (
           <ProjectCard key={project.id} {...project} />
         ))}
