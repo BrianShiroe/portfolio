@@ -77,15 +77,19 @@ const About = () => {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
           {educationDetails.map((detail) => (
-            <a
+            <div
               key={detail.name}
-              href={detail.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block border rounded-md p-4 overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg text-center hover:bg-indigo-50 dark:hover:bg-indigo-900"
+              className="border rounded-md p-3 overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-lg"
             >
-              {detail.name}
-            </a>
+              <a
+                href={detail.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors duration-300 hover:text-indigo-800 dark:hover:text-indigo-300"
+              >
+                {detail.name}
+              </a>
+            </div>
           ))}
         </div>
       </section>
@@ -98,16 +102,20 @@ const About = () => {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {achievements.map((achievement) => (
-            <a
+            <div
               key={achievement.name}
-              href={achievement.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-4 flex flex-col justify-between overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:bg-green-50 dark:hover:bg-green-900"
+              className="border rounded-md p-4 flex flex-col justify-between overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-lg"
             >
               <p className="font-semibold text-gray-800 dark:text-gray-200 mb-2">{achievement.name}</p>
-              <span className="text-green-700 dark:text-green-300 underline">View Achievement</span>
-            </a>
+              <a
+                href={achievement.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-700 dark:text-green-300 underline transition-colors duration-300 hover:text-green-900 dark:hover:text-green-100"
+              >
+                View Achievement
+              </a>
+            </div>
           ))}
         </div>
       </section>
@@ -120,16 +128,20 @@ const About = () => {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {Certificates.map((cert) => (
-            <a
+            <div
               key={cert.name}
-              href={cert.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border rounded-md p-4 flex flex-col justify-between overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:bg-yellow-50 dark:hover:bg-yellow-900"
+              className="border rounded-md p-2 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
             >
               <p className="font-semibold mb-2">{cert.name}</p>
-              <span className="text-yellow-700 dark:text-yellow-500 underline">View Certificate</span>
-            </a>
+              <a
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-700 dark:text-yellow-300 underline transition-colors duration-300 hover:text-yellow-900 dark:hover:text-yellow-100"
+              >
+                View Certificate
+              </a>
+            </div>
           ))}
         </div>
       </section>
