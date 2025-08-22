@@ -1,9 +1,6 @@
 // src/pages/About.tsx
-// Displays personal background, education details, and academic achievements.
-
 import { AcademicCapIcon, TrophyIcon, CheckBadgeIcon } from "@heroicons/react/24/outline";
 
-// Reusable Highlight (HL) component for consistent styling
 const HL = ({ children }: { children: React.ReactNode }) => (
   <span className="text-indigo-600 dark:text-indigo-400 font-semibold">{children}</span>
 );
@@ -19,7 +16,7 @@ const About = () => {
       url: "/images/achievement-images/academic-scholar-and-dean-lister-award.pdf",
     },
     {
-      name: "Best Abstract and Best Oral Research Presenter - PAIR International Research Conference",
+      name: "Best Abstract and Best Oral Research Presenter - PAIR Conference",
       url: "/images/achievement-images/best-abstract-and-best-oral-research-presenter-award.pdf",
     },
     {
@@ -27,6 +24,7 @@ const About = () => {
       url: "/images/achievement-images/top-20-finalist-award.pdf",
     },
   ];
+
   const Certificates = [
     {
       name: "CLP: JavaScript Essentials 2",
@@ -71,92 +69,70 @@ const About = () => {
         <HL>committed</HL> to continuous learning and applying my skills to create innovative and practical solutions.
       </p>
 
-      {/* 3-column layout for Education, Achievements, Awards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        {/* Education */}
-        <section>
-          <h3 className="text-3xl font-semibold mb-6 flex items-center space-x-3 text-indigo-600 dark:text-indigo-400">
-            <AcademicCapIcon className="w-8 h-8" />
-            <span>Education</span>
-          </h3>
-          <ul className="list-disc list-inside space-y-3 text-gray-700 dark:text-gray-300">
-            {educationDetails.map((detail) => (
-              <li key={detail.name} className="flex items-center space-x-2 group">
-                <AcademicCapIcon className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
-                {detail.url ? (
-                  <a
-                    href={detail.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=" hover:text-indigo-800 dark:hover:text-indigo-300"
-                  >
-                    {detail.name}
-                  </a>
-                ) : (
-                  <span>{detail.name}</span>
-                )}
-                <span className="invisible group-hover:visible mr-1">👈</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+      {/* Education Row */}
+      <section className="mb-12">
+        <h3 className="text-3xl font-semibold mb-6 flex items-center space-x-3 text-indigo-600 dark:text-indigo-400">
+          <AcademicCapIcon className="w-8 h-8" />
+          <span>Education</span>
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+          {educationDetails.map((detail) => (
+            <a
+              key={detail.name}
+              href={detail.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block border rounded-md p-4 overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg text-center hover:bg-indigo-50 dark:hover:bg-indigo-900"
+            >
+              {detail.name}
+            </a>
+          ))}
+        </div>
+      </section>
 
-        {/* Achievements */}
-        <section>
-          <h3 className="text-3xl font-semibold mb-6 flex items-center space-x-3 text-green-600 dark:text-green-400">
-            <TrophyIcon className="w-8 h-8" />
-            <span>Achievements</span>
-          </h3>
-          <ul className="list-disc list-inside space-y-3 text-gray-700 dark:text-gray-300">
-            {achievements.map((achievement) => (
-              <li key={achievement.name} className="flex items-center space-x-2 group">
-                <TrophyIcon className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
-                {achievement.url ? (
-                  <a
-                    href={achievement.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-green-800 dark:hover:text-green-300"
-                  >
-                    {achievement.name}
-                  </a>
-                ) : (
-                  <span>{achievement.name}</span>
-                )}
-                <span className="invisible group-hover:visible mr-1">👈</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+      {/* Achievements Row */}
+      <section className="mb-12">
+        <h3 className="text-3xl font-semibold mb-6 flex items-center space-x-3 text-green-600 dark:text-green-400">
+          <TrophyIcon className="w-8 h-8" />
+          <span>Achievements</span>
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {achievements.map((achievement) => (
+            <a
+              key={achievement.name}
+              href={achievement.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border rounded-md p-4 flex flex-col justify-between overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:bg-green-50 dark:hover:bg-green-900"
+            >
+              <p className="font-semibold text-gray-800 dark:text-gray-200 mb-2">{achievement.name}</p>
+              <span className="text-green-700 dark:text-green-300 underline">View Achievement</span>
+            </a>
+          ))}
+        </div>
+      </section>
 
-        {/*Certificates */}
-        <section>
-          <h3 className="text-3xl font-semibold mb-6 flex items-center space-x-3 text-yellow-600 dark:text-yellow-400">
-            <CheckBadgeIcon className="w-8 h-8" />
-            <span>Certificates</span>
-          </h3>
-          <ul className="list-disc list-inside space-y-3 text-gray-700 dark:text-gray-300">
-            {Certificates.map((cert) => (
-              <li key={cert.name} className="flex items-center space-x-2 group">
-                <CheckBadgeIcon className="w-5 h-5 text-yellow-600 dark:text-yellow-400 flex-shrink-0" />
-                {cert.url ? (
-                  <a
-                    href={cert.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-yellow-800 dark:hover:text-yellow-300"
-                  >
-                    {cert.name}
-                  </a>
-                ) : (
-                  <span>{cert.name}</span>
-                )}
-                <span className="invisible group-hover:visible mr-1">👈</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      </div>
+      {/* Certificates Row */}
+      <section>
+        <h3 className="text-3xl font-semibold mb-6 flex items-center space-x-3 text-yellow-600 dark:text-yellow-400">
+          <CheckBadgeIcon className="w-8 h-8" />
+          <span>Certificates</span>
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {Certificates.map((cert) => (
+            <a
+              key={cert.name}
+              href={cert.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border rounded-md p-4 flex flex-col justify-between overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg hover:bg-yellow-50 dark:hover:bg-yellow-900"
+            >
+              <p className="font-semibold mb-2">{cert.name}</p>
+              <span className="text-yellow-700 dark:text-yellow-500 underline">View Certificate</span>
+            </a>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
