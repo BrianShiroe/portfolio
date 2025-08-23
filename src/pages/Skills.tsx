@@ -2,8 +2,8 @@
 // Skills section displaying categorized technical proficiencies.
 
 const skills = {
-  "Frontend Development": ["Next.js", "React.js", "Tailwind", "Bootstrap", "CSS", "HTML"],
-  "Backend Development": ["Flask", "Node.js", "PHP"],
+  "Frontend Development": ["Next.js", "React.js", "Tailwind", "Bootstrap", "CSS", "HTML", "Shadcn"],
+  "Backend Development": ["Flask", "Node.js", "PHP", "Stripe"],
   "Programming Languages": ["TypeScript", "JavaScript", "Python", "C#", "GDScript"],
   Databases: ["PostgreSQL", "MongoDB", "MySQL", "SQLite", "Firestore"],
   "DevOps & Cloud Services": ["Docker", "Firebase", "Supabase", "Railway", "Netlify"],
