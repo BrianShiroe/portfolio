@@ -28,7 +28,7 @@ interface Project {
 const projectsAcademic: Project[] = [
   {
     id: "pp3",
-    title: "🛒 ShiroeShop Ecommerce Store",
+    title: "ShiroeShop Ecommerce Store",
     icon: <FaShoppingCart />,
     description: `An e-commerce web application built with Next.js, TailwindCSS, Shadcn/UI, and Stripe, providing seamless online shopping and checkout experiences.`,
     imgSrc: "/images/project-images/project13.png",
