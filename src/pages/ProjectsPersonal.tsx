@@ -208,7 +208,7 @@ const ProjectsPersonal: React.FC = () => {
 
   return (
     <div className="px-4 py-12 max-w-6xl mx-auto">
-      <h1 className="animated bounce-in text-4xl font-bold mb-6 text-center">PERSONAL PROJECTS</h1>
+      <h1 className="animated bounce-in text-4xl font-bold mb-6 text-center">MINOR PROJECTS</h1>
       <div className="projects-container personal overflow-hidden">
         {projectsPersonal.slice(0, visibleCount).map((project) => (
           <ProjectCard key={project.id} {...project} />
