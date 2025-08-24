@@ -4,7 +4,7 @@
 
 import React, { useState } from "react";
 import type { ReactNode } from "react";
-import { FaRobot, FaGlobe, FaDesktop } from "react-icons/fa";
+import { FaRobot, FaGlobe, FaDesktop, FaShoppingCart } from "react-icons/fa";
 
 interface ExtraLink {
   href: string;
@@ -26,6 +26,18 @@ interface Project {
 }
 
 const projectsAcademic: Project[] = [
+  {
+    id: "pp3",
+    title: "🛒 ShiroeShop Ecommerce Store",
+    icon: <FaShoppingCart />,
+    description: `An e-commerce web application built with Next.js, TailwindCSS, Shadcn/UI, and Stripe, providing seamless online shopping and checkout experiences.`,
+    imgSrc: "/images/project-images/project13.png",
+    link: "https://github.com/BrianShiroe/shiroeshop-ecommerce",
+    linkText: "Github",
+    disabled: false,
+    btnStyle: {},
+    hashtags: ["#next.js", "#tailwindcss", "#shadcn", "#stripe", "#ecommerce"],
+  },
   {
     id: "pp7",
     title: "Luka",
