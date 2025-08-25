@@ -85,7 +85,7 @@ const projectsPersonal: Project[] = [
     icon: <FaGamepad />,
     description: `A 2D speedrun platformer game made using the unity
      game engine, submitted for the 5th SpeedJam competition hosted in itch.io.`,
-    imgSrc: "/images/project-images/project2.png",
+    imgSrc: "/images/project-images/project2.1.png",
     link: "https://mun-development.itch.io/the-goddess-trial",
     linkText: "itch.io",
     disabled: false,
@@ -139,7 +139,7 @@ const ProjectCard: React.FC<Project> = ({
     className="project animated bounce-in border rounded
    shadow p-4 mb-6 flex flex-col gap-4 md:flex-row md:gap-6"
   >
-    <img src={imgSrc} alt={title} className="w-full md:w-48 object-cover rounded" />
+    <img src={imgSrc} alt={title} className="w-full md:w-64 object-cover rounded" />
     <div className="content flex flex-col justify-between">
       <h2 className="text-2xl font-semibold flex items-center space-x-2 mb-2">
         {icon}

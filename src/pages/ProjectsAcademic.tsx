@@ -4,7 +4,7 @@
 
 import React, { useState } from "react";
 import type { ReactNode } from "react";
-import { FaRobot, FaGlobe, FaDesktop, FaShoppingCart } from "react-icons/fa";
+import { FaSchool, FaRobot, FaGlobe, FaDesktop, FaShoppingCart } from "react-icons/fa";
 
 interface ExtraLink {
   href: string;
@@ -31,12 +31,24 @@ const projectsAcademic: Project[] = [
     title: "ShiroeShop Ecommerce Store",
     icon: <FaShoppingCart />,
     description: `An e-commerce web application built with Next.js, TailwindCSS, Shadcn/UI, and Stripe, providing seamless online shopping and checkout experiences.`,
-    imgSrc: "/images/project-images/project13.png",
+    imgSrc: "/images/project-images/project13.2.png",
     link: "https://github.com/BrianShiroe/shiroeshop-ecommerce",
     linkText: "Github",
     disabled: false,
     btnStyle: {},
     hashtags: ["#next.js", "#tailwindcss", "#shadcn", "#stripe", "#ecommerce"],
+  },
+  {
+    id: "pp14",
+    title: "Rumahsekolah – All-in-One Academic Platform",
+    icon: <FaSchool />,
+    description: `A scalable academic platform built with Next.js, Supabase, Redis, and TailwindCSS. Supports student registration, teacher collaboration, grade management, progress tracking, and more in one seamless system.`,
+    imgSrc: "/images/project-images/project14.png",
+    link: "",
+    linkText: "Private!",
+    disabled: true,
+    btnStyle: { backgroundColor: "red", color: "white", cursor: "not-allowed" },
+    hashtags: ["#next.js", "#supabase", "#redis", "#tailwindcss", "#education"],
   },
   {
     id: "pp7",
@@ -60,7 +72,7 @@ const projectsAcademic: Project[] = [
       and manage all computer hardware assets required by the organization.`,
     imgSrc: "/images/project-images/project10.png",
     link: "",
-    linkText: "PRIVATE PROJECT!",
+    linkText: "PRIVATE!",
     disabled: true,
     btnStyle: { backgroundColor: "red", color: "white", cursor: "not-allowed" },
     hashtags: ["#webdevelopment", "#xampp", "#mysql", "#php", "#apache", "#phpmyadmin"],
@@ -73,7 +85,7 @@ const projectsAcademic: Project[] = [
       a school-affiliated organization dedicated to publishing campus news and updates.`,
     imgSrc: "/images/project-images/project9.png",
     link: "",
-    linkText: "PRIVATE PROJECT!",
+    linkText: "PRIVATE!",
     disabled: true,
     btnStyle: { backgroundColor: "red", color: "white", cursor: "not-allowed" },
     hashtags: ["#webdevelopment", "#xampp", "#mysql", "#php", "#apache", "#phpmyadmin"],
@@ -86,7 +98,7 @@ const projectsAcademic: Project[] = [
      the products of the Manaheartz Handicrafts Store.`,
     imgSrc: "/images/project-images/project8.1.png",
     link: "/assets/manaheartz-project.pdf",
-    linkText: "PRIVATE PROJECT!",
+    linkText: "PRIVATE!",
     disabled: true,
     btnStyle: { backgroundColor: "red", color: "white", cursor: "not-allowed" },
     hashtags: ["#webdevelopment", "#xampp", "#mysql", "#php", "#apache", "#phpmyadmin"],
@@ -118,7 +130,7 @@ const ProjectCard: React.FC<Project> = ({
       role="region"
       aria-labelledby={`project-title-${title}`}
     >
-      <img src={imgSrc} alt={title} className="w-full md:w-48 object-cover rounded" />
+      <img src={imgSrc} alt={title} className="w-full md:w-64 object-cover rounded" />
       <div className="content flex flex-col justify-between">
         <h2 id={`project-title-${title}`} className="text-2xl font-semibold flex items-center space-x-2 mb-2">
           {icon}
