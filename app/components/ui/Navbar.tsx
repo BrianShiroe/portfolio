@@ -56,9 +56,9 @@ export default function Navbar() {
     <>
       {/* Desktop Sidebar */}
       <aside className="hidden sm:flex w-72 text-gray-900 p-6 border-r border-gray-300 flex-col h-screen">
-        <div>
-          <Image src="/images/logo.png" alt="BS Logo" width={80} height={80} />
-        </div>
+        <Link href={`/${locale}/home`}>
+          <Image src="/images/logo.png" alt="Logo" width={80} height={80} />
+        </Link>
 
         {/* Navigation */}
         <nav className="mb-6 border-b border-gray-300 pb-4">
@@ -119,9 +119,9 @@ export default function Navbar() {
 
       {/* Mobile Header */}
       <header className="sm:hidden w-full text-gray-900 p-4 border-b border-gray-300 flex items-center justify-between">
-        <div>
-          <Image src="/images/logo.png" alt="BS Logo" width={40} height={40} />
-        </div>
+        <Link href={`/${locale}/home`}>
+          <Image src="/images/logo.png" alt="Logo" width={30} height={30} />
+        </Link>
         <nav className="flex space-x-2">
           {navLinks.map(({ name, href, icon }) => (
             <Link
