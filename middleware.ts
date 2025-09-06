@@ -8,7 +8,11 @@ export function middleware(req: NextRequest) {
   const url = req.nextUrl.clone();
   const { pathname } = req.nextUrl;
 
-  if (pathname.startsWith("/_next") || pathname.startsWith("/favicon.ico")) {
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/favicon.ico") ||
+    pathname.startsWith("/_next/image")
+  ) {
     return NextResponse.next();
   }
 
@@ -24,5 +28,7 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next|favicon.ico).*)'],
+  matcher: [
+    "/((?!_next|favicon.ico|images).*)",
+  ],
 };

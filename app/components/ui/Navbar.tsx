@@ -4,12 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { Mail, Home, User, Code, Folder } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "home", icon: <Home className="w-5 h-5 mr-1" /> },
   { name: "About Me", href: "about", icon: <User className="w-5 h-5 mr-1" /> },
   { name: "Skills", href: "skills", icon: <Code className="w-5 h-5 mr-1" /> },
-  { name: "Projects", href: "projects", icon: <Folder className="w-5 h-5 mr-1" /> },
+  {
+    name: "Projects",
+    href: "projects",
+    icon: <Folder className="w-5 h-5 mr-1" />,
+  },
   { name: "Email", href: "email", icon: <Mail className="w-5 h-5 mr-1" /> },
 ];
 
@@ -51,7 +56,9 @@ export default function Navbar() {
     <>
       {/* Desktop Sidebar */}
       <aside className="hidden sm:flex w-72 text-gray-900 p-6 border-r border-gray-300 flex-col h-screen">
-        <div className="text-4xl font-extrabold mb-6 tracking-wide">BS</div>
+        <div>
+          <Image src="/images/logo.png" alt="BS Logo" width={80} height={80} />
+        </div>
 
         {/* Navigation */}
         <nav className="mb-6 border-b border-gray-300 pb-4">
@@ -73,7 +80,9 @@ export default function Navbar() {
         <section className="border-b border-gray-300 pb-4 mb-4 flex-1 overflow-y-auto">
           {Object.entries(projectCategories).map(([category, projects]) => (
             <div key={category} className="mb-4">
-              <h3 className="text-xs uppercase text-gray-500 mb-2">{category}</h3>
+              <h3 className="text-xs uppercase text-gray-500 mb-2">
+                {category}
+              </h3>
               <ul className="space-y-1 pl-2">
                 {projects.map((proj) => (
                   <li
@@ -110,7 +119,9 @@ export default function Navbar() {
 
       {/* Mobile Header */}
       <header className="sm:hidden w-full text-gray-900 p-4 border-b border-gray-300 flex items-center justify-between">
-        <div className="text-2xl font-extrabold tracking-wide">BS</div>
+        <div>
+          <Image src="/images/logo.png" alt="BS Logo" width={40} height={40} />
+        </div>
         <nav className="flex space-x-2">
           {navLinks.map(({ name, href, icon }) => (
             <Link
