@@ -21,9 +21,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={dir}>
-      <body className="antialiased flex flex-col sm:flex-row min-h-screen">
+     <body className="antialiased flex flex-col sm:flex-row min-h-screen font-sans">
         <Navbar />
-        <main className="flex-1 p-4">{children}</main>
+        <main className="flex-1 p-20">{children}</main>
       </body>
     </html>
   );
