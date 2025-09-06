@@ -23,7 +23,7 @@ export default async function RootLayout({
     <html lang={locale} dir={dir}>
      <body className="antialiased flex flex-col sm:flex-row min-h-screen font-sans">
         <Navbar />
-        <main className="flex-1 p-20">{children}</main>
+        <main className="flex-1 p-20 min-w-[320px]">{children}</main>
       </body>
     </html>
   );

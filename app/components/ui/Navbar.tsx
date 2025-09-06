@@ -12,7 +12,10 @@ const navLinks = [
   { key: "home", icon: <Home className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
   { key: "about", icon: <User className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
   { key: "skills", icon: <Code className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
-  { key: "projects", icon: <Folder className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
+  {
+    key: "projects",
+    icon: <Folder className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+  },
   { key: "email", icon: <Mail className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
 ];
 
@@ -62,10 +65,37 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden sm:flex w-72 text-gray-900 p-6 border-r border-gray-300 flex-col h-screen">
-        <Link href={`/${locale}/home`}>
-          <Image src="/images/logo.png" alt="Logo" width={80} height={80} />
-        </Link>
+      <aside className="hidden sm:flex w-72 min-w-[240px] text-gray-900 p-6 border-r border-gray-300 flex-col h-screen">
+        <div className="flex items-center justify-between mb-6">
+          <Link href={`/${locale}/home`}>
+            <Image src="/images/logo.png" alt="Logo" width={80} height={80} />
+          </Link>
+          {/* Language Switch beside Logo */}
+          <div className="flex space-x-2 rtl:space-x-reverse">
+            <Link
+              href={`/en${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
+              className={clsx(
+                "px-3 py-1 rounded text-sm",
+                locale === "en"
+                  ? "bg-gray-200 font-semibold"
+                  : "hover:bg-gray-100"
+              )}
+            >
+              EN
+            </Link>
+            <Link
+              href={`/ar${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
+              className={clsx(
+                "px-3 py-1 rounded text-sm",
+                locale === "ar"
+                  ? "bg-gray-200 font-semibold"
+                  : "hover:bg-gray-100"
+              )}
+            >
+              AR
+            </Link>
+          </div>
+        </div>
 
         {/* Navigation */}
         <nav className="mb-6 border-b border-gray-300 pb-4">
@@ -126,21 +156,66 @@ export default function Navbar() {
       </aside>
 
       {/* Mobile Header */}
-      <header className="sm:hidden w-full text-gray-900 p-4 border-b border-gray-300 flex items-center justify-between">
-        <Link href={`/${locale}/home`}>
-          <Image src="/images/logo.png" alt="Logo" width={30} height={30} />
-        </Link>
-        <nav className="flex space-x-2">
+      <header className="sm:hidden w-full min-w-[320px] text-gray-900 p-4 border-b border-gray-300">
+        {/* Row 1: Logo + Language Switch */}
+        <div className="flex items-center justify-between mb-3 w-full">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href={`/${locale}/home`}>
+              <Image src="/images/logo.png" alt="Logo" width={30} height={30} />
+            </Link>
+          </div>
+
+          {/* EN/AR */}
+          <div className="flex space-x-2 rtl:space-x-reverse flex-shrink-0">
+            <Link
+              href={`/en${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
+              className={clsx(
+                "px-2 py-1 rounded text-xs",
+                locale === "en"
+                  ? "bg-gray-200 font-semibold"
+                  : "hover:bg-gray-100"
+              )}
+            >
+              EN
+            </Link>
+            <Link
+              href={`/ar${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
+              className={clsx(
+                "px-2 py-1 rounded text-xs",
+                locale === "ar"
+                  ? "bg-gray-200 font-semibold"
+                  : "hover:bg-gray-100"
+              )}
+            >
+              AR
+            </Link>
+          </div>
+        </div>
+
+        {/* Row 2: Navigation */}
+        <nav className="flex w-full">
           {navLinks.map(({ key, icon }) => (
             <Link
               key={key}
               href={`/${locale}/${key}`}
               className={clsx(
-                "flex items-center px-2 py-1 rounded hover:bg-gray-100 transition text-sm",
+                "flex-1 flex items-center justify-center rounded hover:bg-gray-100 transition text-sm",
                 pathname === `/${locale}/${key}` && "bg-gray-100 font-semibold"
               )}
+              style={{
+                padding: "clamp(0.25rem, 2vw, 0.75rem)", // responsive padding
+              }}
             >
-              {icon}
+              <span
+                className="flex items-center justify-center"
+                style={{
+                  width: "clamp(1.5rem, 8vw, 2.5rem)", // icon width responsive
+                  height: "clamp(1.5rem, 8vw, 2.5rem)",
+                }}
+              >
+                {icon}
+              </span>
               <span className="hidden">{t(`nav.${key}`)}</span>
             </Link>
           ))}
