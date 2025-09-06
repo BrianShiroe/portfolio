@@ -50,13 +50,12 @@ const contactLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const locale = pathname.split("/")[1] || "en";
 
   return (
     <>
       {/* Desktop Sidebar */}
       <aside className="hidden sm:flex w-72 text-gray-900 p-6 border-r border-gray-300 flex-col h-screen">
-        <Link href={`/${locale}/home`}>
+        <Link href="/home">
           <Image src="/images/logo.png" alt="Logo" width={80} height={80} />
         </Link>
 
@@ -65,10 +64,10 @@ export default function Navbar() {
           {navLinks.map(({ name, href }) => (
             <Link
               key={name}
-              href={`/${locale}/${href}`}
+              href={`/${href}`}
               className={clsx(
                 "block px-3 py-2 rounded hover:bg-gray-100 transition text-sm",
-                pathname === `/${locale}/${href}` && "bg-gray-100 font-semibold"
+                pathname === `/${href}` && "bg-gray-100 font-semibold"
               )}
             >
               {name}
@@ -119,17 +118,17 @@ export default function Navbar() {
 
       {/* Mobile Header */}
       <header className="sm:hidden w-full text-gray-900 p-4 border-b border-gray-300 flex items-center justify-between">
-        <Link href={`/${locale}/home`}>
+        <Link href="/home">
           <Image src="/images/logo.png" alt="Logo" width={30} height={30} />
         </Link>
         <nav className="flex space-x-2">
           {navLinks.map(({ name, href, icon }) => (
             <Link
               key={name}
-              href={`/${locale}/${href}`}
+              href={`/${href}`}
               className={clsx(
                 "flex items-center px-2 py-1 rounded hover:bg-gray-100 transition text-sm",
-                pathname === `/${locale}/${href}` && "bg-gray-100 font-semibold"
+                pathname === `/${href}` && "bg-gray-100 font-semibold"
               )}
             >
               {icon}
