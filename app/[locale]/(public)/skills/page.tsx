@@ -1,7 +1,7 @@
 // app/[locale]/(public)/skills/page.tsx
 "use client";
 
-import { skills } from "@/assets/skills";
+import { skills } from "@/data/skills";
 import Image from "next/image";
 
 export default function SkillsPage() {
