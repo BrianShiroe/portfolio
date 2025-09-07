@@ -12,7 +12,9 @@ export default function HomePage() {
       <h1 className="text-8xl font-bold text-gray-900 mb-2">BRIAN ONG HAW</h1>
 
       <div className="text-start mt-8">
-        <p className="text-4xl text-gray-500 mb-2">Handle | Brianshiroe</p>
+        <p className="text-4xl text-gray-800 mb-2">
+          Handle | <strong>Srianshiroe</strong>
+        </p>
         <p className="text-2xl font-medium text-gray-900 mb-10">
           Full-Stack Developer
         </p>
@@ -30,7 +32,7 @@ export default function HomePage() {
           Download CV
         </button>
       </div>
+      
     </div>
   );
 }
-  
