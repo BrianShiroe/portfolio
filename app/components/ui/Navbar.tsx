@@ -77,7 +77,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden sm:flex w-72 min-w-[240px] text-gray-900 p-6 border-r border-gray-300 flex-col h-screen sticky top-0">
+      <aside className="hidden md:flex w-72 min-w-[240px] text-gray-900 p-6 border-r border-gray-300 flex-col h-screen sticky top-0">
         <div className="flex items-center justify-between mb-6">
           <Link href={`/${locale}/home`}>
             <Image src="/images/logo.png" alt="Logo" width={80} height={80} />
@@ -168,7 +168,7 @@ export default function Navbar() {
       </aside>
 
       {/* Mobile Header */}
-      <header className="sm:hidden w-full min-w-[320px] text-gray-900 p-4 border-b border-gray-300">
+      <header className="md:hidden w-full min-w-[320px] text-gray-900 p-4 border-b border-gray-300">
         {/* Row 1: Logo + Language Switch */}
         <div className="flex items-center justify-between mb-3 w-full">
           {/* Logo */}
