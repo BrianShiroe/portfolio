@@ -21,10 +21,12 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={dir}>
-      <body className="antialiased flex flex-col md:flex-row min-h-screen font-sans">
+      <body className="antialiased flex flex-col lg:flex-row min-h-screen font-sans">
         <Navbar />
         <main className="flex-1 flex justify-center">
-          <div className="max-w-[1200] min-w-[320px] p-20">{children}</div>
+          <div className="max-w-[1800] min-w-[320px] p-6 pt-50 lg:pt-40 lg:p-20">
+            {children}
+          </div>
         </main>
       </body>
     </html>

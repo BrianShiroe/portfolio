@@ -12,23 +12,23 @@ import { useState, useEffect, useRef } from "react";
 const navLinks = [
   {
     key: "home",
-    icon: <Home className="w-10 h-10 sm:w-5 sm:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+    icon: <Home className="w-10 h-10 lg:w-5 lg:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
   },
   {
     key: "about",
-    icon: <User className="w-10 h-10 sm:w-5 sm:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+    icon: <User className="w-10 h-10 lg:w-5 lg:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
   },
   {
     key: "skills",
-    icon: <Code className="w-10 h-10 sm:w-5 sm:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+    icon: <Code className="w-10 h-10 lg:w-5 lg:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
   },
   {
     key: "projects",
-    icon: <Folder className="w-10 h-10 sm:w-5 sm:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+    icon: <Folder className="w-10 h-10 lg:w-5 lg:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
   },
   {
     key: "email",
-    icon: <Mail className="w-10 h-10 sm:w-5 sm:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+    icon: <Mail className="w-10 h-10 lg:w-5 lg:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
   },
 ];
 
@@ -110,7 +110,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex w-72 min-w-[240px] text-gray-900 p-6 border-r border-gray-300 flex-col h-screen sticky top-0">
+      <aside className="hidden lg:flex w-72 min-w-[240px] text-gray-900 p-6 border-r border-gray-300 flex-col h-screen sticky top-0">
         <div className="flex items-center justify-between mb-6">
           <Link href={`/${locale}/home`}>
             <Image src="/images/logo.png" alt="Logo" width={80} height={80} />
@@ -203,7 +203,7 @@ export default function Navbar() {
       {/* Mobile Header */}
       <header
         className={`
-        md:hidden w-full min-w-[320px] text-gray-900 p-4 border-b border-gray-300 
+        lg:hidden w-full min-w-[320px] text-gray-900 p-4 border-b border-gray-300 
         fixed top-0 z-50 bg-white transition-transform duration-500 ease-in-out
         ${showHeader ? "translate-y-0" : "-translate-y-full"}
       `}

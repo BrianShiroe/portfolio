@@ -7,7 +7,7 @@ export default function HomePage() {
   const { t, locale } = useLocale();
 
   return (
-    <div className="flex flex-col items-center justify-center text-center py-20 px-4 bg-white">
+    <div className="flex flex-col items-center justify-center">
       <p className="self-start text-4xl text-gray-600 mb-2">Hello! I'm</p>
       <h1 className="text-8xl font-bold text-gray-900 mb-2">BRIAN ONG HAW</h1>
 
@@ -32,7 +32,6 @@ export default function HomePage() {
           Download CV
         </button>
       </div>
-      
     </div>
   );
 }
