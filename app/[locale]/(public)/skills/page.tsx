@@ -39,13 +39,16 @@ export default function SkillsPage() {
 
       <section className="w-full max-w-5xl space-y-12">
         {Object.entries(skills).map(([category, items]) => (
-          <div key={category}>
+          <div
+            key={category}
+            className="bg-gray-100 p-12 rounded-4xl inset-shadow"
+          >
             <h2 className="text-2xl font-semibold mb-6">{category}</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
               {items.map((skill) => (
                 <div
                   key={skill}
-                  className="flex items-center justify-center rounded-2xl border shadow-sm p-4 hover:shadow-md hover:scale-105 transition-transform bg-white"
+                  className="flex items-center justify-center rounded-2xl shadow-lg p-4 hover:scale-103 transition-transform bg-white"
                 >
                   <span className="text-lg font-medium text-gray-800">
                     {skill}
