@@ -77,7 +77,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden sm:flex w-72 min-w-[240px] text-gray-900 p-6 border-r border-gray-300 flex-col h-screen">
+      <aside className="hidden sm:flex w-72 min-w-[240px] text-gray-900 p-6 border-r border-gray-300 flex-col h-screen sticky top-0">
         <div className="flex items-center justify-between mb-6">
           <Link href={`/${locale}/home`}>
             <Image src="/images/logo.png" alt="Logo" width={80} height={80} />
