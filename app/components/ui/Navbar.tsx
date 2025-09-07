@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { Mail, Home, User, Code, Folder } from "lucide-react";
 import Image from "next/image";
 import { useLocale } from "@/lib/useLocale";
+import { useState, useEffect, useRef } from "react";
 
 const navLinks = [
   {
@@ -34,6 +35,38 @@ const navLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const { locale, t } = useLocale();
+  const [showHeader, setShowHeader] = useState(true);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          // Only hide/show if scroll delta is significant
+          if (currentScrollY - lastScrollY.current > 10) {
+            // scrolling down
+            setShowHeader(false);
+          } else if (
+            lastScrollY.current - currentScrollY > 10 ||
+            currentScrollY < 50
+          ) {
+            // scrolling up or near top
+            setShowHeader(true);
+          }
+          lastScrollY.current = currentScrollY;
+          ticking.current = false;
+        });
+
+        ticking.current = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const projectCategories = [
     {
@@ -168,17 +201,20 @@ export default function Navbar() {
       </aside>
 
       {/* Mobile Header */}
-      <header className="md:hidden w-full min-w-[320px] text-gray-900 p-4 border-b border-gray-300">
+      <header
+        className={`
+        md:hidden w-full min-w-[320px] text-gray-900 p-4 border-b border-gray-300 
+        fixed top-0 z-50 bg-white transition-transform duration-500 ease-in-out
+        ${showHeader ? "translate-y-0" : "-translate-y-full"}
+      `}
+      >
         {/* Row 1: Logo + Language Switch */}
         <div className="flex items-center justify-between mb-3 w-full">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <Link href={`/${locale}/home`}>
               <Image src="/images/logo.png" alt="Logo" width={50} height={50} />
             </Link>
           </div>
-
-          {/* EN/AR */}
           <div className="flex space-x-2 rtl:space-x-reverse flex-shrink-0">
             <Link
               href={`/en${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
@@ -216,13 +252,13 @@ export default function Navbar() {
                 pathname === `/${locale}/${key}` && "bg-gray-100 font-semibold"
               )}
               style={{
-                padding: "clamp(0.25rem, 2vw, 0.75rem)", // responsive padding
+                padding: "clamp(0.25rem, 2vw, 0.75rem)",
               }}
             >
               <span
                 className="flex items-center justify-center"
                 style={{
-                  width: "clamp(1.5rem, 8vw, 2.5rem)", // icon width responsive
+                  width: "clamp(1.5rem, 8vw, 2.5rem)",
                   height: "clamp(1.5rem, 8vw, 2.5rem)",
                 }}
               >
