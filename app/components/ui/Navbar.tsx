@@ -9,14 +9,26 @@ import Image from "next/image";
 import { useLocale } from "@/lib/useLocale";
 
 const navLinks = [
-  { key: "home", icon: <Home className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
-  { key: "about", icon: <User className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
-  { key: "skills", icon: <Code className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
+  {
+    key: "home",
+    icon: <Home className="w-10 h-10 sm:w-5 sm:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+  },
+  {
+    key: "about",
+    icon: <User className="w-10 h-10 sm:w-5 sm:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+  },
+  {
+    key: "skills",
+    icon: <Code className="w-10 h-10 sm:w-5 sm:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+  },
   {
     key: "projects",
-    icon: <Folder className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+    icon: <Folder className="w-10 h-10 sm:w-5 sm:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
   },
-  { key: "email", icon: <Mail className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
+  {
+    key: "email",
+    icon: <Mail className="w-10 h-10 sm:w-5 sm:h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+  },
 ];
 
 export default function Navbar() {
@@ -75,7 +87,7 @@ export default function Navbar() {
             <Link
               href={`/en${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
               className={clsx(
-                "px-3 py-1 rounded text-sm",
+                "px-3 py-1 rounded",
                 locale === "en"
                   ? "bg-gray-200 font-semibold"
                   : "hover:bg-gray-100"
@@ -86,7 +98,7 @@ export default function Navbar() {
             <Link
               href={`/ar${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
               className={clsx(
-                "px-3 py-1 rounded text-sm",
+                "px-3 py-1 rounded",
                 locale === "ar"
                   ? "bg-gray-200 font-semibold"
                   : "hover:bg-gray-100"
@@ -162,7 +174,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href={`/${locale}/home`}>
-              <Image src="/images/logo.png" alt="Logo" width={30} height={30} />
+              <Image src="/images/logo.png" alt="Logo" width={50} height={50} />
             </Link>
           </div>
 
@@ -171,7 +183,7 @@ export default function Navbar() {
             <Link
               href={`/en${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
               className={clsx(
-                "px-2 py-1 rounded text-xs",
+                "px-2 py-1 rounded",
                 locale === "en"
                   ? "bg-gray-200 font-semibold"
                   : "hover:bg-gray-100"
@@ -182,7 +194,7 @@ export default function Navbar() {
             <Link
               href={`/ar${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
               className={clsx(
-                "px-2 py-1 rounded text-xs",
+                "px-2 py-1 rounded",
                 locale === "ar"
                   ? "bg-gray-200 font-semibold"
                   : "hover:bg-gray-100"
