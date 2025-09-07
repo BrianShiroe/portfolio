@@ -28,7 +28,15 @@ export default function SkillsPage() {
       "Railway",
       "Netlify",
     ],
-    "Developer Tools": ["Git", "VSCode", "Jira", "Trello", "Clickup", "Figma"],
+    "Developer Tools": [
+      "Git",
+      "VSCode",
+      "Jira",
+      "Trello",
+      "Clickup",
+      "Figma",
+      "Stripe",
+    ],
     "Machine Learning & AI": ["YOLO", "OpenCV", "LLMs"],
     "Game Development": ["Unity", "Unreal Engine", "Godot", "Roblox Studio"],
   };
