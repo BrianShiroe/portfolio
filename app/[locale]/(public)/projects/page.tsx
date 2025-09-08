@@ -34,11 +34,13 @@ export default function HomePage() {
                       className="w-full h-32 sm:h-40 object-cover rounded-lg sm:rounded-xl mb-2 sm:mb-3"
                     />
                   ) : (
-                    <div className="w-full h-32 sm:h-40 bg-gray-200 rounded-lg sm:rounded-xl mb-2 sm:mb-3 flex items-center justify-center">
-                      <span className="text-gray-500 text-sm sm:text-base">
-                        Image
-                      </span>
-                    </div>
+                    <Image
+                      src="/placeholders/image-placeholder.png"
+                      alt="Placeholder"
+                      width={400}
+                      height={200}
+                      className="w-full h-32 sm:h-40 object-cover rounded-lg sm:rounded-xl mb-2 sm:mb-3"
+                    />
                   )}
 
                   <h3 className="text-base sm:text-lg font-semibold">

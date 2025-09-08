@@ -17,15 +17,13 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
     <div className="px-6 py-10 max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
 
-      {project.image && (
-        <Image
-          src={project.image}
-          alt={project.title}
-          width={800}
-          height={400}
-          className="w-full h-64 sm:h-80 object-cover rounded-lg mb-6"
-        />
-      )}
+      <Image
+        src={project.image ? project.image : "/placeholders/image-placeholder.png"}
+        alt={project.title}
+        width={800}
+        height={400}
+        className="w-full h-64 sm:h-80 object-cover rounded-lg mb-6"
+      />
 
       <p className="text-gray-700 text-lg">{project.desc}</p>
     </div>
