@@ -8,6 +8,7 @@ import { projects } from "@/data/projects";
 
 export default function HomePage() {
   const { t, locale } = useLocale();
+  const maxChar = 80;
 
   return (
     <div className="flex flex-col items-center justify-center px-3 sm:px-6">
@@ -21,10 +22,10 @@ export default function HomePage() {
             {section.category}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
             {section.items.map((proj) => (
               <Link key={proj.id} href={`/${locale}${proj.href}`}>
-                <div className="group rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg transition p-3 sm:p-4 cursor-pointer">
+                <div className="group rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg transition p-3 sm:p-4 cursor-pointer md:min-h-68">
                   {proj.image ? (
                     <Image
                       src={proj.image}
@@ -47,7 +48,9 @@ export default function HomePage() {
                     {proj.title}
                   </h3>
                   <p className="text-gray-600 text-xs sm:text-sm">
-                    {proj.desc}
+                    {proj.desc.length > maxChar
+                      ? `${proj.desc.slice(0, maxChar)}…`
+                      : proj.desc}
                   </p>
                 </div>
               </Link>
