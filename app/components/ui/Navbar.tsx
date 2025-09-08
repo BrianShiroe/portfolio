@@ -73,7 +73,7 @@ export default function Navbar() {
       title: t("projects.web"),
       items: [
         t("projects.list.shiroeshop"),
-        t("projects.list.rumahssekolah"),
+        t("projects.list.rumahsekolah"),
         t("projects.list.luka"),
         t("projects.list.editorial"),
         t("projects.list.web_editorial"),

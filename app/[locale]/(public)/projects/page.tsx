@@ -14,9 +14,9 @@ const projects = [
         href: "/projects/shiroeshop",
       },
       {
-        title: "Rumahssekolah Educ",
+        title: "Rumahsekolah Educ",
         desc: "Educational platform for schools.",
-        href: "/projects/rumahssekolah",
+        href: "/projects/rumahsekolah",
       },
       {
         title: "Luka AI CCTV System",
