@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import { projects } from "@/data/projects";
 
-export default function HomePage() {
+export default function HomePage() {  
   const { locale } = useLocale();
   const maxChar = 80;
 

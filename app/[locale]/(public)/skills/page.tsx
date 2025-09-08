@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function SkillsPage() {
   return (
-    <div className="">
+    <div className="flex flex-col items-center justify-center">
       <h1 className="self-start text-4xl font-bold mb-10">Skills</h1>
 
       <section className="w-full max-w-5xl space-y-12">
