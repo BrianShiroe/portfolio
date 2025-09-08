@@ -19,9 +19,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
       <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
 
       <Image
-        src={
-          project.image ? project.image : "/placeholders/image-placeholder.png"
-        }
+        src={project.image || "/placeholders/image-placeholder.png"}
         alt={project.title}
         width={800}
         height={400}
@@ -30,16 +28,39 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
 
       <p className="text-gray-700 text-lg mb-6">{project.desc}</p>
 
-      <div className="flex flex-wrap gap-4 justify-center">
-        <button className="flex items-center justify-center gap-2 px-4 py-2 w-48 bg-black text-white rounded-full hover:bg-gray-800 transition cursor-pointer">
-          <FaGithub /> GitHub
-        </button>
-        <button className="flex items-center justify-center gap-2 px-4 py-2 w-48 bg-black text-white rounded-full hover:bg-gray-800 transition cursor-pointer">
-          <FaItchIo /> itch.io
-        </button>
-        <button className="flex items-center justify-center gap-2 px-4 py-2 w-48 bg-black text-white rounded-full hover:bg-gray-800 transition cursor-pointer">
-          <FaExternalLinkAlt /> Live Demo
-        </button>
+      <div className="flex flex-wrap gap-4">
+        {project.githubLink && (
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-4 py-2 w-48 bg-black text-white rounded-full hover:bg-gray-800 transition"
+          >
+            <FaGithub /> GitHub
+          </a>
+        )}
+
+        {project.itchLink && (
+          <a
+            href={project.itchLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-4 py-2 w-48 bg-black text-white rounded-full hover:bg-gray-800 transition"
+          >
+            <FaItchIo /> itch.io
+          </a>
+        )}
+
+        {project.demoLink && (
+          <a
+            href={project.demoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-4 py-2 w-48 bg-black text-white rounded-full hover:bg-gray-800 transition"
+          >
+            <FaExternalLinkAlt /> Live Demo
+          </a>
+        )}
       </div>
     </div>
   );
