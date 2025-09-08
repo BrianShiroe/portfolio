@@ -70,9 +70,9 @@ export default function Navbar() {
   }, []);
 
   const contactLinks = [
-    { name: t("contact.linkedin"), href: "https://linkedin.com" },
-    { name: t("contact.github"), href: "https://github.com" },
-    { name: t("contact.itchio"), href: "https://itch.io" },
+    { name: t("contact.linkedin"), href: "https://linkedin.com/in/brianshiroe/" },
+    { name: t("contact.github"), href: "https://github.com/BrianShiroe/" },
+    { name: t("contact.itchio"), href: "https://mun-development.itch.io/" },
   ];
 
   return (

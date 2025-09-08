@@ -10,8 +10,14 @@ type Translations = typeof en;
 
 const locales: Record<string, Translations> = { en, ar };
 
-const getNested = (obj: any, key: string) => {
-  return key.split('.').reduce((acc, k) => acc?.[k], obj);
+// Type-safe getNested function
+const getNested = (obj: unknown, key: string): unknown => {
+  return key.split(".").reduce((acc, k) => {
+    if (acc && typeof acc === "object" && k in acc) {
+      return (acc as Record<string, unknown>)[k];
+    }
+    return undefined;
+  }, obj as unknown);
 };
 
 export const useLocale = () => {
@@ -19,7 +25,10 @@ export const useLocale = () => {
   const locale = pathname?.split("/")[1] || "en";
 
   const t = useMemo(() => {
-    return (key: string) => getNested(locales[locale as "en" | "ar"], key) || key;
+    return (key: string): string => {
+      const value = getNested(locales[locale as "en" | "ar"], key);
+      return typeof value === "string" ? value : key;
+    };
   }, [locale]);
 
   return { locale, t };

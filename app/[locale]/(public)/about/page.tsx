@@ -1,11 +1,10 @@
 // app/[locale]/(public)/about/page.tsx
 "use client";
-import { useLocale } from "@/lib/useLocale";
 import Image from "next/image";
 import { User, GraduationCap } from "lucide-react";
 
 export default function AboutPage() {
-  const { t, locale } = useLocale();
+  // const { t, locale } = useLocale();
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -24,14 +23,14 @@ export default function AboutPage() {
 
         <div className="w-full border-t lg:border-t-0 lg:border-l border-gray-300 lg:pl-10 pt-6 lg:pt-0">
           <p className="mb-4">
-            Hi! I'm a <strong>Computer Science graduate</strong> with a passion
-            for exploring the field — from{" "}
+            Hi! I&apos;m a <strong>Computer Science graduate</strong> with a
+            passion for exploring the field — from{" "}
             <strong>full-stack development</strong> to problem-solving, data
             structures, and emerging technologies.
           </p>
           <p>
             I enjoy building functional applications and understanding how
-            systems work to solve real-world challenges. I'm{" "}
+            systems work to solve real-world challenges. I&apos;m{" "}
             <strong>committed</strong> to continuous learning and applying my
             skills to create innovative and practical solutions.
           </p>

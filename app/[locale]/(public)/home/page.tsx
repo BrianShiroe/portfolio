@@ -4,11 +4,11 @@ import { useLocale } from "@/lib/useLocale";
 import Link from "next/link";
 
 export default function HomePage() {
-  const { t, locale } = useLocale();
+  const { locale } = useLocale();
 
   return (
     <div className="flex flex-col items-center justify-center lg:pt-20">
-      <p className="self-start text-4xl text-gray-600 mb-2">Hello! I'm</p>
+      <p className="self-start text-4xl text-gray-600 mb-2">Hello! I&apos;m</p>
       <h1 className="text-8xl font-bold text-gray-900 mb-2">BRIAN ONG HAW</h1>
 
       <div className="text-start mt-8">

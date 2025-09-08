@@ -47,11 +47,16 @@ export async function POST(req: NextRequest) {
       { message: "Email sent successfully" },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
+    let message = "Error sending email";
+
+    if (error instanceof Error) {
+      // TypeScript now knows error has a message property
+      message = error.message;
+    }
+
     console.error("Error sending email:", error);
-    return NextResponse.json(
-      { message: error.message || "Error sending email" },
-      { status: 500 }
-    );
+
+    return NextResponse.json({ message }, { status: 500 });
   }
 }
