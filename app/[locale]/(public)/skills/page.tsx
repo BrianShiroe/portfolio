@@ -18,12 +18,12 @@ export default function SkillsPage() {
             <h2 className="text-xl font-light text-gray-500 mb-10 pb-4 border-b-1 border-gray-300">
               {skills.label}
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {skills.tools.map((tools) => (
                 <div
                   key={tools.name}
                   className="flex items-center rounded-2xl shadow-lg p-4 hover:scale-103 
-                transition-transform bg-white w-2sm"
+                transition-transform bg-white"
                 >
                   {tools.icon && (
                     <Image
