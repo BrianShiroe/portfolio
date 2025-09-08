@@ -28,7 +28,7 @@ export default function HomePage() {
         >
           Contact Me
         </Link>
-        <button className="flex-1 border border-gray-900 text-gray-900 px-8 py-4 rounded-4xl hover:bg-gray-100 transition">
+        <button className="flex-1 border border-gray-900 text-gray-900 px-8 py-4 rounded-4xl hover:bg-gray-100 transition cursor-pointer">
           Download CV
         </button>
       </div>
