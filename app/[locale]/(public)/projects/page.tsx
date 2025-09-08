@@ -25,7 +25,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
             {section.items.map((proj) => (
               <Link key={proj.id} href={`/${locale}${proj.href}`}>
-                <div className="group rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg transition p-3 sm:p-4 cursor-pointer md:min-h-68">
+                <div className="group border border-gray-200 rounded-lg p-6 shadow-lg border-t-0 border-r-0 transition sm:p-4 cursor-pointer md:min-h-68 hover:scale-102 hover:shadow-md">
                   {proj.image ? (
                     <Image
                       src={proj.image}

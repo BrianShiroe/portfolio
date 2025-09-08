@@ -8,6 +8,7 @@ import { Mail, Home, User, Code, Folder } from "lucide-react";
 import Image from "next/image";
 import { useLocale } from "@/lib/useLocale";
 import { useState, useEffect, useRef } from "react";
+import { projects as projectData } from "@/data/projects";
 
 const navLinks = [
   {
@@ -67,39 +68,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const projectCategories = [
-    {
-      title: t("projects.web"),
-      items: [
-        t("projects.list.shiroeshop"),
-        t("projects.list.rumahsekolah"),
-        t("projects.list.luka"),
-        t("projects.list.editorial"),
-        t("projects.list.web_editorial"),
-        t("projects.list.cc_cafeteria"),
-      ],
-    },
-    {
-      title: t("projects.ml"),
-      items: [
-        t("projects.list.collective"),
-        t("projects.list.fire"),
-        t("projects.list.smoke"),
-        t("projects.list.flood"),
-        t("projects.list.landslide"),
-      ],
-    },
-    {
-      title: t("projects.game"),
-      items: [
-        t("projects.list.wob_cob"),
-        t("projects.list.goddess"),
-        t("projects.list.shadow"),
-        t("projects.list.climb"),
-      ],
-    },
-  ];
 
   const contactLinks = [
     { name: t("contact.linkedin"), href: "https://linkedin.com" },
@@ -161,16 +129,18 @@ export default function Navbar() {
 
         {/* Projects */}
         <section className="border-b border-gray-300 pb-4 mb-4 flex-1 overflow-y-auto min-h-[100px]">
-          {projectCategories.map(({ title, items }) => (
-            <div key={title} className="mb-4">
-              <h3 className="text-xs uppercase text-gray-500 mb-2">{title}</h3>
+          {projectData.map((category) => (
+            <div key={category.category} className="mb-4">
+              <h3 className="text-xs uppercase text-gray-500 mb-2">
+                {category.category}
+              </h3>
               <ul className="space-y-1 pl-2">
-                {items.map((proj) => (
+                {category.items.map((proj) => (
                   <li
-                    key={proj}
+                    key={proj.id}
                     className="text-sm text-gray-700 hover:text-black cursor-pointer"
                   >
-                    {proj}
+                    <Link href={proj.href}>{proj.title}</Link>
                   </li>
                 ))}
               </ul>
