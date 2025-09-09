@@ -6,9 +6,12 @@ import Image from "next/image";
 
 import { projects } from "@/data/projects";
 
-export default function HomePage() {  
+export default function HomePage() {
   const { locale } = useLocale();
   const maxChar = 80;
+
+  const imageClass =
+    "w-full h-50 md:h-80 xl:h-50 object-cover rounded-lg sm:rounded-xl mb-2 sm:mb-3";
 
   return (
     <div className="flex flex-col items-center justify-center px-3 sm:px-6">
@@ -25,29 +28,30 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
             {section.items.map((proj) => (
               <Link key={proj.id} href={`/${locale}${proj.href}`}>
-                <div className="group border border-gray-200 rounded-lg p-6 shadow-lg border-t-0 border-r-0 transition sm:p-4 cursor-pointer md:min-h-68 hover:scale-102 hover:shadow-md">
+                {/* md:min-h-68 */}
+                <div className="group border border-gray-200 rounded-lg p-6 shadow-lg border-t-0 border-r-0 transition sm:p-4 cursor-pointer hover:scale-102 hover:shadow-md">
                   {proj.image ? (
                     <Image
                       src={proj.image}
                       alt={proj.title}
-                      width={400}
-                      height={200}
-                      className="w-full h-32 sm:h-40 object-cover rounded-lg sm:rounded-xl mb-2 sm:mb-3"
+                      width={600}
+                      height={300}
+                      className={imageClass}
                     />
                   ) : (
                     <Image
                       src="/placeholders/image-placeholder.png"
                       alt="Placeholder"
-                      width={400}
-                      height={200}
-                      className="w-full h-32 sm:h-40 object-cover rounded-lg sm:rounded-xl mb-2 sm:mb-3"
+                      width={600}
+                      height={300}
+                      className={imageClass}
                     />
                   )}
 
                   <h3 className="text-base sm:text-lg font-semibold">
                     {proj.title}
                   </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm">
+                  <p className="text-gray-600 text-xs sm:text-sm h-[2.5rem]">
                     {proj.desc.length > maxChar
                       ? `${proj.desc.slice(0, maxChar)}…`
                       : proj.desc}

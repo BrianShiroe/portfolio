@@ -15,7 +15,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   if (!project) return notFound();
 
   return (
-    <div className="px-6 py-10 max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
 
       <Image
@@ -28,7 +28,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
 
       <p className="text-gray-700 text-lg mb-6">{project.desc}</p>
 
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-4 justify-center">
         {project.githubLink && (
           <a
             href={project.githubLink}
