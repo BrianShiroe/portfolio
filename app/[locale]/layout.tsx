@@ -4,8 +4,9 @@ import "@/app/globals.css";
 import Navbar from "@/app/components/ui/Navbar";
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Portfolio built with Next.js and TypeScript",
+  title: "Brianshiroe",
+  description:
+    "Brian Shiroe's Portfolio built with Next.js and TypeScript. Complete with dynamic routing, english and arabic language, responsive design.",
 };
 
 export default async function RootLayout({
@@ -16,7 +17,8 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const params = await awaitedParams;
-  const locale = params.locale;
+  // const locale = params.locale;
+  const locale = params.locale || "en"; // default to "en"
   const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
