@@ -26,7 +26,7 @@ export const projects = [
       {
         id: "luka",
         title: "Luka",
-        desc: "AI-powered CCTV monitoring system.",
+        desc: "LUKA is a Flask-based intelligent accident and disaster detection system that uses YOLO, OpenCV, CCTV, and IoT cameras for real-time monitoring and automated alerting. Developed as a final thesis project by Brian O. Haw, Maria Zorene J. Ramos, and Mark Angelo P. Santonil, the system is designed to enhance public safety by detecting road collisions, fires, floods, and other emergencies through deep learning–powered video analysis. By integrating with existing surveillance infrastructures, LUKA minimizes response times, improves situational awareness, and provides sample feeds and demonstration data to showcase its capabilities.",
         href: "/projects/luka",
         image: "/images/projects/luka-1.jpg",
         githubLink: "https://github.com/BrianShiroe/luka",
