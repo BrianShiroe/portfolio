@@ -4,8 +4,13 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { FaGithub, FaItchIo, FaExternalLinkAlt } from "react-icons/fa";
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default async function ProjectPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const awaitedParams = await params;
+  const { id } = awaitedParams;
 
   // Flatten all items across categories
   const allProjects = projects.flatMap((section) => section.items);
