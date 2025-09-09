@@ -11,7 +11,7 @@ export const projects = [
         image: "/images/projects/ecommerce-1.png",
         githubLink: "https://github.com/BrianShiroe/ecommerce-web-app",
         itchLink: "",
-        demoLink: "https://brianshiroe.vercel.app/en/projects",
+        demoLink: "https://shiroe-ecommerce.vercel.app/",
       },
       {
         id: "rumahsekolah",
