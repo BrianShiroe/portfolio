@@ -59,10 +59,10 @@ export const projects = [
     category: "Machine Learning Projects",
     items: [
       {
-        id: "collision-fire-smoke-detection",
-        title: "Collision, Fire, & Smoke Detection",
+        id: "collision-detection",
+        title: "Collision-Detection",
         desc: "An object detection system built with YOLOv11 for detecting car collisions, fire, and smoke from CCTV footage. The custom model is trained on 25,000 labeled images across these three classes for disaster- and accident-specific detection, while a lightweight YOLOv11 nano model offers fast, general-purpose object detection. With detailed dataset splits and evaluation metrics—including precision, recall, and mAP—the project provides a reliable, high-speed solution for real-time monitoring and automated response to accidents and emergencies.",
-        href: "/projects/collision-fire-smoke-detection",
+        href: "/projects/collision-detection",
         image: "/images/projects/collision-fire-smoke-detection-1.png",
         githubLink:
           "https://github.com/BrianShiroe/yolov11-collision-fire-smoke-detection",
@@ -127,16 +127,16 @@ export const projects = [
           "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
         demoLink: "",
       },
-      {
-        id: "climb-it-up",
-        title: "Climb It Up!",
-        desc: "Climb It Up is a challenging Roblox parkour game where the goal is to reach the very top. Precision and skill are key—falling sends you back to the start! While there are checkpoints for those who need a little help, only the truly daring will race to the top without relying on them. Test your reflexes, master the jumps, and see if you have what it takes to conquer the climb!",
-        href: "/projects/climb-it-up",
-        image: "/images/projects/climb-it-up-1.png",
-        githubLink: "",
-        itchLink: "",
-        demoLink: "",
-      },
+      // {
+      //   id: "climb-it-up",
+      //   title: "Climb It Up!",
+      //   desc: "Climb It Up is a challenging Roblox parkour game where the goal is to reach the very top. Precision and skill are key—falling sends you back to the start! While there are checkpoints for those who need a little help, only the truly daring will race to the top without relying on them. Test your reflexes, master the jumps, and see if you have what it takes to conquer the climb!",
+      //   href: "/projects/climb-it-up",
+      //   image: "/images/projects/climb-it-up-1.png",
+      //   githubLink: "",
+      //   itchLink: "",
+      //   demoLink: "",
+      // },
     ],
   },
 ];
