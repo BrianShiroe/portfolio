@@ -108,7 +108,7 @@ export const projects = [
       {
         id: "goddess-trial",
         title: "The Goddess' Trial",
-        desc: "Fantasy RPG adventure.",
+        desc: "The Goddess’ Trial is a challenging 2D platformer where players must ascend an ethereal realm to prove their worth to a mysterious goddess. Featuring tight controls, precise jumping—including the essential coyote jump mechanic—and increasingly difficult obstacles, the game tests skill, timing, and perseverance. Developed in just 36 hours for the May 2024 SpeedJam #5, this bite-sized platformer offers a fast-paced, skill-focused experience with updates to character movement and level design planned after the event.",
         href: "/projects/goddess-trial",
         image: "/images/projects/the-goddess-trial-1.png",
         githubLink: "",
