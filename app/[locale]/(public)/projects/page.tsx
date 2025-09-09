@@ -10,9 +10,6 @@ export default function HomePage() {
   const { locale } = useLocale();
   const maxChar = 80;
 
-  const imageClass =
-    "w-full h-50 md:h-80 xl:h-50 object-cover rounded-lg sm:rounded-xl mb-2 sm:mb-3";
-
   return (
     <div className="flex flex-col items-center justify-center px-3 sm:px-6">
       <h1 className="self-start text-3xl sm:text-4xl font-semibold mb-4 sm:mb-6">
@@ -25,28 +22,18 @@ export default function HomePage() {
             {section.category}
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 sm:gap-6">
             {section.items.map((proj) => (
               <Link key={proj.id} href={`/${locale}${proj.href}`}>
-                {/* md:min-h-68 */}
                 <div className="group border border-gray-200 rounded-lg p-6 shadow-lg border-t-0 border-r-0 transition sm:p-4 cursor-pointer hover:scale-102 hover:shadow-md">
-                  {proj.image ? (
+                  <div className="relative w-full aspect-square rounded-lg sm:rounded-xl mb-2 sm:mb-3 overflow-hidden bg-gray-100">
                     <Image
-                      src={proj.image}
-                      alt={proj.title}
-                      width={600}
-                      height={300}
-                      className={imageClass}
+                      src={proj.image || "/placeholders/image-placeholder.png"}
+                      alt={proj.title || "Placeholder"}
+                      fill
+                      className="object-cover"
                     />
-                  ) : (
-                    <Image
-                      src="/placeholders/image-placeholder.png"
-                      alt="Placeholder"
-                      width={600}
-                      height={300}
-                      className={imageClass}
-                    />
-                  )}
+                  </div>
 
                   <h3 className="text-base sm:text-lg font-semibold">
                     {proj.title}

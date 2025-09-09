@@ -21,9 +21,9 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
       <Image
         src={project.image || "/placeholders/image-placeholder.png"}
         alt={project.title}
-        width={800}
-        height={400}
-        className="w-full h-64 sm:h-80 object-cover rounded-lg mb-6"
+        width={1200} // wider for desktop
+        height={675} // 16:9 aspect ratio, looks cinematic
+        className="w-full h-auto max-h-[800px] object-cover rounded-xl mb-8 shadow-lg"
       />
 
       <p className="text-gray-700 text-lg mb-6">{project.desc}</p>
