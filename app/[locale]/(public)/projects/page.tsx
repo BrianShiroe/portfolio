@@ -8,7 +8,6 @@ import { projects } from "@/data/projects";
 
 export default function HomePage() {
   const { locale } = useLocale();
-  const maxChar = 80;
 
   return (
     <div className="flex flex-col items-center justify-center px-3 sm:px-6">
@@ -38,10 +37,8 @@ export default function HomePage() {
                   <h3 className="text-base sm:text-lg font-semibold">
                     {proj.title}
                   </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm h-[2.5rem]">
-                    {proj.desc.length > maxChar
-                      ? `${proj.desc.slice(0, maxChar)}…`
-                      : proj.desc}
+                  <p className="text-gray-600 text-xs sm:text-sm h-[2.5rem] overflow-hidden line-clamp-2">
+                    {proj.desc}
                   </p>
                 </div>
               </Link>
