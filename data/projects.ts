@@ -4,10 +4,10 @@ export const projects = [
     category: "Web Projects",
     items: [
       {
-        id: "ecommerce",
-        title: "E-Commerce",
-        desc: "A modern online shopping platform with a sleek UI.",
-        href: "/projects/ecommerce",
+        id: "shiroe-ecommerce",
+        title: "Shiroe E-Commerce",
+        desc: "Shiroe E-commerce is a modern, responsive online shopping platform built with Next.js, TailwindCSS, Shadcn/UI, and Stripe, designed to deliver a seamless and secure shopping experience. It features a dynamic product catalog, efficient shopping cart management, and smooth Stripe Checkout integration, all wrapped in a clean, customizable UI. With reusable components and a mobile-friendly design, Shiroe E-commerce ensures fast performance, accessibility, and an intuitive user experience from browsing to payment.",
+        href: "/projects/shiroe-ecommerce",
         image: "/images/projects/ecommerce-1.png",
         githubLink: "https://github.com/BrianShiroe/ecommerce-web-app",
         itchLink: "",
@@ -16,7 +16,7 @@ export const projects = [
       {
         id: "rumahsekolah",
         title: "Rumahsekolah",
-        desc: "Educational platform for schools.",
+        desc: "Rumahsekolah is a comprehensive AI-driven digital education platform designed to empower schools by streamlining learning, collaboration, and content delivery. It offers secure authentication with role-based access for students, teachers, and administrators, alongside robust classroom and course management tools. The platform includes assignment submission and grading, live and scheduled session integration, discussion forums, announcements, and a resource library for PDFs, videos, and documents. With personal dashboards and analytics, Rumahsekolah provides actionable insights into attendance, performance, and engagement, creating a seamless, technology-enhanced learning experience.",
         href: "/projects/rumahsekolah",
         image: "/images/projects/rumaksekolah-1.png",
         githubLink: "",
@@ -61,7 +61,7 @@ export const projects = [
       {
         id: "collision-fire-smoke-detection",
         title: "Collision, Fire, & Smoke Detection",
-        desc: "An object detection models trained to detect landslide using YOLOv11",
+        desc: "An object detection system built with YOLOv11 for detecting car collisions, fire, and smoke from CCTV footage. The custom model is trained on 25,000 labeled images across these three classes for disaster- and accident-specific detection, while a lightweight YOLOv11 nano model offers fast, general-purpose object detection. With detailed dataset splits and evaluation metrics—including precision, recall, and mAP—the project provides a reliable, high-speed solution for real-time monitoring and automated response to accidents and emergencies.",
         href: "/projects/collision-fire-smoke-detection",
         image: "/images/projects/collision-fire-smoke-detection-1.png",
         githubLink:
@@ -72,7 +72,7 @@ export const projects = [
       {
         id: "landslide-detection",
         title: "Landslide Detection",
-        desc: "An object detection models trained to detect flood using YOLOv11.",
+        desc: "This project features a landslide detection and segmentation system built using YOLOv11. It includes a custom-trained model capable of accurately identifying landslides from 5,661 labeled images, alongside a lightweight pre-trained YOLOv11 nano model optimized for fast, general-purpose object detection. The dataset is carefully split into 4,528 training images and 1,133 validation images, ensuring robust model evaluation and performance. Designed for disaster monitoring, this project provides a high-speed, reliable solution for automated landslide detection.",
         href: "/projects/landslide-detection",
         image: "/images/projects/landslide-detection-1.png",
         githubLink:
@@ -83,7 +83,7 @@ export const projects = [
       {
         id: "flood-detection",
         title: "Flood Detection",
-        desc: "An object detection models trained to detect car collision, fire, and smoke using YOLOv11.",
+        desc: "A flood detection and segmentation system built with YOLOv11 for accurate identification of flood-affected areas. The custom model is trained on 12,463 labeled flood images for disaster-specific detection, while a lightweight YOLOv11 nano model provides fast, general-purpose object detection. With 9,970 training and 2,493 validation images, the project ensures robust evaluation and delivers a high-speed, reliable solution for automated flood monitoring.",
         href: "/projects/flood-detection",
         image: "/images/projects/flood-detection-1.png",
         githubLink: "https://github.com/BrianShiroe/yolov11-flood-detection",
@@ -98,7 +98,7 @@ export const projects = [
       {
         id: "wob-cob",
         title: "WOB and COB",
-        desc: "A fun casual 2D game.",
+        desc: "WoB & CoB is a charming 2D puzzle-platformer made in Unity, where teamwork is the key to success. Players control two specialized robots—WoB, the strong box-lifter, and CoB, the clever button-presser—switching between them to solve environmental puzzles, activate machinery, and navigate tricky platforms. With satisfying mechanics like lever-pulling, box-stacking, and precise timing, this lighthearted adventure challenges players to load all the boxes into the mysterious Dropbox Machine. Simple to pick up but full of fun, WoB & CoB delivers a bite-sized, feel-good experience perfect for puzzle fans and robot enthusiasts alike.",
         href: "/projects/wob-cob",
         image: "/images/projects/wob-and-cob-1.jpg",
         githubLink: "",
@@ -119,7 +119,7 @@ export const projects = [
       {
         id: "shadow-monarch",
         title: "Shadow Monarch",
-        desc: "Dark-themed action RPG.",
+        desc: "Shadow M onarch is a short, action-packed game where you play as cat, trapped in the shadow dimension. To escape, you must battle shadow monsters and face a challenging final boss. Developed by a duo of third-year computer science students over the course of one month, this 5–10 minute game showcases their first foray into game development using Godot and GDScript. Featuring intuitive controls for movement, attacks, sprinting, and portal transfers, the game combines point-and-click mechanics with directional combat for an engaging experience. While no further development is planned, the developers welcome feedback and tips on game development and publishing.",
         href: "/projects/shadow-monarch",
         image: "/images/projects/shadow-monarch-1.png",
         githubLink: "",
@@ -130,7 +130,7 @@ export const projects = [
       {
         id: "climb-it-up",
         title: "Climb It Up!",
-        desc: "Vertical climbing challenge game.",
+        desc: "Climb It Up is a challenging Roblox parkour game where the goal is to reach the very top. Precision and skill are key—falling sends you back to the start! While there are checkpoints for those who need a little help, only the truly daring will race to the top without relying on them. Test your reflexes, master the jumps, and see if you have what it takes to conquer the climb!",
         href: "/projects/climb-it-up",
         image: "/images/projects/climb-it-up-1.png",
         githubLink: "",
