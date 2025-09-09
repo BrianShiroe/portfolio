@@ -84,7 +84,7 @@ export default function Navbar() {
             <Image src="/images/logo.png" alt="Logo" width={80} height={80} />
           </Link>
           {/* Language Switch beside Logo */}
-          <div className="flex space-x-2 rtl:space-x-reverse">
+          {/* <div className="flex space-x-2 rtl:space-x-reverse">
             <Link
               href={`/en${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
               className={clsx(
@@ -107,7 +107,7 @@ export default function Navbar() {
             >
               AR
             </Link>
-          </div>
+          </div> */}
         </div>
 
         {/* Navigation */}
@@ -179,7 +179,7 @@ export default function Navbar() {
       `}
       >
         {/* Row 1: Logo + Language Switch */}
-        <div className="flex items-center justify-between mb-3 w-full">
+        {/* <div className="flex items-center justify-between mb-3 w-full">
           <div className="flex-shrink-0">
             <Link href={`/${locale}/home`}>
               <Image src="/images/logo.png" alt="Logo" width={50} height={50} />
@@ -209,7 +209,7 @@ export default function Navbar() {
               AR
             </Link>
           </div>
-        </div>
+        </div> */}
 
         {/* Row 2: Navigation */}
         <nav className="flex w-full">
