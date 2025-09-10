@@ -28,9 +28,13 @@ export default function HomePage() {
         >
           Contact Me
         </Link>
-        <button className="flex-1 border border-gray-900 text-gray-900 px-8 py-4 rounded-4xl hover:bg-gray-100 transition cursor-pointer">
+        <a
+          href="/Brian-Haw-CV.pdf"
+          download="Brian-Haw-CV.pdf"
+          className="flex-1 border border-gray-900 text-gray-900 px-8 py-4 rounded-4xl hover:bg-gray-100 transition text-center cursor-pointer"
+        >
           Download CV
-        </button>
+        </a>
       </div>
     </div>
   );
