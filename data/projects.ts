@@ -48,7 +48,7 @@ export const projects = [
         title: "Colweb",
         desc: "A web-based academic platform design made for Columban College Inc.",
         href: "/projects/colweb",
-        image: "/images/projects/ccws-1.png",
+        image: "/images/projects/colweb.png",
         githubLink: "",
         itchLink: "",
         demoLink: "",
