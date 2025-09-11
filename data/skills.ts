@@ -1,3 +1,4 @@
+// data/skills.ts
 export const skills = [
   {
     label: "Frontend",
