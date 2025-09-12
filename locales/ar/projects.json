@@ -1,0 +1,119 @@
+{
+  "projects": [
+    {
+      "category": "مشاريع الويب",
+      "items": [
+        {
+          "id": "shiroe-ecommerce",
+          "title": "Shiroe E-Commerce",
+          "desc": "Shiroe E-commerce هو منصة تسوق إلكترونية حديثة ومتجاوبة تم إنشاؤها باستخدام Next.js و TailwindCSS و Shadcn/UI و Stripe، مصممة لتوفير تجربة تسوق سلسة وآمنة. تتميز بكتالوج منتجات ديناميكي، وإدارة فعّالة لعربة التسوق، وتكامل سلس مع Stripe Checkout، وكل ذلك بواجهة نظيفة وقابلة للتخصيص. مع مكونات قابلة لإعادة الاستخدام وتصميم متوافق مع الهواتف، يضمن Shiroe E-commerce أداءً سريعًا وسهولة وصول وتجربة مستخدم بديهية من التصفح إلى الدفع.",
+          "href": "/projects/shiroe-ecommerce",
+          "image": "/images/projects/ecommerce-1.png",
+          "githubLink": "https://github.com/BrianShiroe/ecommerce-web-app",
+          "itchLink": "",
+          "demoLink": "https://shiroe-ecommerce.vercel.app/"
+        },
+        {
+          "id": "rumahsekolah",
+          "title": "Rumahsekolah",
+          "desc": "Rumahsekolah هو منصة تعليم رقمي شاملة مدعومة بالذكاء الاصطناعي مصممة لتمكين المدارس من خلال تبسيط التعلم والتعاون وتوزيع المحتوى. توفر تسجيل دخول آمن مع وصول قائم على الأدوار للطلاب والمعلمين والإداريين، إلى جانب أدوات قوية لإدارة الصفوف والدروس. تشمل المنصة تسليم الواجبات وتصحيحها، تكامل الجلسات المباشرة والمجدولة، المنتديات، الإعلانات، ومكتبة للموارد مثل ملفات PDF والفيديوهات والمستندات. من خلال لوحات معلومات شخصية وتحليلات، توفر Rumahsekolah رؤى قابلة للتنفيذ حول الحضور والأداء والمشاركة، مما يخلق تجربة تعليمية سلسة مدعومة بالتكنولوجيا.",
+          "href": "/projects/rumahsekolah",
+          "image": "/images/projects/rumaksekolah-1.png",
+          "githubLink": "",
+          "itchLink": "",
+          "demoLink": "https://app-dev.rumahsekolah.com/"
+        },
+        {
+          "id": "luka",
+          "title": "Luka",
+          "desc": "LUKA هو نظام ذكي للكشف عن الحوادث والكوارث يعتمد على Flask ويستخدم YOLO و OpenCV وكاميرات CCTV و IoT للمراقبة في الوقت الحقيقي والتنبيه التلقائي. تم تطويره كمشروع تخرج من قبل Brian O. Haw و Maria Zorene J. Ramos و Mark Angelo P. Santonil، وهو مصمم لتعزيز السلامة العامة من خلال الكشف عن الحوادث المرورية والحرائق والفيضانات وحالات الطوارئ الأخرى عبر تحليل الفيديو بالاعتماد على التعلم العميق. من خلال التكامل مع أنظمة المراقبة الحالية، يقلل LUKA من أوقات الاستجابة ويحسن الوعي بالوضع ويوفر تدفقات بيانات تجريبية لعرض قدراته.",
+          "href": "/projects/luka",
+          "image": "/images/projects/luka-1.jpg",
+          "githubLink": "https://github.com/BrianShiroe/luka",
+          "itchLink": "",
+          "demoLink": ""
+        },
+        {
+          "id": "ccweb",
+          "title": "CCWEB",
+          "desc": "منصة أكاديمية عبر الويب مصممة خصيصًا لكلية كولومبان.",
+          "href": "/projects/ccweb",
+          "image": "/images/projects/ccws-1.png",
+          "githubLink": "",
+          "itchLink": "",
+          "demoLink": ""
+        }
+      ]
+    },
+    {
+      "category": "مشاريع تعلم الآلة",
+      "items": [
+        {
+          "id": "collision-detection",
+          "title": "Collision-Detection",
+          "desc": "نظام كشف يعتمد على YOLOv11 لاكتشاف حوادث السيارات والحرائق والدخان من لقطات كاميرات المراقبة. النموذج المخصص مدرب على 25,000 صورة معنونة عبر هذه الفئات الثلاث للكشف عن الحوادث والكوارث، بينما يوفر نموذج YOLOv11 nano الخفيف كشفًا سريعًا للأغراض العامة. مع تقسيم دقيق للبيانات ومقاييس تقييم مثل الدقة والاسترجاع و mAP، يوفر المشروع حلاً موثوقًا وعالي السرعة للمراقبة في الوقت الحقيقي والاستجابة التلقائية للحوادث والطوارئ.",
+          "href": "/projects/collision-detection",
+          "image": "/images/projects/collision-fire-smoke-detection-1.png",
+          "githubLink": "https://github.com/BrianShiroe/yolov11-collision-fire-smoke-detection",
+          "itchLink": "",
+          "demoLink": ""
+        },
+        {
+          "id": "landslide-detection",
+          "title": "Landslide Detection",
+          "desc": "يتميز هذا المشروع بنظام كشف وانقسام للانهيارات الأرضية باستخدام YOLOv11. يتضمن نموذجًا مخصصًا مدربًا على 5,661 صورة معنونة للكشف بدقة عن الانهيارات الأرضية، إلى جانب نموذج YOLOv11 nano الخفيف للأغراض العامة. تم تقسيم البيانات إلى 4,528 صورة تدريبية و 1,133 صورة للتحقق، مما يضمن تقييمًا قويًا وأداءً عاليًا. مصمم لمراقبة الكوارث، ويوفر المشروع حلاً موثوقًا وعالي السرعة للكشف التلقائي عن الانهيارات الأرضية.",
+          "href": "/projects/landslide-detection",
+          "image": "/images/projects/landslide-detection-1.png",
+          "githubLink": "https://github.com/BrianShiroe/yolov11-landslide-detection",
+          "itchLink": "",
+          "demoLink": ""
+        },
+        {
+          "id": "flood-detection",
+          "title": "Flood Detection",
+          "desc": "نظام كشف وانقسام للفيضانات مبني باستخدام YOLOv11 للكشف بدقة عن المناطق المتأثرة بالفيضانات. النموذج المخصص مدرب على 12,463 صورة معنونة، بينما يوفر نموذج YOLOv11 nano الخفيف كشفًا سريعًا للأغراض العامة. مع 9,970 صورة تدريبية و 2,493 صورة للتحقق، يضمن المشروع تقييمًا قويًا ويقدم حلاً موثوقًا وعالي السرعة لمراقبة الفيضانات تلقائيًا.",
+          "href": "/projects/flood-detection",
+          "image": "/images/projects/flood-detection-1.png",
+          "githubLink": "https://github.com/BrianShiroe/yolov11-flood-detection",
+          "itchLink": "",
+          "demoLink": ""
+        }
+      ]
+    },
+    {
+      "category": "مشاريع الألعاب",
+      "items": [
+        {
+          "id": "wob-cob",
+          "title": "WOB and COB",
+          "desc": "WoB & CoB هي لعبة ألغاز ثنائية الأبعاد مسلية مبنية باستخدام Unity، حيث يكون التعاون هو مفتاح النجاح. يتحكم اللاعبون في روبوتين متخصصين — WoB القوي لرفع الصناديق، و CoB الذكي للضغط على الأزرار — مع التبديل بينهما لحل الألغاز البيئية وتشغيل الآلات والتنقل في المنصات الصعبة. مع آليات ممتعة مثل سحب الرافعات وتكديس الصناديق والتوقيت الدقيق، تقدم هذه المغامرة الخفيفة تحديًا للاعبين لوضع جميع الصناديق في آلة Dropbox الغامضة. سهلة الالتقاط ولكنها مليئة بالمرح، WoB & CoB توفر تجربة خفيفة مثالية لمحبي الألغاز والروبوتات.",
+          "href": "/projects/wob-cob",
+          "image": "/images/projects/wob-and-cob-1.jpg",
+          "githubLink": "",
+          "itchLink": "https://mun-development.itch.io/wob-cob",
+          "demoLink": ""
+        },
+        {
+          "id": "goddess-trial",
+          "title": "The Goddess' Trial",
+          "desc": "The Goddess’ Trial هي لعبة منصات ثنائية الأبعاد صعبة حيث يجب على اللاعبين الصعود في عالم سماوي لإثبات قيمتهم لإلهة غامضة. تتميز بضوابط دقيقة وقفز محسّن (بما في ذلك ميكانيكية coyote jump الأساسية) وعقبات متزايدة الصعوبة، مما يختبر المهارة والتوقيت والصبر. تم تطوير اللعبة في 36 ساعة فقط لمسابقة SpeedJam #5 في مايو 2024، وتوفر تجربة سريعة ومركزة على المهارة مع خطط لتحديثات على حركة الشخصية وتصميم المراحل بعد الحدث.",
+          "href": "/projects/goddess-trial",
+          "image": "/images/projects/the-goddess-trial-1.png",
+          "githubLink": "",
+          "itchLink": "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
+          "demoLink": ""
+        },
+        {
+          "id": "shadow-monarch",
+          "title": "Shadow Monarch",
+          "desc": "Shadow Monarch هي لعبة قصيرة مليئة بالإثارة حيث تلعب دور قطة محاصرة في بُعد الظل. للهروب، يجب أن تقاتل وحوش الظل وتواجه زعيمًا نهائيًا صعبًا. تم تطويرها من قبل طالبين في علوم الحاسوب في السنة الثالثة خلال شهر واحد، وتعرض اللعبة أول تجربة لهما في تطوير الألعاب باستخدام Godot و GDScript. تتميز بضوابط بديهية للحركة والهجمات والجري والانتقال عبر البوابات، وتجمع بين ميكانيكيات النقر والإشارة والقتال الاتجاهي لتقديم تجربة ممتعة. على الرغم من عدم وجود خطط لتطوير إضافي، يرحب المطورون بالملاحظات والنصائح حول تطوير ونشر الألعاب.",
+          "href": "/projects/shadow-monarch",
+          "image": "/images/projects/shadow-monarch-1.png",
+          "githubLink": "",
+          "itchLink": "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
+          "demoLink": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "projects": [
+    {
+      "category": "Web Projects",
+      "items": [
+        {
+          "id": "shiroe-ecommerce",
+          "title": "Shiroe E-Commerce",
+          "desc": "Shiroe E-commerce is a modern, responsive online shopping platform built with Next.js, TailwindCSS, Shadcn/UI, and Stripe, designed to deliver a seamless and secure shopping experience. It features a dynamic product catalog, efficient shopping cart management, and smooth Stripe Checkout integration, all wrapped in a clean, customizable UI. With reusable components and a mobile-friendly design, Shiroe E-commerce ensures fast performance, accessibility, and an intuitive user experience from browsing to payment.",
+          "href": "/projects/shiroe-ecommerce",
+          "image": "/images/projects/ecommerce-1.png",
+          "githubLink": "https://github.com/BrianShiroe/ecommerce-web-app",
+          "itchLink": "",
+          "demoLink": "https://shiroe-ecommerce.vercel.app/"
+        },
+        {
+          "id": "rumahsekolah",
+          "title": "Rumahsekolah",
+          "desc": "Rumahsekolah is a comprehensive AI-driven digital education platform designed to empower schools by streamlining learning, collaboration, and content delivery. It offers secure authentication with role-based access for students, teachers, and administrators, alongside robust classroom and course management tools. The platform includes assignment submission and grading, live and scheduled session integration, discussion forums, announcements, and a resource library for PDFs, videos, and documents. With personal dashboards and analytics, Rumahsekolah provides actionable insights into attendance, performance, and engagement, creating a seamless, technology-enhanced learning experience.",
+          "href": "/projects/rumahsekolah",
+          "image": "/images/projects/rumaksekolah-1.png",
+          "githubLink": "",
+          "itchLink": "",
+          "demoLink": "https://app-dev.rumahsekolah.com/"
+        },
+        {
+          "id": "luka",
+          "title": "Luka",
+          "desc": "LUKA is a Flask-based intelligent accident and disaster detection system that uses YOLO, OpenCV, CCTV, and IoT cameras for real-time monitoring and automated alerting. Developed as a final thesis project by Brian O. Haw, Maria Zorene J. Ramos, and Mark Angelo P. Santonil, the system is designed to enhance public safety by detecting road collisions, fires, floods, and other emergencies through deep learning–powered video analysis. By integrating with existing surveillance infrastructures, LUKA minimizes response times, improves situational awareness, and provides sample feeds and demonstration data to showcase its capabilities.",
+          "href": "/projects/luka",
+          "image": "/images/projects/luka-1.jpg",
+          "githubLink": "https://github.com/BrianShiroe/luka",
+          "itchLink": "",
+          "demoLink": ""
+        },
+        {
+          "id": "ccweb",
+          "title": "CCWEB",
+          "desc": "A web-based academic platform design made for Columban College Inc.",
+          "href": "/projects/ccweb",
+          "image": "/images/projects/ccws-1.png",
+          "githubLink": "",
+          "itchLink": "",
+          "demoLink": ""
+        }
+      ]
+    },
+    {
+      "category": "Machine Learning Projects",
+      "items": [
+        {
+          "id": "collision-detection",
+          "title": "Collision-Detection",
+          "desc": "An object detection system built with YOLOv11 for detecting car collisions, fire, and smoke from CCTV footage. The custom model is trained on 25,000 labeled images across these three classes for disaster- and accident-specific detection, while a lightweight YOLOv11 nano model offers fast, general-purpose object detection. With detailed dataset splits and evaluation metrics—including precision, recall, and mAP—the project provides a reliable, high-speed solution for real-time monitoring and automated response to accidents and emergencies.",
+          "href": "/projects/collision-detection",
+          "image": "/images/projects/collision-fire-smoke-detection-1.png",
+          "githubLink": "https://github.com/BrianShiroe/yolov11-collision-fire-smoke-detection",
+          "itchLink": "",
+          "demoLink": ""
+        },
+        {
+          "id": "landslide-detection",
+          "title": "Landslide Detection",
+          "desc": "This project features a landslide detection and segmentation system built using YOLOv11. It includes a custom-trained model capable of accurately identifying landslides from 5,661 labeled images, alongside a lightweight pre-trained YOLOv11 nano model optimized for fast, general-purpose object detection. The dataset is carefully split into 4,528 training images and 1,133 validation images, ensuring robust model evaluation and performance. Designed for disaster monitoring, this project provides a high-speed, reliable solution for automated landslide detection.",
+          "href": "/projects/landslide-detection",
+          "image": "/images/projects/landslide-detection-1.png",
+          "githubLink": "https://github.com/BrianShiroe/yolov11-landslide-detection",
+          "itchLink": "",
+          "demoLink": ""
+        },
+        {
+          "id": "flood-detection",
+          "title": "Flood Detection",
+          "desc": "A flood detection and segmentation system built with YOLOv11 for accurate identification of flood-affected areas. The custom model is trained on 12,463 labeled flood images for disaster-specific detection, while a lightweight YOLOv11 nano model provides fast, general-purpose object detection. With 9,970 training and 2,493 validation images, the project ensures robust evaluation and delivers a high-speed, reliable solution for automated flood monitoring.",
+          "href": "/projects/flood-detection",
+          "image": "/images/projects/flood-detection-1.png",
+          "githubLink": "https://github.com/BrianShiroe/yolov11-flood-detection",
+          "itchLink": "",
+          "demoLink": ""
+        }
+      ]
+    },
+    {
+      "category": "Game Projects",
+      "items": [
+        {
+          "id": "wob-cob",
+          "title": "WOB and COB",
+          "desc": "WoB & CoB is a charming 2D puzzle-platformer made in Unity, where teamwork is the key to success. Players control two specialized robots—WoB, the strong box-lifter, and CoB, the clever button-presser—switching between them to solve environmental puzzles, activate machinery, and navigate tricky platforms. With satisfying mechanics like lever-pulling, box-stacking, and precise timing, this lighthearted adventure challenges players to load all the boxes into the mysterious Dropbox Machine. Simple to pick up but full of fun, WoB & CoB delivers a bite-sized, feel-good experience perfect for puzzle fans and robot enthusiasts alike.",
+          "href": "/projects/wob-cob",
+          "image": "/images/projects/wob-and-cob-1.jpg",
+          "githubLink": "",
+          "itchLink": "https://mun-development.itch.io/wob-cob",
+          "demoLink": ""
+        },
+        {
+          "id": "goddess-trial",
+          "title": "The Goddess' Trial",
+          "desc": "The Goddess’ Trial is a challenging 2D platformer where players must ascend an ethereal realm to prove their worth to a mysterious goddess. Featuring tight controls, precise jumping—including the essential coyote jump mechanic—and increasingly difficult obstacles, the game tests skill, timing, and perseverance. Developed in just 36 hours for the May 2024 SpeedJam #5, this bite-sized platformer offers a fast-paced, skill-focused experience with updates to character movement and level design planned after the event.",
+          "href": "/projects/goddess-trial",
+          "image": "/images/projects/the-goddess-trial-1.png",
+          "githubLink": "",
+          "itchLink": "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
+          "demoLink": ""
+        },
+        {
+          "id": "shadow-monarch",
+          "title": "Shadow Monarch",
+          "desc": "Shadow Monarch is a short, action-packed game where you play as cat, trapped in the shadow dimension. To escape, you must battle shadow monsters and face a challenging final boss. Developed by a duo of third-year computer science students over the course of one month, this 5–10 minute game showcases their first foray into game development using Godot and GDScript. Featuring intuitive controls for movement, attacks, sprinting, and portal transfers, the game combines point-and-click mechanics with directional combat for an engaging experience. While no further development is planned, the developers welcome feedback and tips on game development and publishing.",
+          "href": "/projects/shadow-monarch",
+          "image": "/images/projects/shadow-monarch-1.png",
+          "githubLink": "",
+          "itchLink": "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
+          "demoLink": ""
+        }
+      ]
+    }
+  ]
+}

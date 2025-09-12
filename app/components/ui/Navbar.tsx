@@ -39,6 +39,7 @@ export default function Navbar() {
   const [showHeader, setShowHeader] = useState(true);
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
+  const [localizedProjects, setLocalizedProjects] = useState<any[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,15 +47,12 @@ export default function Navbar() {
 
       if (!ticking.current) {
         window.requestAnimationFrame(() => {
-          // Only hide/show if scroll delta is significant
           if (currentScrollY - lastScrollY.current > 10) {
-            // scrolling down
             setShowHeader(false);
           } else if (
             lastScrollY.current - currentScrollY > 10 ||
             currentScrollY < 50
           ) {
-            // scrolling up or near top
             setShowHeader(true);
           }
           lastScrollY.current = currentScrollY;
@@ -69,10 +67,32 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const loadProjects = async () => {
+      try {
+        const data = await import(`@/locales/${locale}/projects.json`);
+        setLocalizedProjects(data.projects);
+      } catch (err) {
+        console.error("Failed to load projects JSON:", err);
+        setLocalizedProjects([]);
+      }
+    };
+    loadProjects();
+  }, [locale]);
+
   const contactLinks = [
-    { name: t("contact.linkedin"), href: "https://linkedin.com/in/brianshiroe/" },
-    { name: t("contact.github"), href: "https://github.com/BrianShiroe/" },
-    { name: t("contact.itchio"), href: "https://mun-development.itch.io/" },
+    {
+      name: t("navbar.contact.linkedin"),
+      href: "https://linkedin.com/in/brianshiroe/",
+    },
+    {
+      name: t("navbar.contact.github"),
+      href: "https://github.com/BrianShiroe/",
+    },
+    {
+      name: t("navbar.contact.itchio"),
+      href: "https://mun-development.itch.io/",
+    },
   ];
 
   return (
@@ -83,8 +103,9 @@ export default function Navbar() {
           <Link href={`/${locale}/home`}>
             <Image src="/images/logo.png" alt="Logo" width={80} height={80} />
           </Link>
-          {/* Language Switch beside Logo */}
-          {/* <div className="flex space-x-2 rtl:space-x-reverse">
+
+          {/* Language Switch */}
+          <div className="flex space-x-2 rtl:space-x-reverse">
             <Link
               href={`/en${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
               className={clsx(
@@ -107,7 +128,7 @@ export default function Navbar() {
             >
               AR
             </Link>
-          </div> */}
+          </div>
         </div>
 
         {/* Navigation */}
@@ -122,17 +143,17 @@ export default function Navbar() {
               )}
             >
               {icon}
-              {t(`nav.${key}`)}
+              {t(`navbar.nav.${key}`)}
             </Link>
           ))}
         </nav>
 
         {/* Projects */}
         <section className="border-b border-gray-300 pb-4 mb-4 flex-1 overflow-y-auto min-h-[100px]">
-          {projectData.map((category) => (
+          {localizedProjects.map((category) => (
             <div key={category.category} className="mb-4">
               <h3 className="text-xs uppercase text-gray-500 mb-2">
-                {category.category}
+                {t("navbar.categories.projects")}
               </h3>
               <ul className="space-y-1 pl-2">
                 {category.items.map((proj) => (
@@ -140,7 +161,7 @@ export default function Navbar() {
                     key={proj.id}
                     className="text-sm text-gray-700 hover:text-black cursor-pointer"
                   >
-                    <Link href={proj.href}>{proj.title}</Link>
+                    <Link href={`/${locale}${proj.href}`}>{proj.title}</Link>
                   </li>
                 ))}
               </ul>
@@ -151,7 +172,7 @@ export default function Navbar() {
         {/* Contact */}
         <section>
           <h3 className="text-xs uppercase text-gray-500 mb-2">
-            {t("contact.linkedin")}
+            {t("navbar.contact.title")}
           </h3>
           <ul className="space-y-1 pl-2">
             {contactLinks.map(({ name, href }) => (
@@ -172,14 +193,11 @@ export default function Navbar() {
 
       {/* Mobile Header */}
       <header
-        className={`
-        lg:hidden w-full min-w-[320px] text-gray-900 p-4 border-b border-gray-300 
+        className={`lg:hidden w-full min-w-[320px] text-gray-900 p-4 border-b border-gray-300 
         fixed top-0 z-50 bg-white transition-transform duration-500 ease-in-out
-        ${showHeader ? "translate-y-0" : "-translate-y-full"}
-      `}
+        ${showHeader ? "translate-y-0" : "-translate-y-full"}`}
       >
-        {/* Row 1: Logo + Language Switch */}
-        {/* <div className="flex items-center justify-between mb-3 w-full">
+        <div className="flex items-center justify-between mb-3 w-full">
           <div className="flex-shrink-0">
             <Link href={`/${locale}/home`}>
               <Image src="/images/logo.png" alt="Logo" width={50} height={50} />
@@ -209,9 +227,9 @@ export default function Navbar() {
               AR
             </Link>
           </div>
-        </div> */}
+        </div>
 
-        {/* Row 2: Navigation */}
+        {/* Mobile Nav */}
         <nav className="flex w-full">
           {navLinks.map(({ key, icon }) => (
             <Link
@@ -221,9 +239,7 @@ export default function Navbar() {
                 "flex-1 flex items-center justify-center rounded hover:bg-gray-100 transition text-sm",
                 pathname === `/${locale}/${key}` && "bg-gray-100 font-semibold"
               )}
-              style={{
-                padding: "clamp(0.25rem, 2vw, 0.75rem)",
-              }}
+              style={{ padding: "clamp(0.25rem, 2vw, 0.75rem)" }}
             >
               <span
                 className="flex items-center justify-center"
@@ -234,7 +250,7 @@ export default function Navbar() {
               >
                 {icon}
               </span>
-              <span className="hidden">{t(`nav.${key}`)}</span>
+              <span className="hidden">{t(`navbar.nav.${key}`)}</span>
             </Link>
           ))}
         </nav>

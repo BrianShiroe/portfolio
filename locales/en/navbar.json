@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "email": "Email"
+  },
+  "contact": {
+    "title": "Contact",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "itchio": "Itch.io"
+  },
+  "categories": {
+    "projects": "Projects"
+  }
+}

@@ -1,22 +1,35 @@
+// app/[locale]/(public)/projects/page.tsx
 "use client";
-import { useState, useEffect } from "react";
-import { useLocale } from "@/lib/useLocale";
+
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-
-import { projects as staticProjects } from "@/data/projects";
 import ProjectsSkeleton from "@/app/components/projectsSkeleton";
 
-export default function HomePage() {
-  const { locale } = useLocale();
-  const [projects, setProjects] = useState<typeof staticProjects | null>(null);
+export default function ProjectsPage() {
+  const params = useParams();
+  const locale = params?.locale || "en";
+  const [projects, setProjects] = useState<any[] | null>(null);
 
-  // Simulate API fetching
   useEffect(() => {
-    setTimeout(() => {
-      setProjects(staticProjects);
-    }, 1500); // simulate 1.5s delay
-  }, []);
+    const loadProjects = async () => {
+      try {
+        const data = await import(`@/locales/${locale}/projects.json`);
+        setProjects(data.projects);
+      } catch (err) {
+        console.error("Failed to load projects JSON:", err);
+        setProjects([]);
+      }
+    };
+
+    // Optional: simulate API delay
+    const timeout = setTimeout(() => {
+      loadProjects();
+    }, 1500);
+
+    return () => clearTimeout(timeout);
+  }, [locale]);
 
   return (
     <div className="flex flex-col items-center justify-center px-3 sm:px-6">
@@ -25,10 +38,8 @@ export default function HomePage() {
       </h1>
 
       {!projects ? (
-        // Skeleton placeholders
         <ProjectsSkeleton sections={2} itemsPerSection={3} />
       ) : (
-        // Real projects
         projects.map((section) => (
           <div key={section.category} className="w-full mb-6 sm:mb-10">
             <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">

@@ -3,14 +3,39 @@
 
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
-import en from "../locales/en.json";
-import ar from "../locales/ar.json";
+
+// ---- English ----
+import enGeneral from "../locales/en/general.json";
+import enSkills from "../locales/en/skills.json";
+import enProjects from "../locales/en/projects.json";
+import enNavbar from "../locales/en/navbar.json";
+
+// ---- Arabic ----
+import arGeneral from "../locales/ar/general.json";
+import arSkills from "../locales/ar/skills.json";
+import arProjects from "../locales/ar/projects.json";
+import arNavbar from "../locales/ar/navbar.json";
+
+// Merge per-locale JSONs into one object
+const en = {
+  general: enGeneral,
+  skills: enSkills,
+  projects: enProjects,
+  navbar: enNavbar,
+};
+
+const ar = {
+  general: arGeneral,
+  skills: arSkills,
+  projects: arProjects,
+  navbar: arNavbar,
+};
 
 type Translations = typeof en;
 
 const locales: Record<string, Translations> = { en, ar };
 
-// Type-safe getNested function
+// Utility to access nested keys like "navbar.home"
 const getNested = (obj: unknown, key: string): unknown => {
   return key.split(".").reduce((acc, k) => {
     if (acc && typeof acc === "object" && k in acc) {

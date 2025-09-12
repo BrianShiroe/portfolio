@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "about": "من أنا",
+    "skills": "المهارات",
+    "projects": "المشاريع",
+    "email": "البريد"
+  },
+  "contact": {
+    "title": "التواصل",
+    "linkedin": "لينكدإن",
+    "github": "جيتهاب",
+    "itchio": "إتش.آي.أو"
+  },
+  "categories": {
+    "projects": "المشاريع"
+  }
+}

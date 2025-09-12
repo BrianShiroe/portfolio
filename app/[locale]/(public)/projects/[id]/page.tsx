@@ -1,33 +1,50 @@
 // app/[locale]/(public)/projects/[id]/page.tsx
-import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { FaGithub, FaItchIo, FaExternalLinkAlt } from "react-icons/fa";
 
+interface Project {
+  id: string;
+  title: string;
+  desc: string;
+  href: string;
+  image: string;
+  githubLink: string;
+  itchLink: string;
+  demoLink: string;
+}
+
 export default async function ProjectPage({
   params,
 }: {
-  params: { id: string };
+  params: { locale: string; id: string };
 }) {
-  const awaitedParams = await params;
-  const { id } = awaitedParams;
+  const { locale, id } = params;
 
-  // Flatten all items across categories
-  const allProjects = projects.flatMap((section) => section.items);
+  let allProjects: Project[] = [];
+
+  try {
+    const data = await import(`@/locales/${locale}/projects.json`);
+    // Flatten all items across categories
+    allProjects = data.projects.flatMap((section: any) => section.items);
+  } catch (err) {
+    console.error("Failed to load projects JSON:", err);
+    return notFound();
+  }
 
   const project = allProjects.find((p) => p.id === id);
 
   if (!project) return notFound();
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto px-3 sm:px-6">
       <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
 
       <Image
         src={project.image || "/placeholders/image-placeholder.png"}
         alt={project.title}
-        width={1200} // wider for desktop
-        height={675} // 16:9 aspect ratio, looks cinematic
+        width={1200}
+        height={675}
         className="w-full h-auto max-h-[800px] object-cover rounded-xl mb-8 shadow-lg"
       />
 
