@@ -3,15 +3,20 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { FaGithub, FaItchIo, FaExternalLinkAlt } from "react-icons/fa";
 
-interface Project {
+interface ProjectItem {
   id: string;
   title: string;
   desc: string;
   href: string;
   image: string;
-  githubLink: string;
-  itchLink: string;
-  demoLink: string;
+  githubLink?: string;
+  itchLink?: string;
+  demoLink?: string;
+}
+
+interface ProjectSection {
+  category: string;
+  items: ProjectItem[];
 }
 
 export default async function ProjectPage({
@@ -21,12 +26,13 @@ export default async function ProjectPage({
 }) {
   const { locale, id } = params;
 
-  let allProjects: Project[] = [];
+  let allProjects: ProjectItem[] = [];
 
   try {
-    const data = await import(`@/locales/${locale}/projects.json`);
-    // Flatten all items across categories
-    allProjects = data.projects.flatMap((section: any) => section.items);
+    const data: { projects: ProjectSection[] } = await import(
+      `@/locales/${locale}/projects.json`
+    );
+    allProjects = data.projects.flatMap((section) => section.items);
   } catch (err) {
     console.error("Failed to load projects JSON:", err);
     return notFound();

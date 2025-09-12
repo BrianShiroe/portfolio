@@ -7,10 +7,23 @@ import Link from "next/link";
 import Image from "next/image";
 import ProjectsSkeleton from "@/app/components/projectsSkeleton";
 
+type ProjectItem = {
+  id: string;
+  href: string;
+  title: string;
+  desc: string;
+  image?: string;
+};
+
+type ProjectSection = {
+  category: string;
+  items: ProjectItem[];
+};
+
 export default function ProjectsPage() {
   const params = useParams();
   const locale = params?.locale || "en";
-  const [projects, setProjects] = useState<any[] | null>(null);
+  const [projects, setProjects] = useState<ProjectSection[] | null>(null);
 
   useEffect(() => {
     const loadProjects = async () => {
@@ -47,7 +60,7 @@ export default function ProjectsPage() {
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
-              {section.items.map((proj) => (
+              {section.items.map((proj: ProjectItem) => (
                 <Link key={proj.id} href={`/${locale}${proj.href}`}>
                   <div className="group border border-gray-200 rounded-2xl overflow-hidden shadow hover:shadow-lg transition transform hover:scale-[1.02] cursor-pointer bg-white">
                     {/* Image */}

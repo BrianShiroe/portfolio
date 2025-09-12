@@ -8,7 +8,22 @@ import { Mail, Home, User, Code, Folder } from "lucide-react";
 import Image from "next/image";
 import { useLocale } from "@/lib/useLocale";
 import { useState, useEffect, useRef } from "react";
-import { projects as projectData } from "@/data/projects";
+
+interface ProjectItem {
+  id: string;
+  title: string;
+  desc?: string;
+  href: string;
+  image?: string;
+  githubLink?: string;
+  itchLink?: string;
+  demoLink?: string;
+}
+
+interface ProjectCategory {
+  category: string;
+  items: ProjectItem[];
+}
 
 const navLinks = [
   {
@@ -39,7 +54,9 @@ export default function Navbar() {
   const [showHeader, setShowHeader] = useState(true);
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
-  const [localizedProjects, setLocalizedProjects] = useState<any[]>([]);
+  const [localizedProjects, setLocalizedProjects] = useState<ProjectCategory[]>(
+    []
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -150,7 +167,7 @@ export default function Navbar() {
 
         {/* Projects */}
         <section className="border-b border-gray-300 pb-4 mb-4 flex-1 overflow-y-auto min-h-[100px]">
-          {localizedProjects.map((category) => (
+          {localizedProjects.map((category: ProjectCategory) => (
             <div key={category.category} className="mb-4">
               <h3 className="text-xs uppercase text-gray-500 mb-2">
                 {t("navbar.categories.projects")}
