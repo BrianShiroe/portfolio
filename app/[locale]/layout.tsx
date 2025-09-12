@@ -26,7 +26,7 @@ export default async function RootLayout({
       <body className="antialiased flex flex-col lg:flex-row min-h-screen font-sans">
         <Navbar />
         <main className="flex mx-auto">
-          <div className="max-w-[1200] min-w-[320px] p-6 pt-30 lg:pt-20">
+          <div className="max-w-[1200] min-w-[320px] p-6 pt-45 md:pt-60 lg:pt-20">
             {children}
           </div>
         </main>
