@@ -127,16 +127,6 @@ export const projects = [
           "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
         demoLink: "",
       },
-      // {
-      //   id: "climb-it-up",
-      //   title: "Climb It Up!",
-      //   desc: "Climb It Up is a challenging Roblox parkour game where the goal is to reach the very top. Precision and skill are key—falling sends you back to the start! While there are checkpoints for those who need a little help, only the truly daring will race to the top without relying on them. Test your reflexes, master the jumps, and see if you have what it takes to conquer the climb!",
-      //   href: "/projects/climb-it-up",
-      //   image: "/images/projects/climb-it-up-1.png",
-      //   githubLink: "",
-      //   itchLink: "",
-      //   demoLink: "",
-      // },
     ],
   },
 ];

@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "about": "من أنا",
+    "skills": "المهارات",
+    "projects": "المشاريع",
+    "email": "البريد الإلكتروني"
+  },
+  "contact": {
+    "title": "التواصل",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "itchio": "Itch.io"
+  },
+  "categories": {
+    "projects": "المشاريع"
+  }
+}

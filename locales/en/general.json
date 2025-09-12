@@ -1,0 +1,56 @@
+{
+  "home": {
+    "greeting": "Hello! I'm",
+    "name": "BRIAN ONG HAW",
+    "handle": "Handle |",
+    "username": "Srianshiroe",
+    "role": "Full-Stack Developer",
+    "contactButton": "Contact Me",
+    "downloadCV": "Download CV"
+  },
+  "about": {
+      "title": "About Me",
+      "intro": {
+        "line1": "Hi! I'm a <strong>Computer Science graduate</strong> with a passion for exploring the field — from <strong>full-stack development</strong> to problem-solving, data structures, and emerging technologies.",
+        "line2": "I enjoy building functional applications and understanding how systems work to solve real-world challenges. I'm <strong>committed</strong> to continuous learning and applying my skills to create innovative and practical solutions."
+      },
+      "cards": {
+        "basicInfo": {
+          "title": "Basic Info",
+          "subtitle": "Academic background",
+          "ageLabel": "Age",
+          "age": "23 Years Old",
+          "birthLabel": "Birth",
+          "birth": "January 17, 2002",
+          "residenceLabel": "Residence",
+          "residence": "Al Wasl Area, Dubai"
+        },
+        "education": {
+          "title": "Education",
+          "subtitle": "Bachelor of Science in Computer Science",
+          "attendedLabel": "Attended",
+          "attended": "July 12, 2021",
+          "graduatedLabel": "Graduated",
+          "graduated": "June 18, 2025",
+          "institutionLabel": "Institution",
+          "institution": "Columban College, Inc. Philippines"
+        }
+      }
+    },
+  "email": {
+    "title": "Contact Me",
+    "subtitle": "Have a proposal?",
+    "description": "Leave me a message.",
+    "placeholders": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company (optional)",
+      "phone": "Phone (optional)",
+      "message": "Tell me about your project..."
+    },
+    "submit": "Submit",
+    "sending": "Sending...",
+    "success": "Message sent!",
+    "error": "Error sending message"
+  }
+}
