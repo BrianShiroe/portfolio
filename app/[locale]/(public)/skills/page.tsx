@@ -1,41 +1,69 @@
-// app/[locale]/(public)/skills/page.tsx
 "use client";
 
-import { skills } from "@/data/skills";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useMemo, useState, useEffect } from "react";
 
 export default function SkillsPage() {
+  const pathname = usePathname();
+  const locale = pathname?.split("/")[1] || "en";
+
+  const [skills, setSkills] = useState<
+    { label: string; tools: { name: string; icon: string }[] }[] | null
+  >(null);
+
+  useEffect(() => {
+    const loadSkills = async () => {
+      try {
+        const data = await import(`@/locales/${locale}/skills.json`);
+        setSkills(data.default); // JSON default export
+      } catch (err) {
+        console.error("Failed to load skills JSON:", err);
+        setSkills([]);
+      }
+    };
+    loadSkills();
+  }, [locale]);
+
+  if (!skills) return <div>Loading...</div>;
+
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="self-start text-4xl font-bold mb-10">Skills</h1>
+      <h1 className="self-start text-4xl font-bold mb-10">
+        {locale === "ar" ? "المهارات" : "Skills"}
+      </h1>
 
       <section className="w-full max-w-5xl space-y-12">
-        {skills.map((skills) => (
+        {skills.map((skill) => (
           <div
+            key={skill.label}
             className="p-12 bg-gray-50 rounded-2xl inset-shadow-gray-400 inset-shadow-sm text-2xl font-semibold mb-6"
-            key={skills.label}
           >
-            <h2 className="text-xl font-light text-gray-500 mb-10 pb-4 border-b-1 border-gray-300">
-              {skills.label}
+            <h2 className="text-xl font-light text-gray-500 mb-10 pb-4 border-b border-gray-300">
+              {skill.label}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {skills.tools.map((tools) => (
+              {skill.tools.map((tool) => (
                 <div
-                  key={tools.name}
-                  className="flex items-center rounded-2xl shadow-lg p-4 hover:scale-103 
-                transition-transform bg-white"
+                  key={tool.name}
+                  className="flex items-center rounded-2xl shadow-lg p-4 hover:scale-103 transition-transform bg-white"
                 >
-                  {tools.icon && (
+                  {tool.icon && (
                     <Image
-                      src={tools.icon}
+                      src={tool.icon}
                       height={40}
                       width={40}
-                      alt=""
-                      className="-translate-y-5 ltr:-translate-x-8 rtl:translate-x-8"
+                      alt={tool.name}
+                      style={{
+                        transform:
+                          locale === "ar"
+                            ? "translateY(-22px) translateX(30px)"
+                            : "translateY(-22px) translateX(-30px)",
+                      }}
                     />
                   )}
                   <div className="text-lg font-medium text-gray-800">
-                    {tools.name}
+                    {tool.name}
                   </div>
                 </div>
               ))}

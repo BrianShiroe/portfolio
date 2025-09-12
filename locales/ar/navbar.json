@@ -4,13 +4,13 @@
     "about": "من أنا",
     "skills": "المهارات",
     "projects": "المشاريع",
-    "email": "البريد"
+    "email": "البريد الإلكتروني"
   },
   "contact": {
     "title": "التواصل",
-    "linkedin": "لينكدإن",
-    "github": "جيتهاب",
-    "itchio": "إتش.آي.أو"
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "itchio": "Itch.io"
   },
   "categories": {
     "projects": "المشاريع"

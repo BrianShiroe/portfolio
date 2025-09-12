@@ -51,6 +51,14 @@ export const useLocale = () => {
 
   const t = useMemo(() => {
     return (key: string): string => {
+      // First try general
+      const generalValue = getNested(
+        locales[locale as "en" | "ar"].general,
+        key
+      );
+      if (typeof generalValue === "string") return generalValue;
+
+      // Fallback to full locales object
       const value = getNested(locales[locale as "en" | "ar"], key);
       return typeof value === "string" ? value : key;
     };

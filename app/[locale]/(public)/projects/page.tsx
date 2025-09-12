@@ -34,7 +34,7 @@ export default function ProjectsPage() {
   return (
     <div className="flex flex-col items-center justify-center px-3 sm:px-6">
       <h1 className="self-start text-3xl sm:text-4xl font-semibold mb-4 sm:mb-6">
-        Projects
+        {locale === "ar" ? "المشاريع" : "Projects"}
       </h1>
 
       {!projects ? (

@@ -4,14 +4,14 @@
       "category": "مشاريع الويب",
       "items": [
         {
-          "id": "shiroe-ecommerce",
-          "title": "Shiroe E-Commerce",
-          "desc": "Shiroe E-commerce هو منصة تسوق إلكترونية حديثة ومتجاوبة تم إنشاؤها باستخدام Next.js و TailwindCSS و Shadcn/UI و Stripe، مصممة لتوفير تجربة تسوق سلسة وآمنة. تتميز بكتالوج منتجات ديناميكي، وإدارة فعّالة لعربة التسوق، وتكامل سلس مع Stripe Checkout، وكل ذلك بواجهة نظيفة وقابلة للتخصيص. مع مكونات قابلة لإعادة الاستخدام وتصميم متوافق مع الهواتف، يضمن Shiroe E-commerce أداءً سريعًا وسهولة وصول وتجربة مستخدم بديهية من التصفح إلى الدفع.",
-          "href": "/projects/shiroe-ecommerce",
+          "id": "barefox",
+          "title": "Barefox Ecommerce",
+          "desc": "Barefox E-commerce هو منصة تسوق إلكترونية حديثة ومتجاوبة تم إنشاؤها باستخدام Next.js و TailwindCSS و Shadcn/UI و Stripe، مصممة لتوفير تجربة تسوق سلسة وآمنة. تتميز بكتالوج منتجات ديناميكي، وإدارة فعّالة لعربة التسوق، وتكامل سلس مع Stripe Checkout، وكل ذلك بواجهة نظيفة وقابلة للتخصيص. مع مكونات قابلة لإعادة الاستخدام وتصميم متوافق مع الهواتف، يضمن Shiroe E-commerce أداءً سريعًا وسهولة وصول وتجربة مستخدم بديهية من التصفح إلى الدفع.",
+          "href": "/projects/barefox",
           "image": "/images/projects/ecommerce-1.png",
-          "githubLink": "https://github.com/BrianShiroe/ecommerce-web-app",
+          "githubLink": "https://github.com/BrianShiroe/barefox-ecommerce",
           "itchLink": "",
-          "demoLink": "https://shiroe-ecommerce.vercel.app/"
+          "demoLink": "https://barefox.vercel.app/"
         },
         {
           "id": "rumahsekolah",
@@ -50,7 +50,7 @@
       "items": [
         {
           "id": "collision-detection",
-          "title": "Collision-Detection",
+          "title": "Collision Detection",
           "desc": "نظام كشف يعتمد على YOLOv11 لاكتشاف حوادث السيارات والحرائق والدخان من لقطات كاميرات المراقبة. النموذج المخصص مدرب على 25,000 صورة معنونة عبر هذه الفئات الثلاث للكشف عن الحوادث والكوارث، بينما يوفر نموذج YOLOv11 nano الخفيف كشفًا سريعًا للأغراض العامة. مع تقسيم دقيق للبيانات ومقاييس تقييم مثل الدقة والاسترجاع و mAP، يوفر المشروع حلاً موثوقًا وعالي السرعة للمراقبة في الوقت الحقيقي والاستجابة التلقائية للحوادث والطوارئ.",
           "href": "/projects/collision-detection",
           "image": "/images/projects/collision-fire-smoke-detection-1.png",

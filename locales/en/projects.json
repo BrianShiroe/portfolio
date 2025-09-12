@@ -4,14 +4,14 @@
       "category": "Web Projects",
       "items": [
         {
-          "id": "shiroe-ecommerce",
-          "title": "Shiroe E-Commerce",
-          "desc": "Shiroe E-commerce is a modern, responsive online shopping platform built with Next.js, TailwindCSS, Shadcn/UI, and Stripe, designed to deliver a seamless and secure shopping experience. It features a dynamic product catalog, efficient shopping cart management, and smooth Stripe Checkout integration, all wrapped in a clean, customizable UI. With reusable components and a mobile-friendly design, Shiroe E-commerce ensures fast performance, accessibility, and an intuitive user experience from browsing to payment.",
-          "href": "/projects/shiroe-ecommerce",
+          "id": "barefox",
+          "title": "Barefox",
+          "desc": "Barefox E-commerce is a modern, responsive online shopping platform built with Next.js, TailwindCSS, Shadcn/UI, and Stripe, designed to deliver a seamless and secure shopping experience. It features a dynamic product catalog, efficient shopping cart management, and smooth Stripe Checkout integration, all wrapped in a clean, customizable UI. With reusable components and a mobile-friendly design, Shiroe E-commerce ensures fast performance, accessibility, and an intuitive user experience from browsing to payment.",
+          "href": "/projects/barefox",
           "image": "/images/projects/ecommerce-1.png",
-          "githubLink": "https://github.com/BrianShiroe/ecommerce-web-app",
+          "githubLink": "https://github.com/BrianShiroe/barefox",
           "itchLink": "",
-          "demoLink": "https://shiroe-ecommerce.vercel.app/"
+          "demoLink": "https://barefox.vercel.app/"
         },
         {
           "id": "rumahsekolah",
@@ -50,7 +50,7 @@
       "items": [
         {
           "id": "collision-detection",
-          "title": "Collision-Detection",
+          "title": "Collision Detection",
           "desc": "An object detection system built with YOLOv11 for detecting car collisions, fire, and smoke from CCTV footage. The custom model is trained on 25,000 labeled images across these three classes for disaster- and accident-specific detection, while a lightweight YOLOv11 nano model offers fast, general-purpose object detection. With detailed dataset splits and evaluation metrics—including precision, recall, and mAP—the project provides a reliable, high-speed solution for real-time monitoring and automated response to accidents and emergencies.",
           "href": "/projects/collision-detection",
           "image": "/images/projects/collision-fire-smoke-detection-1.png",
