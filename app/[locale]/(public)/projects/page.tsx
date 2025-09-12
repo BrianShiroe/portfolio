@@ -39,7 +39,7 @@ export default function ProjectsPage() {
     // Optional: simulate API delay
     const timeout = setTimeout(() => {
       loadProjects();
-    }, 0);
+    }, 200);
 
     return () => clearTimeout(timeout);
   }, [locale]);

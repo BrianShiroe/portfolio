@@ -37,7 +37,7 @@ export default function HomePage() {
       </DominoMotion>
 
       {/* Buttons Section */}
-      <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md justify-center">
+      <div className="flex flex-col sm:flex-row gap-10 lg:gap-5 center items-center w-full max-w-md justify-center">
         <DominoMotion direction="left" delay={0.7}>
           <Link
             href={`/${locale}/email`}
