@@ -17,7 +17,7 @@ export default function HomePage() {
 
       {/* Name */}
       <DominoMotion direction="right" delay={0.1}>
-        <h1 className="text-8xl font-bold text-gray-900 mb-2">
+        <h1 className="text-7xl md:text-8xl font-bold text-gray-900 mb-2">
           {t("home.name")}
         </h1>
       </DominoMotion>
@@ -37,25 +37,24 @@ export default function HomePage() {
       </DominoMotion>
 
       {/* Buttons Section */}
-      <div className="flex flex-col sm:flex-row gap-10 lg:gap-5 center items-center w-full max-w-md justify-center">
-        <DominoMotion direction="left" delay={0.7}>
+      <DominoMotion direction="up" delay={0.7}>
+        <div className="flex flex-col sm:flex-row gap-6 w-full justify-center">
           <Link
             href={`/${locale}/email`}
-            className="flex-1 bg-gray-900 text-white px-8 py-4 rounded-4xl hover:bg-gray-700 transition text-center"
+            className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gray-900 text-white text-lg font-medium text-center transition-all duration-200 hover:bg-gray-700 hover:shadow-lg"
           >
             {t("home.contactButton")}
           </Link>
-        </DominoMotion>
-        <DominoMotion direction="right" delay={0.9}>
+
           <a
             href="/Brian-Haw-CV.pdf"
             download="Brian-Haw-CV.pdf"
-            className="flex-1 border border-gray-900 text-gray-900 px-8 py-4 rounded-4xl hover:bg-gray-100 transition text-center cursor-pointer"
+            className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-gray-900 text-gray-900 text-lg font-medium text-center transition-all duration-200 hover:bg-gray-100 hover:shadow-lg"
           >
             {t("home.downloadCV")}
           </a>
-        </DominoMotion>
-      </div>
+        </div>
+      </DominoMotion>
     </div>
   );
 }

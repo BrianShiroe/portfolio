@@ -33,7 +33,12 @@ export default function DominoMotion({
   };
 
   return (
-    <motion.div variants={variants} initial="hidden" animate="visible">
+    <motion.div
+      className="w-full text-center" // makes inner content centered
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+    >
       {children}
     </motion.div>
   );
