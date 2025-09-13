@@ -30,13 +30,19 @@ const navLinks = [
 export default function NavbarDesktop() {
   const pathname = usePathname();
   const { locale, t } = useLocale();
-  const [localizedProjects, setLocalizedProjects] = useState<ProjectCategory[]>([]);
+  const [localizedProjects, setLocalizedProjects] = useState<ProjectCategory[]>(
+    []
+  );
+  const [openCategories, setOpenCategories] = useState<string[]>([]);
 
   useEffect(() => {
     const loadProjects = async () => {
       try {
         const data = await import(`@/locales/${locale}/projects.json`);
         setLocalizedProjects(data.projects);
+        setOpenCategories(
+          data.projects.map((cat: ProjectCategory) => cat.category)
+        ); // <-- open all
       } catch {
         setLocalizedProjects([]);
       }
@@ -44,10 +50,27 @@ export default function NavbarDesktop() {
     loadProjects();
   }, [locale]);
 
+  const toggleCategory = (category: string) => {
+    setOpenCategories((prev) =>
+      prev.includes(category)
+        ? prev.filter((c) => c !== category)
+        : [...prev, category]
+    );
+  };
+
   const contactLinks = [
-    { name: t("navbar.contact.linkedin"), href: "https://linkedin.com/in/brianshiroe/" },
-    { name: t("navbar.contact.github"), href: "https://github.com/BrianShiroe/" },
-    { name: t("navbar.contact.itchio"), href: "https://mun-development.itch.io/" },
+    {
+      name: t("navbar.contact.linkedin"),
+      href: "https://linkedin.com/in/brianshiroe/",
+    },
+    {
+      name: t("navbar.contact.github"),
+      href: "https://github.com/BrianShiroe/",
+    },
+    {
+      name: t("navbar.contact.itchio"),
+      href: "https://mun-development.itch.io/",
+    },
   ];
 
   return (
@@ -70,7 +93,9 @@ export default function NavbarDesktop() {
               href={`/${lang}${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
               className={clsx(
                 "px-3 py-1 rounded transition",
-                locale === lang ? "bg-gray-200 font-semibold" : "hover:bg-gray-100"
+                locale === lang
+                  ? "bg-gray-200 font-semibold"
+                  : "hover:bg-gray-100"
               )}
             >
               {lang.toUpperCase()}
@@ -89,7 +114,10 @@ export default function NavbarDesktop() {
         {navLinks.map(({ key }) => (
           <motion.div
             key={key}
-            variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+            variants={{
+              hidden: { opacity: 0, x: -20 },
+              visible: { opacity: 1, x: 0 },
+            }}
           >
             <Link
               href={`/${locale}/${key}`}
@@ -109,22 +137,49 @@ export default function NavbarDesktop() {
         <h3 className="text-xs uppercase text-gray-500 mb-2">
           {t("navbar.categories.projects")}
         </h3>
-        <ul className="space-y-1 pl-2">
+        <ul className="space-y-1 pl-2 rtl:pr-2">
           <AnimatePresence>
-            {localizedProjects.map((category) =>
-              category.items.map((proj) => (
-                <motion.li
-                  key={proj.id}
-                  initial={{ opacity: 0, x: -15 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -15 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-sm text-gray-700 hover:text-black cursor-pointer"
+            {localizedProjects.map((category) => (
+              <motion.li key={category.category}>
+                {/* Category title */}
+                <button
+                  onClick={() => toggleCategory(category.category)}
+                  className="w-full text-left rtl:text-right text-sm text-gray-500 hover:text-black cursor-pointer transition mb-1 pl-2 rtl:pr-2"
                 >
-                  <Link href={`/${locale}${proj.href}`}>{proj.title}</Link>
-                </motion.li>
-              ))
-            )}
+                  {category.category}
+                </button>
+
+                {/* Category projects */}
+                <AnimatePresence>
+                  {openCategories.includes(category.category) && (
+                    <motion.ul
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="pl-4 rtl:pr-4 space-y-1 relative overflow-hidden"
+                    >
+                      {/* Vertical line */}
+                      <span className="absolute left-2 rtl:right-2 top-2 bottom-2 w-[1px] bg-gray-300"></span>
+
+                      {category.items.map((proj) => (
+                        <motion.li
+                          key={proj.id}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -10 }}
+                          transition={{ duration: 0.2 }}
+                          className="relative text-sm text-gray-700 hover:text-black cursor-pointer pl-2 rtl:pr-2"
+                        >
+                          <Link href={`/${locale}${proj.href}`}>
+                            {proj.title}
+                          </Link>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              </motion.li>
+            ))}
           </AnimatePresence>
         </ul>
       </section>
