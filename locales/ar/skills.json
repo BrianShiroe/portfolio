@@ -44,7 +44,7 @@
   {
     "label": "أدوات المطور",
     "tools": [
-      { "name": "Git", "icon": "/images/git-icon.png" },
+      { "name": "Git/Github", "icon": "/images/git-icon.png" },
       { "name": "VSCode", "icon": "/images/vscode-icon.png" },
       { "name": "Jira", "icon": "/images/jira-icon.png" },
       { "name": "Trello", "icon": "/images/trello-icon.png" },
