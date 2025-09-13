@@ -51,15 +51,15 @@ export const useLocale = () => {
 
   const t = useMemo(() => {
     return (key: string): string => {
+      const localeObj = locales[locale as "en" | "ar"];
+      if (!localeObj) return key; // fallback if locale not found
+
       // First try general
-      const generalValue = getNested(
-        locales[locale as "en" | "ar"].general,
-        key
-      );
+      const generalValue = getNested(localeObj.general, key);
       if (typeof generalValue === "string") return generalValue;
 
       // Fallback to full locales object
-      const value = getNested(locales[locale as "en" | "ar"], key);
+      const value = getNested(localeObj, key);
       return typeof value === "string" ? value : key;
     };
   }, [locale]);

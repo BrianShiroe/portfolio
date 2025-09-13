@@ -21,9 +21,9 @@ interface ProjectSection {
 export default async function ProjectPage({
   params,
 }: {
-  params: { locale: string; id: string };
+  params: Promise<{ locale: string; id: string }>;
 }) {
-  const { locale, id } = params;
+  const { locale, id } = await params;
 
   let allProjects: ProjectItem[] = [];
 
