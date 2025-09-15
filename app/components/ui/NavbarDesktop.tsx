@@ -13,6 +13,7 @@ interface ProjectItem {
   id: string;
   title: string;
   href: string;
+  isNotVisible: number;
 }
 interface ProjectCategory {
   category: string;
@@ -139,47 +140,57 @@ export default function NavbarDesktop() {
         </h3>
         <ul className="space-y-1 pl-2 rtl:pr-2">
           <AnimatePresence>
-            {localizedProjects.map((category) => (
-              <motion.li key={category.category}>
-                {/* Category title */}
-                <button
-                  onClick={() => toggleCategory(category.category)}
-                  className="w-full text-left rtl:text-right text-sm text-gray-500 hover:text-black cursor-pointer transition mb-1 pl-2 rtl:pr-2"
-                >
-                  {category.category}
-                </button>
+            {localizedProjects.map((category) => {
+              // Filter projects that are visible
+              const visibleProjects = category.items.filter(
+                (proj) => proj.isNotVisible !== 1
+              );
 
-                {/* Category projects */}
-                <AnimatePresence>
-                  {openCategories.includes(category.category) && (
-                    <motion.ul
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="pl-4 rtl:pr-4 space-y-1 relative overflow-hidden"
-                    >
-                      {/* Vertical line */}
-                      <span className="absolute left-2 rtl:right-2 top-2 bottom-2 w-[1px] bg-gray-300"></span>
+              // Skip category if no visible projects
+              if (visibleProjects.length === 0) return null;
 
-                      {category.items.map((proj) => (
-                        <motion.li
-                          key={proj.id}
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          exit={{ opacity: 0, x: -10 }}
-                          transition={{ duration: 0.2 }}
-                          className="relative text-sm text-gray-700 hover:text-black cursor-pointer pl-2 rtl:pr-2"
-                        >
-                          <Link href={`/${locale}${proj.href}`}>
-                            {proj.title}
-                          </Link>
-                        </motion.li>
-                      ))}
-                    </motion.ul>
-                  )}
-                </AnimatePresence>
-              </motion.li>
-            ))}
+              return (
+                <motion.li key={category.category}>
+                  {/* Category title */}
+                  <button
+                    onClick={() => toggleCategory(category.category)}
+                    className="w-full text-left rtl:text-right text-sm text-gray-500 hover:text-black cursor-pointer transition mb-1 pl-2 rtl:pr-2"
+                  >
+                    {category.category}
+                  </button>
+
+                  {/* Category projects */}
+                  <AnimatePresence>
+                    {openCategories.includes(category.category) && (
+                      <motion.ul
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-4 rtl:pr-4 space-y-1 relative overflow-hidden"
+                      >
+                        {/* Vertical line */}
+                        <span className="absolute left-2 rtl:right-2 top-2 bottom-2 w-[1px] bg-gray-300"></span>
+
+                        {visibleProjects.map((proj) => (
+                          <motion.li
+                            key={proj.id}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -10 }}
+                            transition={{ duration: 0.2 }}
+                            className="relative text-sm text-gray-700 hover:text-black cursor-pointer pl-2 rtl:pr-2"
+                          >
+                            <Link href={`/${locale}${proj.href}`}>
+                              {proj.title}
+                            </Link>
+                          </motion.li>
+                        ))}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
+                </motion.li>
+              );
+            })}
           </AnimatePresence>
         </ul>
       </section>

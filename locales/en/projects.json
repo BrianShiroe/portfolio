@@ -41,7 +41,8 @@
           "image": "/images/projects/ccws-1.png",
           "githubLink": "",
           "itchLink": "",
-          "demoLink": ""
+          "demoLink": "",
+          "isNotVisible": 1
         }
       ]
     },

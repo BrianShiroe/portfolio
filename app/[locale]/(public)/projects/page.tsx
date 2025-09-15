@@ -13,6 +13,7 @@ type ProjectItem = {
   title: string;
   desc: string;
   image?: string;
+  isNotVisible?: number;
 };
 
 type ProjectSection = {
@@ -71,43 +72,46 @@ export default function ProjectsPage() {
 
             {/* Project Items */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
-              {section.items.map((proj, projIndex) => (
-                <DominoMotion
-                  key={proj.id}
-                  direction="up"
-                  delay={0.2 * sectionIndex + 0.1 * projIndex} // stagger per section and project
-                  duration={0.5}
-                >
-                  <Link href={`/${locale}${proj.href}`}>
-                    <div className="group border border-gray-200 rounded-2xl overflow-hidden shadow hover:shadow-lg transition transform hover:scale-[1.02] cursor-pointer bg-white">
-                      {/* Image */}
-                      <div className="relative w-full h-48 sm:h-56 bg-gray-100 overflow-hidden">
-                        <Image
-                          src={
-                            proj.image || "/placeholders/image-placeholder.png"
-                          }
-                          alt={proj.title || "Placeholder"}
-                          fill
-                          className="object-cover object-top group-hover:scale-103 transition-transform duration-300"
-                          sizes="(max-width: 640px) 100vw,
+              {section.items
+                .filter((proj) => proj.isNotVisible !== 1)
+                .map((proj, projIndex) => (
+                  <DominoMotion
+                    key={proj.id}
+                    direction="up"
+                    delay={0.2 * sectionIndex + 0.1 * projIndex} // stagger per section and project
+                    duration={0.5}
+                  >
+                    <Link href={`/${locale}${proj.href}`}>
+                      <div className="group border border-gray-200 rounded-2xl overflow-hidden shadow hover:shadow-lg transition transform hover:scale-[1.02] cursor-pointer bg-white">
+                        {/* Image */}
+                        <div className="relative w-full h-48 sm:h-56 bg-gray-100 overflow-hidden">
+                          <Image
+                            src={
+                              proj.image ||
+                              "/placeholders/image-placeholder.png"
+                            }
+                            alt={proj.title || "Placeholder"}
+                            fill
+                            className="object-cover object-top group-hover:scale-103 transition-transform duration-300"
+                            sizes="(max-width: 640px) 100vw,
                                  (max-width: 1024px) 50vw,
                                  33vw"
-                        />
-                      </div>
+                          />
+                        </div>
 
-                      {/* Content */}
-                      <div className="p-4 sm:p-5">
-                        <h3 className="text-base sm:text-lg font-semibold mb-1 line-clamp-1">
-                          {proj.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm sm:text-base line-clamp-2">
-                          {proj.desc}
-                        </p>
+                        {/* Content */}
+                        <div className="p-4 sm:p-5">
+                          <h3 className="text-base sm:text-lg font-semibold mb-1 line-clamp-1">
+                            {proj.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm sm:text-base line-clamp-2">
+                            {proj.desc}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </DominoMotion>
-              ))}
+                    </Link>
+                  </DominoMotion>
+                ))}
             </div>
           </div>
         ))
