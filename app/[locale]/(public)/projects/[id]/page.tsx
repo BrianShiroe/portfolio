@@ -1,6 +1,7 @@
 // app/[locale]/(public)/projects/[id]/page.tsx
 import { notFound } from "next/navigation";
 import ProjectDetailContent from "./ProjectDetailContent";
+import Head from "next/head";
 
 interface ProjectItem {
   id: string;
@@ -41,5 +42,35 @@ export default async function ProjectPage({
 
   if (!project) return notFound();
 
-  return <ProjectDetailContent project={project} />;
+  return (
+    <>
+      <Head>
+        <title>{`${project.title} | Brian Ong Haw Projects`}</title>
+        <meta
+          name="description"
+          content={project.desc.slice(0, 160)} // first 160 chars
+        />
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="keywords"
+          content={`Brian Ong Haw, ${project.title}, Projects, Portfolio, ${project.id}`}
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={`${project.title} | Brian Ong Haw Projects`} />
+        <meta property="og:description" content={project.desc.slice(0, 160)} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://yourdomain.com/${locale}/projects/${project.id}`} />
+        <meta property="og:image" content={project.image} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${project.title} | Brian Ong Haw Projects`} />
+        <meta name="twitter:description" content={project.desc.slice(0, 160)} />
+        <meta name="twitter:image" content={project.image} />
+      </Head>
+
+      <ProjectDetailContent project={project} />
+    </>
+  );
 }
