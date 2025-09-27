@@ -1,4 +1,3 @@
-// app/components/ui/NavbarDesktop.tsx
 "use client";
 
 import Link from "next/link";
@@ -31,9 +30,7 @@ const navLinks = [
 export default function NavbarDesktop() {
   const pathname = usePathname();
   const { locale, t } = useLocale();
-  const [localizedProjects, setLocalizedProjects] = useState<ProjectCategory[]>(
-    []
-  );
+  const [localizedProjects, setLocalizedProjects] = useState<ProjectCategory[]>([]);
   const [openCategories, setOpenCategories] = useState<string[]>([]);
 
   useEffect(() => {
@@ -41,9 +38,7 @@ export default function NavbarDesktop() {
       try {
         const data = await import(`@/locales/${locale}/projects.json`);
         setLocalizedProjects(data.projects);
-        setOpenCategories(
-          data.projects.map((cat: ProjectCategory) => cat.category)
-        ); // <-- open all
+        setOpenCategories(data.projects.map((cat: ProjectCategory) => cat.category)); // open all
       } catch {
         setLocalizedProjects([]);
       }
@@ -76,7 +71,7 @@ export default function NavbarDesktop() {
 
   return (
     <aside className="hidden lg:flex w-72 min-w-[240px] text-gray-900 p-6 border-r border-gray-300 flex-col h-screen sticky top-0">
-      {/* Logo + Lang Switch */}
+      {/* Logo + Language Switch */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -105,9 +100,10 @@ export default function NavbarDesktop() {
         </div>
       </motion.div>
 
-      {/* Navigation */}
+      {/* Main Navigation */}
       <motion.nav
         className="mb-6 border-b border-gray-300 pb-4"
+        aria-label={t("navbar.navigation")}
         initial="hidden"
         animate="visible"
         variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
@@ -133,7 +129,7 @@ export default function NavbarDesktop() {
         ))}
       </motion.nav>
 
-      {/* Projects */}
+      {/* Projects Categories */}
       <section className="border-b border-gray-300 pb-4 mb-4 flex-1 overflow-y-auto min-h-[100px]">
         <h3 className="text-xs uppercase text-gray-500 mb-2">
           {t("navbar.categories.projects")}
@@ -141,25 +137,24 @@ export default function NavbarDesktop() {
         <ul className="space-y-1 pl-2 rtl:pr-2">
           <AnimatePresence>
             {localizedProjects.map((category) => {
-              // Filter projects that are visible
               const visibleProjects = category.items.filter(
                 (proj) => proj.isNotVisible !== 1
               );
 
-              // Skip category if no visible projects
               if (visibleProjects.length === 0) return null;
 
               return (
                 <motion.li key={category.category}>
-                  {/* Category title */}
+                  {/* Category button */}
                   <button
                     onClick={() => toggleCategory(category.category)}
                     className="w-full text-left rtl:text-right text-sm text-gray-500 hover:text-black cursor-pointer transition mb-1 pl-2 rtl:pr-2"
+                    aria-expanded={openCategories.includes(category.category)}
                   >
                     {category.category}
                   </button>
 
-                  {/* Category projects */}
+                  {/* Projects under category */}
                   <AnimatePresence>
                     {openCategories.includes(category.category) && (
                       <motion.ul
@@ -168,7 +163,6 @@ export default function NavbarDesktop() {
                         exit={{ opacity: 0, height: 0 }}
                         className="pl-4 rtl:pr-4 space-y-1 relative overflow-hidden"
                       >
-                        {/* Vertical line */}
                         <span className="absolute left-2 rtl:right-2 top-2 bottom-2 w-[1px] bg-gray-300"></span>
 
                         {visibleProjects.map((proj) => (
@@ -195,7 +189,7 @@ export default function NavbarDesktop() {
         </ul>
       </section>
 
-      {/* Contact */}
+      {/* Contact Links */}
       <motion.section
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
