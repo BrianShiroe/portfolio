@@ -24,13 +24,15 @@ const navLinks = [
   { key: "about" },
   { key: "skills" },
   { key: "projects" },
-  { key: "email" },
+  { key: "contacts" },
 ];
 
 export default function NavbarDesktop() {
   const pathname = usePathname();
   const { locale, t } = useLocale();
-  const [localizedProjects, setLocalizedProjects] = useState<ProjectCategory[]>([]);
+  const [localizedProjects, setLocalizedProjects] = useState<ProjectCategory[]>(
+    []
+  );
   const [openCategories, setOpenCategories] = useState<string[]>([]);
 
   useEffect(() => {
@@ -38,7 +40,9 @@ export default function NavbarDesktop() {
       try {
         const data = await import(`@/locales/${locale}/projects.json`);
         setLocalizedProjects(data.projects);
-        setOpenCategories(data.projects.map((cat: ProjectCategory) => cat.category)); // open all
+        setOpenCategories(
+          data.projects.map((cat: ProjectCategory) => cat.category)
+        ); // open all
       } catch {
         setLocalizedProjects([]);
       }

@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useLocale } from "@/lib/useLocale";
 import DominoMotion from "@/app/components/ui/DominoMotion";
 import Head from "next/head";
+import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 
-export default function EmailPage() {
+export default function ContactPage() {
   const { t } = useLocale();
 
   const initialState = {
@@ -70,7 +71,7 @@ export default function EmailPage() {
         <meta property="og:title" content={`${t("email.title")} | Brian Ong Haw`} />
         <meta property="og:description" content="Get in touch with Brian Ong Haw, a Full-Stack Developer. Leave a message and start a conversation about your project." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/email" />
+        <meta property="og:url" content="https://yourdomain.com/contact" />
         <meta property="og:image" content="/images/profile.png" />
 
         {/* Twitter Card */}
@@ -88,23 +89,69 @@ export default function EmailPage() {
           </h1>
         </DominoMotion>
 
+        {/* --- CONTACT INFO SECTION --- */}
+        <DominoMotion direction="up" delay={0.1} duration={0.6}>
+          <section className="w-full max-w-3xl bg-gray-50 border border-gray-200 rounded-2xl p-6 mb-10 shadow-sm">
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-center">
+                <Linkedin className="w-5 h-5 me-2 text-gray-600" />
+                <a
+                  href="https://www.linkedin.com/in/brianshiroe/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  linkedin.com/in/brianshiroe
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Github className="w-5 h-5 me-2 text-gray-600" />
+                <a
+                  href="https://github.com/BrianShiroe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  github.com/BrianShiroe
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Mail className="w-5 h-5 me-2 text-gray-600" />
+                <a href="mailto:brianshiroe@gmail.com" className="hover:underline">
+                  brianshiroe@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Phone className="w-5 h-5 me-2 text-gray-600" />
+                <a href="tel:+971503592133" className="hover:underline">
+                  +971 50 359 2133
+                </a>
+              </li>
+              <li className="flex items-center">
+                <MapPin className="w-5 h-5 me-2 text-gray-600" />
+                <span>Al Wasl, Sheikh Zayed, Dubai - UAE</span>
+              </li>
+            </ul>
+          </section>
+        </DominoMotion>
+
         {/* Subtitle */}
-        <DominoMotion direction="left" delay={0.1} duration={0.6}>
+        <DominoMotion direction="left" delay={0.2} duration={0.6}>
           <h2 className="text-2xl font-semibold text-gray-900 mb-2">
             {t("email.subtitle")}
           </h2>
         </DominoMotion>
 
         {/* Description */}
-        <DominoMotion direction="left" delay={0.2} duration={0.6}>
+        <DominoMotion direction="left" delay={0.3} duration={0.6}>
           <p className="text-lg text-gray-600 mb-8">{t("email.description")}</p>
         </DominoMotion>
 
-        {/* Form */}
+        {/* Contact Form */}
         <form className="w-full max-w-3xl space-y-6" onSubmit={handleSubmit}>
           {/* Name & Email */}
           <div className="flex flex-col md:flex-row gap-4">
-            <DominoMotion direction="up" delay={0.3}>
+            <DominoMotion direction="up" delay={0.4}>
               <input
                 type="text"
                 name="name"
@@ -114,7 +161,7 @@ export default function EmailPage() {
                 className={inputClass}
               />
             </DominoMotion>
-            <DominoMotion direction="up" delay={0.4}>
+            <DominoMotion direction="up" delay={0.5}>
               <input
                 type="email"
                 name="email"
@@ -128,7 +175,7 @@ export default function EmailPage() {
 
           {/* Company & Phone */}
           <div className="flex flex-col md:flex-row gap-4">
-            <DominoMotion direction="up" delay={0.5}>
+            <DominoMotion direction="up" delay={0.6}>
               <input
                 type="text"
                 name="company"
@@ -138,7 +185,7 @@ export default function EmailPage() {
                 className={inputClass}
               />
             </DominoMotion>
-            <DominoMotion direction="up" delay={0.6}>
+            <DominoMotion direction="up" delay={0.7}>
               <input
                 type="tel"
                 name="phone"
@@ -151,7 +198,7 @@ export default function EmailPage() {
           </div>
 
           {/* Message */}
-          <DominoMotion direction="up" delay={0.7}>
+          <DominoMotion direction="up" delay={0.8}>
             <textarea
               name="message"
               placeholder={t("email.placeholders.message")}
@@ -163,7 +210,7 @@ export default function EmailPage() {
           </DominoMotion>
 
           {/* Submit Button */}
-          <DominoMotion direction="up" delay={0.8}>
+          <DominoMotion direction="up" delay={0.9}>
             <div className="flex flex-col items-center">
               <button
                 type="submit"

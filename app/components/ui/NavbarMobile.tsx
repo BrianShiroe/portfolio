@@ -19,7 +19,7 @@ export const navLinks: NavLink[] = [
   { key: "about", icon: <User className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
   { key: "skills", icon: <Code className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
   { key: "projects", icon: <Folder className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
-  { key: "email", icon: <Mail className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
+  { key: "contacts", icon: <Mail className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
 ];
 
 export default function NavbarMobile() {
