@@ -14,22 +14,37 @@ export default function AboutPage() {
         <title>{`${t("about.title")} | Brian Ong Haw`}</title>
         <meta
           name="description"
-          content="Learn more about Brian Ong Haw, a Full-Stack Developer, his background, education, and experience."
+          content="Learn more about Brian Ong Haw, a Web Developer, his background, education, and experience."
         />
         <meta name="robots" content="index, follow" />
-        <meta name="keywords" content="Brian Ong Haw, Full-Stack Developer, Portfolio, About Me, Computer Science" />
+        <meta
+          name="keywords"
+          content="Brian Ong Haw, Web Developer, Portfolio, About Me, Computer Science"
+        />
 
         {/* Open Graph */}
-        <meta property="og:title" content={`${t("about.title")} | Brian Ong Haw`} />
-        <meta property="og:description" content="Learn more about Brian Ong Haw, a Full-Stack Developer, his background, education, and experience." />
+        <meta
+          property="og:title"
+          content={`${t("about.title")} | Brian Ong Haw`}
+        />
+        <meta
+          property="og:description"
+          content="Learn more about Brian Ong Haw, a Web Developer, his background, education, and experience."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yourdomain.com/about" />
         <meta property="og:image" content="/images/profile.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${t("about.title")} | Brian Ong Haw`} />
-        <meta name="twitter:description" content="Learn more about Brian Ong Haw, a Full-Stack Developer, his background, education, and experience." />
+        <meta
+          name="twitter:title"
+          content={`${t("about.title")} | Brian Ong Haw`}
+        />
+        <meta
+          name="twitter:description"
+          content="Learn more about Brian Ong Haw, a Web Developer, his background, education, and experience."
+        />
         <meta name="twitter:image" content="/images/profile.png" />
       </Head>
 
@@ -57,9 +72,7 @@ export default function AboutPage() {
                 className="mb-4"
                 dangerouslySetInnerHTML={{ __html: t("about.intro.line1") }}
               />
-              <p
-                dangerouslySetInnerHTML={{ __html: t("about.intro.line2") }}
-              />
+              <p dangerouslySetInnerHTML={{ __html: t("about.intro.line2") }} />
             </div>
           </div>
         </DominoMotion>
@@ -71,18 +84,26 @@ export default function AboutPage() {
             <div className="border border-gray-200 rounded-lg p-6 shadow-lg border-t-0">
               <div className="flex items-center gap-3 mb-4">
                 <User className="w-8 h-8 text-gray-800" />
-                <h2 className="text-xl font-semibold">{t("about.cards.basicInfo.title")}</h2>
+                <h2 className="text-xl font-semibold">
+                  {t("about.cards.basicInfo.title")}
+                </h2>
               </div>
-              <p className="mb-2 text-sm text-gray-600">{t("about.cards.basicInfo.subtitle")}</p>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li>
-                  <strong>{t("about.cards.basicInfo.ageLabel")}:</strong> {t("about.cards.basicInfo.age")}
+                  <strong>{t("about.cards.basicInfo.ageLabel")}:</strong>{" "}
+                  {t("about.cards.basicInfo.age")}
                 </li>
                 <li>
-                  <strong>{t("about.cards.basicInfo.birthLabel")}:</strong> {t("about.cards.basicInfo.birth")}
+                  <strong>{t("about.cards.basicInfo.birthLabel")}:</strong>{" "}
+                  {t("about.cards.basicInfo.birth")}
                 </li>
                 <li>
-                  <strong>{t("about.cards.basicInfo.residenceLabel")}:</strong> {t("about.cards.basicInfo.residence")}
+                  <strong>{t("about.cards.basicInfo.residenceLabel")}:</strong>{" "}
+                  {t("about.cards.basicInfo.residence")}
+                </li>{" "}
+                <li>
+                  <strong>{t("about.cards.basicInfo.contactLabel")}:</strong>{" "}
+                  {t("about.cards.basicInfo.contact")}{" "}
                 </li>
               </ul>
             </div>
@@ -93,18 +114,27 @@ export default function AboutPage() {
             <div className="border border-gray-200 rounded-lg p-6 shadow-lg border-t-0">
               <div className="flex items-center gap-3 mb-4">
                 <GraduationCap className="w-8 h-8 text-gray-800" />
-                <h2 className="text-xl font-semibold">{t("about.cards.education.title")}</h2>
+                <h2 className="text-xl font-semibold">
+                  {t("about.cards.education.title")}
+                </h2>
               </div>
-              <p className="mb-2 text-sm text-gray-600">{t("about.cards.education.subtitle")}</p>
+              <p className="mb-2 text-sm text-gray-600">
+                {t("about.cards.education.subtitle")}
+              </p>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li>
-                  <strong>{t("about.cards.education.attendedLabel")}:</strong> {t("about.cards.education.attended")}
+                  <strong>{t("about.cards.education.attendedLabel")}:</strong>{" "}
+                  {t("about.cards.education.attended")}
                 </li>
                 <li>
-                  <strong>{t("about.cards.education.graduatedLabel")}:</strong> {t("about.cards.education.graduated")}
+                  <strong>{t("about.cards.education.graduatedLabel")}:</strong>{" "}
+                  {t("about.cards.education.graduated")}
                 </li>
                 <li>
-                  <strong>{t("about.cards.education.institutionLabel")}:</strong> {t("about.cards.education.institution")}
+                  <strong>
+                    {t("about.cards.education.institutionLabel")}:
+                  </strong>{" "}
+                  {t("about.cards.education.institution")}
                 </li>
               </ul>
             </div>

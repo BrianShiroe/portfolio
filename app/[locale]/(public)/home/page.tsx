@@ -3,6 +3,7 @@ import { useLocale } from "@/lib/useLocale";
 import Link from "next/link";
 import DominoMotion from "@/app/components/ui/DominoMotion";
 import Head from "next/head";
+import { FaGithub } from "react-icons/fa";
 
 export default function HomePage() {
   const { locale, t } = useLocale();
@@ -11,21 +12,45 @@ export default function HomePage() {
     <>
       <Head>
         <title>{`${t("home.name")} | ${t("home.role")}`}</title>
-        <meta name="description" content={`Hi, I'm ${t("home.name")}, a ${t("home.role")}. ${t("home.greeting")}`} />
+        <meta
+          name="description"
+          content={`Hi, I'm ${t("home.name")}, a ${t("home.role")}. ${t(
+            "home.greeting"
+          )}`}
+        />
         <meta name="robots" content="index, follow" />
-        <meta name="keywords" content="Full-Stack Developer, Portfolio, Brian Ong Haw, Web Developer, Software Engineer" />
+        <meta
+          name="keywords"
+          content="Web Developer, Portfolio, Brian Ong Haw, Web Developer, Software Engineer"
+        />
 
         {/* Open Graph */}
-        <meta property="og:title" content={`${t("home.name")} | ${t("home.role")}`} />
-        <meta property="og:description" content={`Hi, I'm ${t("home.name")}, a ${t("home.role")}. ${t("home.greeting")}`} />
+        <meta
+          property="og:title"
+          content={`${t("home.name")} | ${t("home.role")}`}
+        />
+        <meta
+          property="og:description"
+          content={`Hi, I'm ${t("home.name")}, a ${t("home.role")}. ${t(
+            "home.greeting"
+          )}`}
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://yourdomain.com/${locale}`} />
         <meta property="og:image" content="/og-image.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${t("home.name")} | ${t("home.role")}`} />
-        <meta name="twitter:description" content={`Hi, I'm ${t("home.name")}, a ${t("home.role")}. ${t("home.greeting")}`} />
+        <meta
+          name="twitter:title"
+          content={`${t("home.name")} | ${t("home.role")}`}
+        />
+        <meta
+          name="twitter:description"
+          content={`Hi, I'm ${t("home.name")}, a ${t("home.role")}. ${t(
+            "home.greeting"
+          )}`}
+        />
         <meta name="twitter:image" content="/og-image.png" />
       </Head>
 
@@ -74,6 +99,21 @@ export default function HomePage() {
               className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-gray-900 text-gray-900 text-lg font-medium text-center transition-all duration-200 hover:bg-gray-100 hover:shadow-lg"
             >
               {t("home.downloadCV")}
+            </a>
+          </div>
+        </DominoMotion>
+
+        {/* GitHub Link */}
+        <DominoMotion direction="up" delay={0.9}>
+          <div className="flex flex-col sm:flex-row gap-6 w-full justify-center mt-6">
+            <a
+              href="https://github.com/BrianShiroe/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gray-900 text-white text-lg font-medium text-center transition-all duration-200 hover:bg-gray-700 hover:shadow-lg"
+            >
+              <FaGithub className="w-6 h-6" />
+              Github
             </a>
           </div>
         </DominoMotion>

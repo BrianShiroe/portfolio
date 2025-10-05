@@ -35,17 +35,17 @@ export default function SkillsPage() {
         <title>{locale === "ar" ? "المهارات | Brian Ong Haw" : "Skills | Brian Ong Haw"}</title>
         <meta
           name="description"
-          content="Explore the technical skills and tools mastered by Brian Ong Haw, a Full-Stack Developer, across frontend, backend, databases, DevOps, and more."
+          content="Explore the technical skills and tools mastered by Brian Ong Haw, a Web Developer, across frontend, backend, databases, DevOps, and more."
         />
         <meta name="robots" content="index, follow" />
         <meta
           name="keywords"
-          content="Brian Ong Haw, Skills, Full-Stack Developer, Frontend, Backend, Databases, DevOps, Machine Learning, Game Development, Portfolio"
+          content="Brian Ong Haw, Skills, Web Developer, Frontend, Backend, Databases, DevOps, Machine Learning, Game Development, Portfolio"
         />
 
         {/* Open Graph */}
         <meta property="og:title" content={locale === "ar" ? "المهارات | Brian Ong Haw" : "Skills | Brian Ong Haw"} />
-        <meta property="og:description" content="Explore the technical skills and tools mastered by Brian Ong Haw, a Full-Stack Developer, across frontend, backend, databases, DevOps, and more." />
+        <meta property="og:description" content="Explore the technical skills and tools mastered by Brian Ong Haw, a Web Developer, across frontend, backend, databases, DevOps, and more." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://yourdomain.com/${locale}/skills`} />
         <meta property="og:image" content="/images/profile.png" />
@@ -53,7 +53,7 @@ export default function SkillsPage() {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={locale === "ar" ? "المهارات | Brian Ong Haw" : "Skills | Brian Ong Haw"} />
-        <meta name="twitter:description" content="Explore the technical skills and tools mastered by Brian Ong Haw, a Full-Stack Developer, across frontend, backend, databases, DevOps, and more." />
+        <meta name="twitter:description" content="Explore the technical skills and tools mastered by Brian Ong Haw, a Web Developer, across frontend, backend, databases, DevOps, and more." />
         <meta name="twitter:image" content="/images/profile.png" />
       </Head>
 
