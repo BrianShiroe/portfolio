@@ -44,6 +44,16 @@
           "demoLink": "https://aquamarine-wasp-418509.hostingersite.com/"
         },
         {
+          "id": "munem",
+          "title": "Munem",
+          "desc": "Munem is a website that presents the services of Monaem General Contracting & Maintenance. It showcases the company’s expertise in residential, religious, educational, and commercial construction, as well as renovation, MEP works, and long-term facility maintenance. Designed with a clean and professional layout, the website highlights completed projects, services, and client achievements, providing visitors with an informative and engaging overview of Monaem’s capabilities and commitment to quality, innovation, and sustainability.",
+          "href": "/projects/munem",
+          "image": "/images/projects/munem-1.png",
+          "githubLink": "",
+          "itchLink": "",
+          "demoLink": "https://munem.ae/"
+        },
+        {
           "id": "ccweb",
           "title": "CCWEB",
           "desc": "A web-based academic platform design made for Columban College Inc.",
