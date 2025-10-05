@@ -56,7 +56,7 @@ export default function SkillsPage() {
         <meta name="robots" content="index, follow" />
         <meta
           name="keywords"
-          content="Brian Ong Haw, Skills, Web Developer, Frontend, Backend, Databases, DevOps, Machine Learning, Game Development, Portfolio"
+          content="Brian Ong Haw, Skills, Web Developer, Frontend, Backend, Databases, DevOps, Machine Learning, Game Development, Portfolio, WordPress"
         />
 
         {/* Open Graph */}

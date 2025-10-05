@@ -18,6 +18,7 @@
       { "name": "Next.js", "icon": "SiNextdotjs" },
       { "name": "Flask", "icon": "SiFlask" },
       { "name": "PHP", "icon": "SiPhp" },
+      { "name": "WordPress", "icon": "SiWordpress" },
       { "name": "Stripe", "icon": "SiStripe" }
     ]
   },
