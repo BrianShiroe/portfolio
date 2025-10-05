@@ -4,26 +4,27 @@
     "name": "BRIAN ONG HAW",
     "handle": "Handle |",
     "username": "Srianshiroe",
-    "role": "Full-Stack Developer",
+    "role": "Web Developer",
     "contactButton": "Contact Me",
     "downloadCV": "Download CV"
   },
   "about": {
     "title": "About Me",
     "intro": {
-      "line1": "Hi! I'm a <strong>Computer Science graduate</strong> with a passion for exploring the field — from <strong>full-stack development</strong> to problem-solving, data structures, and emerging technologies.",
+      "line1": "Hi! I'm a <strong>Computer Science graduate</strong> with a passion for exploring the field — from <strong>web development</strong> to problem-solving, data structures, and emerging technologies.",
       "line2": "I enjoy building functional applications and understanding how systems work to solve real-world challenges. I'm <strong>committed</strong> to continuous learning and applying my skills to create innovative and practical solutions."
     },
     "cards": {
       "basicInfo": {
         "title": "Basic Info",
-        "subtitle": "Academic background",
         "ageLabel": "Age",
         "age": "23 Years Old",
         "birthLabel": "Birth",
         "birth": "January 17, 2002",
         "residenceLabel": "Residence",
-        "residence": "Al Wasl Area, Dubai"
+        "residence": "Al Wasl, Sheikh Zayed, Dubai - UAE",
+        "contactLabel": "Contact",
+        "contact": "+971 50 359 2133"
       },
       "education": {
         "title": "Education",
@@ -33,7 +34,7 @@
         "graduatedLabel": "Graduated",
         "graduated": "June 18, 2025",
         "institutionLabel": "Institution",
-        "institution": "Columban College, Inc. Philippines"
+        "institution": "Columban College, Inc., Philippines"
       }
     }
   },
