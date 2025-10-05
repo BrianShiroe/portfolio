@@ -8,7 +8,7 @@
           "title": "Barefox",
           "desc": "Barefox E-commerce is a modern, responsive online shopping platform built with Next.js, TailwindCSS, Shadcn/UI, and Stripe, designed to deliver a seamless and secure shopping experience. It features a dynamic product catalog, efficient shopping cart management, and smooth Stripe Checkout integration, all wrapped in a clean, customizable UI. With reusable components and a mobile-friendly design, Shiroe E-commerce ensures fast performance, accessibility, and an intuitive user experience from browsing to payment.",
           "href": "/projects/barefox",
-          "image": "/images/projects/ecommerce-1.png",
+          "image": "/images/projects/ecommerce-2.png",
           "githubLink": "https://github.com/BrianShiroe/barefox",
           "itchLink": "",
           "demoLink": "https://barefox.vercel.app/"
@@ -18,7 +18,7 @@
           "title": "Rumahsekolah",
           "desc": "Rumahsekolah is a comprehensive AI-driven digital education platform designed to empower schools by streamlining learning, collaboration, and content delivery. It offers secure authentication with role-based access for students, teachers, and administrators, alongside robust classroom and course management tools. The platform includes assignment submission and grading, live and scheduled session integration, discussion forums, announcements, and a resource library for PDFs, videos, and documents. With personal dashboards and analytics, Rumahsekolah provides actionable insights into attendance, performance, and engagement, creating a seamless, technology-enhanced learning experience.",
           "href": "/projects/rumahsekolah",
-          "image": "/images/projects/rumaksekolah-1.png",
+          "image": "/images/projects/rumaksekolah-2.png",
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://app-dev.rumahsekolah.com/"
@@ -28,10 +28,20 @@
           "title": "Luka",
           "desc": "LUKA is a Flask-based intelligent accident and disaster detection system that uses YOLO, OpenCV, CCTV, and IoT cameras for real-time monitoring and automated alerting. Developed as a final thesis project by Brian O. Haw, Maria Zorene J. Ramos, and Mark Angelo P. Santonil, the system is designed to enhance public safety by detecting road collisions, fires, floods, and other emergencies through deep learning–powered video analysis. By integrating with existing surveillance infrastructures, LUKA minimizes response times, improves situational awareness, and provides sample feeds and demonstration data to showcase its capabilities.",
           "href": "/projects/luka",
-          "image": "/images/projects/luka-1.jpg",
+          "image": "/images/projects/luka-2.png",
           "githubLink": "https://github.com/BrianShiroe/luka",
           "itchLink": "",
           "demoLink": ""
+        },
+        {
+          "id": "sanco",
+          "title": "Sanco",
+          "desc": "A static website built for Sanco Environmental Services to showcase their professional cleaning and environmental solutions. The website highlights services like grease trap cleaning, water tank sanitation, drain maintenance, and kitchen exhaust cleaning. Designed with a clean and responsive layout, it provides an informative and user-friendly experience while reflecting the company’s expertise, team, and commitment to safety and sustainability.",
+          "href": "/projects/sanco",
+          "image": "/images/projects/sanco-1.png",
+          "githubLink": "",
+          "itchLink": "",
+          "demoLink": "https://aquamarine-wasp-418509.hostingersite.com/"
         },
         {
           "id": "ccweb",

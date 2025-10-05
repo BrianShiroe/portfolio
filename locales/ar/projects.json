@@ -8,7 +8,7 @@
           "title": "Barefox Ecommerce",
           "desc": "Barefox E-commerce هو منصة تسوق إلكترونية حديثة ومتجاوبة تم إنشاؤها باستخدام Next.js و TailwindCSS و Shadcn/UI و Stripe، مصممة لتوفير تجربة تسوق سلسة وآمنة. تتميز بكتالوج منتجات ديناميكي، وإدارة فعّالة لعربة التسوق، وتكامل سلس مع Stripe Checkout، وكل ذلك بواجهة نظيفة وقابلة للتخصيص. مع مكونات قابلة لإعادة الاستخدام وتصميم متوافق مع الهواتف، يضمن Shiroe E-commerce أداءً سريعًا وسهولة وصول وتجربة مستخدم بديهية من التصفح إلى الدفع.",
           "href": "/projects/barefox",
-          "image": "/images/projects/ecommerce-1.png",
+          "image": "/images/projects/ecommerce-2.png",
           "githubLink": "https://github.com/BrianShiroe/barefox-ecommerce",
           "itchLink": "",
           "demoLink": "https://barefox.vercel.app/"
@@ -18,7 +18,7 @@
           "title": "Rumahsekolah",
           "desc": "Rumahsekolah هو منصة تعليم رقمي شاملة مدعومة بالذكاء الاصطناعي مصممة لتمكين المدارس من خلال تبسيط التعلم والتعاون وتوزيع المحتوى. توفر تسجيل دخول آمن مع وصول قائم على الأدوار للطلاب والمعلمين والإداريين، إلى جانب أدوات قوية لإدارة الصفوف والدروس. تشمل المنصة تسليم الواجبات وتصحيحها، تكامل الجلسات المباشرة والمجدولة، المنتديات، الإعلانات، ومكتبة للموارد مثل ملفات PDF والفيديوهات والمستندات. من خلال لوحات معلومات شخصية وتحليلات، توفر Rumahsekolah رؤى قابلة للتنفيذ حول الحضور والأداء والمشاركة، مما يخلق تجربة تعليمية سلسة مدعومة بالتكنولوجيا.",
           "href": "/projects/rumahsekolah",
-          "image": "/images/projects/rumaksekolah-1.png",
+          "image": "/images/projects/rumaksekolah-2.png",
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://app-dev.rumahsekolah.com/"
@@ -28,10 +28,20 @@
           "title": "Luka",
           "desc": "LUKA هو نظام ذكي للكشف عن الحوادث والكوارث يعتمد على Flask ويستخدم YOLO و OpenCV وكاميرات CCTV و IoT للمراقبة في الوقت الحقيقي والتنبيه التلقائي. تم تطويره كمشروع تخرج من قبل Brian O. Haw و Maria Zorene J. Ramos و Mark Angelo P. Santonil، وهو مصمم لتعزيز السلامة العامة من خلال الكشف عن الحوادث المرورية والحرائق والفيضانات وحالات الطوارئ الأخرى عبر تحليل الفيديو بالاعتماد على التعلم العميق. من خلال التكامل مع أنظمة المراقبة الحالية، يقلل LUKA من أوقات الاستجابة ويحسن الوعي بالوضع ويوفر تدفقات بيانات تجريبية لعرض قدراته.",
           "href": "/projects/luka",
-          "image": "/images/projects/luka-1.jpg",
+          "image": "/images/projects/luka-2.png",
           "githubLink": "https://github.com/BrianShiroe/luka",
           "itchLink": "",
           "demoLink": ""
+        },
+        {
+          "id": "sanco",
+          "title": "Sanco",
+          "desc": "موقع ثابت تم إنشاؤه لخدمات سانكو البيئية لعرض حلولها الاحترافية في التنظيف والصيانة البيئية. يبرز الموقع خدمات مثل تنظيف مصائد الدهون، وتعقيم خزانات المياه، وصيانة المصارف، وتنظيف مراوح المطابخ. تم تصميمه بطريقة نظيفة ومتجاوبة لتقديم تجربة معلوماتية وسهلة الاستخدام، مع عكس خبرة الشركة وفريقها والتزامها بالسلامة والاستدامة.",
+          "href": "/projects/sanco",
+          "image": "/images/projects/sanco-1.png",
+          "githubLink": "",
+          "itchLink": "",
+          "demoLink": "https://aquamarine-wasp-418509.hostingersite.com/"
         },
         {
           "id": "ccweb",
