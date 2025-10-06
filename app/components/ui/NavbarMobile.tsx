@@ -66,7 +66,7 @@ export default function NavbarMobile() {
           {/* Logo + Language Switch */}
           <div className="flex items-center justify-between mb-3 w-full">
             <Link href={`/${locale}/home`} aria-label={t("navbar.logoAlt") || "Home"}>
-              <Image src="/images/logo.png" alt="Logo" width={50} height={50} />
+              <Image src="/images/logo.png" alt="Logo" width={130} height={130} />  
             </Link>
             <div className="flex space-x-2 rtl:space-x-reverse flex-shrink-0">
               {["en", "ar"].map((lang) => (

@@ -83,7 +83,7 @@ export default function NavbarDesktop() {
         className="flex items-center justify-between mb-6"
       >
         <Link href={`/${locale}/home`}>
-          <Image src="/images/logo.png" alt="Logo" width={80} height={80} />
+          <Image src="/images/logo.png" alt="Logo" width={100} height={100} />
         </Link>
 
         <div className="flex space-x-2 rtl:space-x-reverse">
