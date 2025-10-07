@@ -65,6 +65,7 @@ export default function AboutPage() {
               height={200}
               className="rounded-full object-cover shadow-lg"
               priority
+              onError={(e) => (e.currentTarget.style.display = "none")} // hide if missing
             />
 
             <div className="w-full border-t lg:border-t-0 lg:border-l border-gray-300 lg:pl-10 pt-6 lg:pt-0">

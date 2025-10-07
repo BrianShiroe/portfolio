@@ -18,8 +18,14 @@ export const navLinks: NavLink[] = [
   { key: "home", icon: <Home className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
   { key: "about", icon: <User className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
   { key: "skills", icon: <Code className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
-  { key: "projects", icon: <Folder className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
-  { key: "contacts", icon: <Mail className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" /> },
+  {
+    key: "projects",
+    icon: <Folder className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+  },
+  {
+    key: "contacts",
+    icon: <Mail className="w-5 h-5 mr-1 rtl:ml-1 rtl:mr-0" />,
+  },
 ];
 
 export default function NavbarMobile() {
@@ -37,7 +43,10 @@ export default function NavbarMobile() {
         window.requestAnimationFrame(() => {
           if (currentScrollY - lastScrollY.current > 10) {
             setShowHeader(false);
-          } else if (lastScrollY.current - currentScrollY > 10 || currentScrollY < 50) {
+          } else if (
+            lastScrollY.current - currentScrollY > 10 ||
+            currentScrollY < 50
+          ) {
             setShowHeader(true);
           }
           lastScrollY.current = currentScrollY;
@@ -65,17 +74,33 @@ export default function NavbarMobile() {
         >
           {/* Logo + Language Switch */}
           <div className="flex items-center justify-between mb-3 w-full">
-            <Link href={`/${locale}/home`} aria-label={t("navbar.logoAlt") || "Home"}>
-              <Image src="/images/logo.png" alt="Logo" width={130} height={130} />  
+            <Link
+              href={`/${locale}/home`}
+              aria-label={t("navbar.logoAlt") || "Home"}
+            >
+              <Image
+                src="/images/logo.png"
+                alt="Logo"
+                width={130}
+                height={130}
+                onError={(e) => (e.currentTarget.style.display = "none")} // hide broken image
+                // OR use a fallback image:
+                // onError={(e) => (e.currentTarget.src = "/images/logo-fallback.png")}
+              />
             </Link>
+
             <div className="flex space-x-2 rtl:space-x-reverse flex-shrink-0">
               {["en", "ar"].map((lang) => (
                 <Link
                   key={lang}
-                  href={`/${lang}${pathname.replace(/^\/(en|ar)/, "") || "/home"}`}
+                  href={`/${lang}${
+                    pathname.replace(/^\/(en|ar)/, "") || "/home"
+                  }`}
                   className={clsx(
                     "px-2 py-1 rounded",
-                    locale === lang ? "bg-gray-200 font-semibold" : "hover:bg-gray-100"
+                    locale === lang
+                      ? "bg-gray-200 font-semibold"
+                      : "hover:bg-gray-100"
                   )}
                   aria-current={locale === lang ? "page" : undefined}
                 >
@@ -99,14 +124,21 @@ export default function NavbarMobile() {
                   href={`/${locale}/${key}`}
                   className={clsx(
                     "flex-1 flex flex-col items-center justify-center rounded hover:bg-gray-100 transition text-sm",
-                    pathname === `/${locale}/${key}` ? "bg-gray-100 font-semibold" : ""
+                    pathname === `/${locale}/${key}`
+                      ? "bg-gray-100 font-semibold"
+                      : ""
                   )}
                   style={{ padding: "clamp(0.25rem, 2vw, 0.75rem)" }}
-                  aria-current={pathname === `/${locale}/${key}` ? "page" : undefined}
+                  aria-current={
+                    pathname === `/${locale}/${key}` ? "page" : undefined
+                  }
                 >
                   <span
                     className="flex items-center justify-center mb-1"
-                    style={{ width: "clamp(1.5rem, 8vw, 2.5rem)", height: "clamp(1.5rem, 8vw, 2.5rem)" }}
+                    style={{
+                      width: "clamp(1.5rem, 8vw, 2.5rem)",
+                      height: "clamp(1.5rem, 8vw, 2.5rem)",
+                    }}
                   >
                     {icon}
                   </span>
