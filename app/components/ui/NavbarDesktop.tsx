@@ -30,9 +30,7 @@ const navLinks = [
 export default function NavbarDesktop() {
   const pathname = usePathname();
   const { locale, t } = useLocale();
-  const [localizedProjects, setLocalizedProjects] = useState<ProjectCategory[]>(
-    []
-  );
+  const [localizedProjects, setLocalizedProjects] = useState<ProjectCategory[]>([]);
   const [openCategories, setOpenCategories] = useState<string[]>([]);
 
   useEffect(() => {
@@ -40,9 +38,7 @@ export default function NavbarDesktop() {
       try {
         const data = await import(`@/locales/${locale}/projects.json`);
         setLocalizedProjects(data.projects);
-        setOpenCategories(
-          data.projects.map((cat: ProjectCategory) => cat.category)
-        ); // open all
+        setOpenCategories(data.projects.map((cat: ProjectCategory) => cat.category));
       } catch {
         setLocalizedProjects([]);
       }
@@ -59,19 +55,18 @@ export default function NavbarDesktop() {
   };
 
   const contactLinks = [
-    {
-      name: t("navbar.contact.linkedin"),
-      href: "https://linkedin.com/in/brianshiroe/",
-    },
-    {
-      name: t("navbar.contact.github"),
-      href: "https://github.com/BrianShiroe/",
-    },
-    {
-      name: t("navbar.contact.itchio"),
-      href: "https://mun-development.itch.io/",
-    },
+    { name: t("navbar.contact.linkedin"), href: "https://linkedin.com/in/brianshiroe/" },
+    { name: t("navbar.contact.github"), href: "https://github.com/BrianShiroe/" },
+    { name: t("navbar.contact.itchio"), href: "https://mun-development.itch.io/" },
   ];
+
+  // Function to determine if a link is active
+  const isActive = (key: string) => {
+    if (key === "home") {
+      return pathname === `/${locale}` || pathname === `/${locale}/home`;
+    }
+    return pathname === `/${locale}/${key}`;
+  };
 
   return (
     <aside className="hidden lg:flex w-72 min-w-[240px] text-gray-900 p-6 border-r border-gray-300 flex-col h-screen sticky top-0">
@@ -88,9 +83,7 @@ export default function NavbarDesktop() {
             alt="Logo"
             width={100}
             height={100}
-            onError={(e) => (e.currentTarget.style.display = "none")} // hide broken image
-            // OR use a fallback:
-            // onError={(e) => (e.currentTarget.src = "/images/logo-fallback.png")}
+            onError={(e) => (e.currentTarget.style.display = "none")}
           />
         </Link>
 
@@ -123,16 +116,13 @@ export default function NavbarDesktop() {
         {navLinks.map(({ key }) => (
           <motion.div
             key={key}
-            variants={{
-              hidden: { opacity: 0, x: -20 },
-              visible: { opacity: 1, x: 0 },
-            }}
+            variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
           >
             <Link
               href={`/${locale}/${key}`}
               className={clsx(
                 "flex items-center px-3 py-2 rounded hover:bg-gray-100 transition text-sm",
-                pathname === `/${locale}/${key}` && "bg-gray-100 font-semibold"
+                isActive(key) && "bg-gray-100 font-semibold"
               )}
             >
               {t(`navbar.nav.${key}`)}
@@ -152,12 +142,10 @@ export default function NavbarDesktop() {
               const visibleProjects = category.items.filter(
                 (proj) => proj.isNotVisible !== 1
               );
-
               if (visibleProjects.length === 0) return null;
 
               return (
                 <motion.li key={category.category}>
-                  {/* Category button */}
                   <button
                     onClick={() => toggleCategory(category.category)}
                     className="w-full text-left rtl:text-right text-sm text-gray-500 hover:text-black cursor-pointer transition mb-1 pl-2 rtl:pr-2"
@@ -165,8 +153,6 @@ export default function NavbarDesktop() {
                   >
                     {category.category}
                   </button>
-
-                  {/* Projects under category */}
                   <AnimatePresence>
                     {openCategories.includes(category.category) && (
                       <motion.ul
@@ -176,7 +162,6 @@ export default function NavbarDesktop() {
                         className="pl-4 rtl:pr-4 space-y-1 relative overflow-hidden"
                       >
                         <span className="absolute left-2 rtl:right-2 top-2 bottom-2 w-[1px] bg-gray-300"></span>
-
                         {visibleProjects.map((proj) => (
                           <motion.li
                             key={proj.id}
@@ -186,9 +171,7 @@ export default function NavbarDesktop() {
                             transition={{ duration: 0.2 }}
                             className="relative text-sm text-gray-700 hover:text-black cursor-pointer pl-2 rtl:pr-2"
                           >
-                            <Link href={`/${locale}${proj.href}`}>
-                              {proj.title}
-                            </Link>
+                            <Link href={`/${locale}${proj.href}`}>{proj.title}</Link>
                           </motion.li>
                         ))}
                       </motion.ul>

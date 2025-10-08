@@ -124,13 +124,25 @@ export default function NavbarMobile() {
                   href={`/${locale}/${key}`}
                   className={clsx(
                     "flex-1 flex flex-col items-center justify-center rounded hover:bg-gray-100 transition text-sm",
-                    pathname === `/${locale}/${key}`
+                    (
+                      key === "home"
+                        ? pathname === `/${locale}` ||
+                          pathname === `/${locale}/home`
+                        : pathname === `/${locale}/${key}`
+                    )
                       ? "bg-gray-100 font-semibold"
                       : ""
                   )}
                   style={{ padding: "clamp(0.25rem, 2vw, 0.75rem)" }}
                   aria-current={
-                    pathname === `/${locale}/${key}` ? "page" : undefined
+                    key === "home"
+                      ? pathname === `/${locale}` ||
+                        pathname === `/${locale}/home`
+                        ? "page"
+                        : undefined
+                      : pathname === `/${locale}/${key}`
+                      ? "page"
+                      : undefined
                   }
                 >
                   <span
