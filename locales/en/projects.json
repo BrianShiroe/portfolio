@@ -21,7 +21,8 @@
           "image": "/images/projects/rumaksekolah-2.png",
           "githubLink": "",
           "itchLink": "",
-          "demoLink": "https://app-dev.rumahsekolah.com/"
+          "demoLink": "https://app-dev.rumahsekolah.com/",
+          "isNotVisible": 1
         },
         {
           "id": "luka",
