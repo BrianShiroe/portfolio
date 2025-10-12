@@ -22,7 +22,7 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://app-dev.rumahsekolah.com/",
-          "isNotVisible": 1
+          "isNotVisible": 0
         },
         {
           "id": "luka",
@@ -62,7 +62,7 @@
           "image": "/images/projects/dgc-3.png",
           "githubLink": "",
           "itchLink": "",
-          "demoLink": "https://mediumpurple-fox-456031.hostingersite.com/"
+          "demoLink": "https://dgcgroup.ae/"
         },
         {
           "id": "ccweb",
