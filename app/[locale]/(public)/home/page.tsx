@@ -87,25 +87,19 @@ export default function HomePage() {
         <DominoMotion direction="up" delay={0.7}>
           <div className="flex flex-col sm:flex-row gap-6 w-full justify-center">
             <Link
-              href={`/${locale}/email`}
+              href={`/${locale}/contacts`}
               className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gray-900 text-white text-lg font-medium text-center transition-all duration-200 hover:bg-gray-700 hover:shadow-lg"
             >
               {t("home.contactButton")}
             </Link>
 
-            <a
+            {/* <a
               href="/Brian-Haw-CV.pdf"
               download="Brian-Haw-CV.pdf"
               className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-gray-900 text-gray-900 text-lg font-medium text-center transition-all duration-200 hover:bg-gray-100 hover:shadow-lg"
             >
               {t("home.downloadCV")}
-            </a>
-          </div>
-        </DominoMotion>
-
-        {/* GitHub Link */}
-        <DominoMotion direction="up" delay={0.9}>
-          <div className="flex flex-col sm:flex-row gap-6 w-full justify-center mt-6">
+            </a> */}
             <a
               href="https://github.com/BrianShiroe/portfolio"
               target="_blank"
@@ -115,6 +109,21 @@ export default function HomePage() {
               <FaGithub className="w-6 h-6" />
               Github
             </a>
+          </div>
+        </DominoMotion>
+
+        {/* GitHub Link */}
+        <DominoMotion direction="up" delay={0.9}>
+          <div className="flex flex-col sm:flex-row gap-6 w-full justify-center mt-6">
+            {/* <a
+              href="https://github.com/BrianShiroe/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gray-900 text-white text-lg font-medium text-center transition-all duration-200 hover:bg-gray-700 hover:shadow-lg"
+            >
+              <FaGithub className="w-6 h-6" />
+              Github
+            </a> */}
           </div>
         </DominoMotion>
       </div>
