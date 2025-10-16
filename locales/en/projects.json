@@ -6,7 +6,7 @@
         {
           "id": "barefox",
           "title": "Barefox",
-          "desc": "Barefox E-commerce is a modern, responsive online shopping platform built with Next.js, TailwindCSS, Shadcn/UI, and Stripe, designed to deliver a seamless and secure shopping experience. It features a dynamic product catalog, efficient shopping cart management, and smooth Stripe Checkout integration, all wrapped in a clean, customizable UI. With reusable components and a mobile-friendly design, Shiroe E-commerce ensures fast performance, accessibility, and an intuitive user experience from browsing to payment.",
+          "desc": "Barefox E-commerce is a modern Next.js online shopping platform built with TailwindCSS, Shadcn/UI, and Stripe. It offers a dynamic product catalog, efficient shopping cart management, and smooth Stripe Checkout integration, all within a clean, customizable UI. With reusable components and a mobile-friendly design, Barefox E-commerce ensures fast performance, accessibility, and an intuitive user experience from browsing to payment.",
           "href": "/projects/barefox",
           "image": "/images/projects/ecommerce-2.png",
           "githubLink": "https://github.com/BrianShiroe/barefox",
@@ -49,7 +49,7 @@
           "title": "Munem",
           "desc": "A WordPress-based website presenting the services of Monaem General Contracting & Maintenance. It showcases the company’s expertise in residential, religious, educational, and commercial construction, as well as renovation, MEP works, and long-term facility maintenance. Designed with a clean and professional layout, the WordPress website highlights completed projects, services, and client achievements, providing visitors with an informative and engaging overview of Monaem’s capabilities and commitment to quality, innovation, and sustainability.",
           "href": "/projects/munem",
-          "image": "/images/projects/munem-1.png",
+          "image": "/images/projects/munem-2.png",
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://munem.ae/"
@@ -63,6 +63,17 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://dgcgroup.ae/"
+        },
+        {
+          "id": "idesignsart",
+          "title": "iDesignsArt",
+          "desc": "iDesignsArt is a cutting-edge digital agency specializing in web development, graphics, 3D visualization, digital art, branding, social media, and online marketing. The agency transforms ideas into stunning visuals, delivering innovative designs and user experiences that empower brands to communicate and inspire. With expertise in website design, content creation, SEO, Google Ads, and logo design, iDesignsArt crafts engaging digital solutions for clients worldwide, combining creativity with technology to elevate brand presence.",
+          "href": "/projects/idesignsart",
+          "image": "/images/projects/idesignsart-1.png",
+          "githubLink": "",
+          "itchLink": "",
+          "demoLink": "https://idesignsart.com/",
+          "isNotVisible": 0
         },
         {
           "id": "ccweb",

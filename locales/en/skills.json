@@ -1,6 +1,6 @@
 [
   {
-    "label": "Frontend",
+    "label": "Web Development",
     "tools": [
       { "name": "HTML", "icon": "SiHtml5" },
       { "name": "CSS", "icon": "SiCss3" },
@@ -8,12 +8,7 @@
       { "name": "TypeScript", "icon": "SiTypescript" },
       { "name": "React.js", "icon": "SiReact" },
       { "name": "Tailwind CSS", "icon": "SiTailwindcss" },
-      { "name": "Bootstrap", "icon": "SiBootstrap" }
-    ]
-  },
-  {
-    "label": "Backend & APIs",
-    "tools": [
+      { "name": "Bootstrap", "icon": "SiBootstrap" },
       { "name": "Node.js", "icon": "SiNodedotjs" },
       { "name": "Next.js", "icon": "SiNextdotjs" },
       { "name": "Flask", "icon": "SiFlask" },
@@ -46,7 +41,7 @@
     "label": "Developer Tools",
     "tools": [
       { "name": "Git/Github", "icon": "SiGithub" },
-      { "name": "VSCode", "icon": "SiVisualstudiocode" },
+      { "name": "VSCode", "icon": "VscVscodeInsiders" },
       { "name": "Jira", "icon": "SiJira" },
       { "name": "Trello", "icon": "SiTrello" },
       { "name": "ClickUp", "icon": "SiClickup" },

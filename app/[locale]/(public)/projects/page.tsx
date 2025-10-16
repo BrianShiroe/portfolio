@@ -87,7 +87,8 @@ export default function ProjectsPage() {
                         <div className="relative w-full h-48 sm:h-56 bg-gray-100 overflow-hidden">
                           <Image
                             src={
-                              proj.image || "/placeholders/image-placeholder.png"
+                              proj.image ||
+                              "/placeholders/image-placeholder.png"
                             }
                             alt={proj.title || "Placeholder"}
                             fill
@@ -103,7 +104,11 @@ export default function ProjectsPage() {
                           <h3 className="text-base sm:text-lg font-semibold mb-1 line-clamp-1">
                             {proj.title}
                           </h3>
-                          <p className="text-gray-600 text-sm sm:text-base line-clamp-2">
+                          <p
+                            className={`text-gray-600 text-sm sm:text-base line-clamp-2 ${
+                              locale === "ar" ? "text-right" : "text-left"
+                            }`}
+                          >
                             {proj.desc}
                           </p>
                         </div>

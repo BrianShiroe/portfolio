@@ -1,6 +1,6 @@
 [
   {
-    "label": "الواجهة الأمامية",
+    "label": "تطوير الويب",
     "tools": [
       { "name": "HTML", "icon": "SiHtml5" },
       { "name": "CSS", "icon": "SiCss3" },
@@ -8,12 +8,7 @@
       { "name": "TypeScript", "icon": "SiTypescript" },
       { "name": "React.js", "icon": "SiReact" },
       { "name": "Tailwind CSS", "icon": "SiTailwindcss" },
-      { "name": "Bootstrap", "icon": "SiBootstrap" }
-    ]
-  },
-  {
-    "label": "الخلفية وواجهات برمجة التطبيقات",
-    "tools": [
+      { "name": "Bootstrap", "icon": "SiBootstrap" },
       { "name": "Node.js", "icon": "SiNodedotjs" },
       { "name": "Next.js", "icon": "SiNextdotjs" },
       { "name": "Flask", "icon": "SiFlask" },

@@ -9,6 +9,7 @@ import Head from "next/head";
 import * as SiIcons from "react-icons/si";
 import * as FaIcons from "react-icons/fa";
 import * as DiIcons from "react-icons/di";
+import * as VscIcons from "react-icons/vsc";
 
 export default function SkillsPage() {
   const pathname = usePathname();
@@ -37,6 +38,7 @@ export default function SkillsPage() {
       SiIcons[iconName as keyof typeof SiIcons] ||
       FaIcons[iconName as keyof typeof FaIcons] ||
       DiIcons[iconName as keyof typeof DiIcons] ||
+      VscIcons[iconName as keyof typeof VscIcons] ||
       null
     );
   };
@@ -47,7 +49,9 @@ export default function SkillsPage() {
     <>
       <Head>
         <title>
-          {locale === "ar" ? "المهارات | Brian Ong Haw" : "Skills | Brian Ong Haw"}
+          {locale === "ar"
+            ? "المهارات | Brian Ong Haw"
+            : "Skills | Brian Ong Haw"}
         </title>
         <meta
           name="description"
@@ -62,21 +66,32 @@ export default function SkillsPage() {
         {/* Open Graph */}
         <meta
           property="og:title"
-          content={locale === "ar" ? "المهارات | Brian Ong Haw" : "Skills | Brian Ong Haw"}
+          content={
+            locale === "ar"
+              ? "المهارات | Brian Ong Haw"
+              : "Skills | Brian Ong Haw"
+          }
         />
         <meta
           property="og:description"
           content="Explore the technical skills and tools mastered by Brian Ong Haw, a Web Developer, across frontend, backend, databases, DevOps, and more."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://yourdomain.com/${locale}/skills`} />
+        <meta
+          property="og:url"
+          content={`https://yourdomain.com/${locale}/skills`}
+        />
         <meta property="og:image" content="/images/profile.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={locale === "ar" ? "المهارات | Brian Ong Haw" : "Skills | Brian Ong Haw"}
+          content={
+            locale === "ar"
+              ? "المهارات | Brian Ong Haw"
+              : "Skills | Brian Ong Haw"
+          }
         />
         <meta
           name="twitter:description"
@@ -98,31 +113,32 @@ export default function SkillsPage() {
 
         <section className="w-full max-w-5xl space-y-12">
           {skills.map((skill, index) => (
-            <DominoMotion key={skill.label} direction="up" delay={0.5 * index}>
+            <DominoMotion
+              key={skill.label}
+              direction="up"
+              delay={0.3 * index}
+              duration={0.6}
+            >
               <div className="p-12 bg-gray-50 rounded-2xl inset-shadow-gray-400 inset-shadow-sm text-2xl font-semibold mb-6">
                 <h2 className="text-xl font-light text-gray-500 mb-10 pb-4 border-b border-gray-300">
                   {skill.label}
                 </h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {skill.tools.map((tool, toolIndex) => {
+                  {skill.tools.map((tool) => {
                     const IconComponent = getIcon(tool.icon);
                     return (
-                      <DominoMotion
+                      <div
                         key={tool.name}
-                        direction={locale === "ar" ? "right" : "left"}
-                        delay={0.5 * index + 0.3 * toolIndex}
-                        duration={0.5}
+                        className="flex items-center gap-3 rounded-2xl shadow-lg p-4 hover:scale-105 transition-transform bg-white"
                       >
-                        <div className="flex items-center gap-3 rounded-2xl shadow-lg p-4 hover:scale-105 transition-transform bg-white">
-                          {IconComponent && (
-                            <IconComponent className="text-4xl text-gray-700" />
-                          )}
-                          <div className="text-lg font-medium text-gray-800">
-                            {tool.name}
-                          </div>
+                        {IconComponent && (
+                          <IconComponent className="text-4xl text-gray-700" />
+                        )}
+                        <div className="text-lg font-medium text-gray-800">
+                          {tool.name}
                         </div>
-                      </DominoMotion>
+                      </div>
                     );
                   })}
                 </div>

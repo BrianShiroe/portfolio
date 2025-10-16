@@ -49,7 +49,7 @@
           "title": "Munem",
           "desc": "موقع ووردبريس (WordPress) يعرض خدمات شركة Monaem General Contracting & Maintenance. يسلط الموقع الضوء على خبرة الشركة في الإنشاءات السكنية والدينية والتعليمية والتجارية، بالإضافة إلى أعمال التجديد، والأعمال الميكانيكية والكهربائية والصحية، وصيانة المنشآت طويلة المدى. يتميز الموقع بتصميم نظيف واحترافي يعرض المشاريع المكتملة والخدمات وإنجازات العملاء، مما يوفر للزوار نظرة شاملة على قدرات الشركة والتزامها بالجودة والابتكار والاستدامة.",
           "href": "/projects/munem",
-          "image": "/images/projects/munem-1.png",
+          "image": "/images/projects/munem-2.png",
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://munem.ae/"
@@ -63,6 +63,17 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://dgcgroup.ae/"
+        },
+        {
+          "id": "idesignsart",
+          "title": "iDesignsArt",
+          "desc": "Barefox للتجارة الإلكترونية هو منصة تسوق حديثة مبنية باستخدام Next.js وTailwindCSS وShadcn/UI وStripe. توفر المنصة كتالوج منتجات ديناميكي، وإدارة فعّالة لعربة التسوق، وتكامل سلس مع Stripe Checkout، كل ذلك ضمن واجهة مستخدم نظيفة وقابلة للتخصيص. مع مكونات قابلة لإعادة الاستخدام وتصميم متوافق مع الأجهزة المحمولة، تضمن Barefox تجربة سريعة، سهلة الوصول، وبديهية للمستخدم من التصفح حتى الدفع.",
+          "href": "/projects/idesignsart",
+          "image": "/images/projects/idesignsart-1.png",
+          "githubLink": "",
+          "itchLink": "",
+          "demoLink": "https://idesignsart.com/",
+          "isNotVisible": 0
         },
         {
           "id": "ccweb",
