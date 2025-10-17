@@ -9,9 +9,11 @@
           "desc": "Barefox E-commerce هو منصة تسوق إلكترونية حديثة ومتجاوبة تم إنشاؤها باستخدام Next.js و TailwindCSS و Shadcn/UI و Stripe، مصممة لتوفير تجربة تسوق سلسة وآمنة. تتميز بكتالوج منتجات ديناميكي، وإدارة فعّالة لعربة التسوق، وتكامل سلس مع Stripe Checkout، وكل ذلك بواجهة نظيفة وقابلة للتخصيص. مع مكونات قابلة لإعادة الاستخدام وتصميم متوافق مع الهواتف، يضمن Shiroe E-commerce أداءً سريعًا وسهولة وصول وتجربة مستخدم بديهية من التصفح إلى الدفع.",
           "href": "/projects/barefox",
           "image": "/images/projects/ecommerce-2.png",
-          "githubLink": "https://github.com/BrianShiroe/barefox-ecommerce",
+          "githubLink": "https://github.com/BrianShiroe/barefox",
           "itchLink": "",
-          "demoLink": "https://barefox.vercel.app/"
+          "demoLink": "https://barefox.vercel.app/",
+          "tags": ["Next.js", "TailwindCSS", "Shadcn/UI", "Stripe", "E-commerce", "تطوير الويب"],
+          "isNotVisible": 0
         },
         {
           "id": "rumahsekolah",
@@ -22,6 +24,7 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://app-dev.rumahsekolah.com/",
+          "tags": ["AI", "تعليم", "تطبيق ويب", "لوحة تحكم", "إدارة المدارس"],
           "isNotVisible": 0
         },
         {
@@ -32,7 +35,9 @@
           "image": "/images/projects/luka-2.png",
           "githubLink": "https://github.com/BrianShiroe/luka",
           "itchLink": "",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["Flask", "YOLO", "OpenCV", "IoT", "سلامة", "مراقبة في الوقت الحقيقي"],
+          "isNotVisible": 0
         },
         {
           "id": "sanco",
@@ -42,7 +47,9 @@
           "image": "/images/projects/sanco-2.png",
           "githubLink": "",
           "itchLink": "",
-          "demoLink": "https://aquamarine-wasp-418509.hostingersite.com/"
+          "demoLink": "https://aquamarine-wasp-418509.hostingersite.com/",
+          "tags": ["WordPress", "Elementor", "SEO", "موقع شركات", "تصميم متجاوب"],
+          "isNotVisible": 0
         },
         {
           "id": "munem",
@@ -52,7 +59,9 @@
           "image": "/images/projects/munem-2.png",
           "githubLink": "",
           "itchLink": "",
-          "demoLink": "https://munem.ae/"
+          "demoLink": "https://munem.ae/",
+          "tags": ["WordPress", "إنشاءات", "موقع شركات", "تصميم متجاوب"],
+          "isNotVisible": 0
         },
         {
           "id": "dgc-carpentry",
@@ -62,17 +71,20 @@
           "image": "/images/projects/dgc-3.png",
           "githubLink": "",
           "itchLink": "",
-          "demoLink": "https://dgcgroup.ae/"
+          "demoLink": "https://dgcgroup.ae/",
+          "tags": ["WordPress", "نجارة", "أثاث", "موقع شركات"],
+          "isNotVisible": 0
         },
         {
           "id": "idesignsart",
           "title": "iDesignsArt",
-          "desc": "Barefox للتجارة الإلكترونية هو منصة تسوق حديثة مبنية باستخدام Next.js وTailwindCSS وShadcn/UI وStripe. توفر المنصة كتالوج منتجات ديناميكي، وإدارة فعّالة لعربة التسوق، وتكامل سلس مع Stripe Checkout، كل ذلك ضمن واجهة مستخدم نظيفة وقابلة للتخصيص. مع مكونات قابلة لإعادة الاستخدام وتصميم متوافق مع الأجهزة المحمولة، تضمن Barefox تجربة سريعة، سهلة الوصول، وبديهية للمستخدم من التصفح حتى الدفع.",
+          "desc": "iDesignsArt هي وكالة رقمية متقدمة متخصصة في تطوير المواقع، الرسوميات، التصورات ثلاثية الأبعاد، الفن الرقمي، العلامات التجارية، وسائل التواصل الاجتماعي، والتسويق عبر الإنترنت. تحوّل الوكالة الأفكار إلى تصاميم مذهلة وتجارب مستخدم مبتكرة تعزز قدرة العلامات التجارية على التواصل والإلهام. مع خبرة في تصميم المواقع، إنشاء المحتوى، تحسين محركات البحث، إعلانات Google، وتصميم الشعارات، تقدم iDesignsArt حلولًا رقمية مبتكرة للعملاء حول العالم، تجمع بين الإبداع والتقنية لرفع حضور العلامة التجارية.",
           "href": "/projects/idesignsart",
           "image": "/images/projects/idesignsart-1.png",
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://idesignsart.com/",
+          "tags": ["تطوير الويب", "وكالة رقمية", "تصميم العلامة التجارية", "SEO", "رسوميات"],
           "isNotVisible": 0
         },
         {
@@ -84,6 +96,7 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "",
+          "tags": ["تطوير الويب", "منصة أكاديمية"],
           "isNotVisible": 1
         }
       ]
@@ -99,7 +112,9 @@
           "image": "/images/projects/collision-fire-smoke-detection-1.png",
           "githubLink": "https://github.com/BrianShiroe/yolov11-collision-fire-smoke-detection",
           "itchLink": "",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["YOLOv11", "كشف الأشياء", "كشف الكوارث", "رؤية حاسوبية", "تعلم الآلة"],
+          "isNotVisible": 0
         },
         {
           "id": "landslide-detection",
@@ -109,7 +124,9 @@
           "image": "/images/projects/landslide-detection-1.png",
           "githubLink": "https://github.com/BrianShiroe/yolov11-landslide-detection",
           "itchLink": "",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["YOLOv11", "كشف الأشياء", "كشف الانهيارات الأرضية", "رؤية حاسوبية", "تعلم الآلة"],
+          "isNotVisible": 0
         },
         {
           "id": "flood-detection",
@@ -119,7 +136,9 @@
           "image": "/images/projects/flood-detection-1.png",
           "githubLink": "https://github.com/BrianShiroe/yolov11-flood-detection",
           "itchLink": "",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["YOLOv11", "كشف الفيضانات", "رؤية حاسوبية", "تعلم الآلة", "مراقبة الكوارث"],
+          "isNotVisible": 0
         }
       ]
     },
@@ -134,7 +153,9 @@
           "image": "/images/projects/wob-and-cob-2.png",
           "githubLink": "",
           "itchLink": "https://mun-development.itch.io/wob-cob",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["Unity", "لعبة 2D", "ألغاز", "منصات", "تطوير الألعاب"],
+          "isNotVisible": 0
         },
         {
           "id": "goddess-trial",
@@ -144,7 +165,9 @@
           "image": "/images/projects/the-goddess-trial-1.png",
           "githubLink": "",
           "itchLink": "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["لعبة 2D", "منصات", "SpeedJam", "تطوير الألعاب", "تحدي"],
+          "isNotVisible": 0
         },
         {
           "id": "shadow-monarch",
@@ -154,7 +177,9 @@
           "image": "/images/projects/shadow-monarch-1.png",
           "githubLink": "",
           "itchLink": "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["Godot", "لعبة 2D", "أكشن", "GDScript", "تطوير الألعاب"],
+          "isNotVisible": 0
         }
       ]
     }
