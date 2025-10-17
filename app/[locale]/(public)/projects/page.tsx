@@ -18,6 +18,7 @@ type ProjectItem = {
   githubLink?: string;
   demoLink?: string;
   itchLink?: string;
+  tags?: string[];
 };
 
 type ProjectSection = {
@@ -94,23 +95,37 @@ export default function ProjectsPage() {
                             fill
                             className="object-cover object-top group-hover:scale-103 transition-transform duration-300"
                             sizes="(max-width: 640px) 100vw,
-                                   (max-width: 1024px) 50vw,
-                                   33vw"
+                                 (max-width: 1024px) 50vw,
+                                 33vw"
                           />
                         </div>
 
                         {/* Content */}
                         <div className="p-4 sm:p-5 flex flex-col items-center sm:items-start text-center sm:text-left">
-                          <h3 className="text-base sm:text-lg font-semibold mb-1 line-clamp-1">
+                          <h3 className="text-base sm:text-lg font-semibold mb-3 line-clamp-1">
                             {proj.title}
                           </h3>
                           <p
-                            className={`text-gray-600 text-sm sm:text-base line-clamp-2 ${
+                            className={`text-gray-600 text-sm sm:text-base md:text-justify line-clamp-4 mb-4 ${
                               locale === "ar" ? "text-right" : "text-left"
                             }`}
                           >
                             {proj.desc}
                           </p>
+
+                          {/* Tags */}
+                          {proj.tags && proj.tags.length > 0 && (
+                            <div className="flex flex-wrap gap-2 mt-2 justify-center sm:justify-start">
+                              {proj.tags.map((tag) => (
+                                <span
+                                  key={tag}
+                                  className="text-xs sm:text-sm bg-gray-100 text-gray-800 px-2 py-1 rounded-full cursor-pointer hover:bg-gray-800 hover:text-white transition-colors duration-200"
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </Link>
 

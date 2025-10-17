@@ -16,25 +16,30 @@ interface ProjectItem {
 
 interface Props {
   project: ProjectItem;
+  tags?: string[]; // new
   projectUrl?: string; // full URL of the project page
 }
 
-export default function ProjectDetailContent({ project, projectUrl }: Props) {
+export default function ProjectDetailContent({
+  project,
+  tags = [],
+  projectUrl,
+}: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": project.title,
-    "description": project.desc,
-    "image": project.image,
-    "url": projectUrl || "",
-    "applicationCategory": "Portfolio Project",
-    "offers": project.demoLink
+    name: project.title,
+    description: project.desc,
+    image: project.image,
+    url: projectUrl || "",
+    applicationCategory: "Portfolio Project",
+    offers: project.demoLink
       ? {
           "@type": "Offer",
-          "url": project.demoLink,
+          url: project.demoLink,
         }
       : undefined,
-    "sameAs": [project.githubLink, project.itchLink].filter(Boolean),
+    sameAs: [project.githubLink, project.itchLink].filter(Boolean),
   };
 
   return (
@@ -50,6 +55,8 @@ export default function ProjectDetailContent({ project, projectUrl }: Props) {
         {/* Title */}
         <DominoMotion direction="left" delay={0} duration={0.6}>
           <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
+          {/* Underline for title */}
+          <div className="w-20 h-1 bg-black mb-8 rounded-full"></div>
         </DominoMotion>
 
         {/* Image */}
@@ -66,7 +73,27 @@ export default function ProjectDetailContent({ project, projectUrl }: Props) {
         {/* Description */}
         <DominoMotion direction="up" delay={0.2} duration={0.6}>
           <p className="text-gray-700 text-lg mb-6">{project.desc}</p>
+          {/* Divider line */}
+          <div className="border-t border-gray-300 mb-6"></div>
         </DominoMotion>
+
+        {/* Tags */}
+        {tags.length > 0 && (
+          <DominoMotion direction="up" delay={0.25} duration={0.6}>
+            <div className="flex flex-wrap gap-3 mt-4 mb-8 justify-center sm:justify-start">
+              {tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-sm sm:text-base bg-gray-100 text-gray-800 px-3 py-1.5 rounded-full cursor-pointer hover:bg-gray-800 hover:text-white transition-colors duration-200"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            {/* Decorative dashed line below tags */}
+            <div className="border-t border-dashed border-gray-300 mt-2 mb-6"></div>
+          </DominoMotion>
+        )}
 
         {/* Links */}
         <DominoMotion direction="up" delay={0.3} duration={0.6}>

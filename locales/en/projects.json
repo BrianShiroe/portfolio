@@ -11,7 +11,8 @@
           "image": "/images/projects/ecommerce-2.png",
           "githubLink": "https://github.com/BrianShiroe/barefox",
           "itchLink": "",
-          "demoLink": "https://barefox.vercel.app/"
+          "demoLink": "https://barefox.vercel.app/",
+          "tags": ["Next.js", "TailwindCSS", "Shadcn/UI", "Stripe", "E-commerce", "Web Development"]
         },
         {
           "id": "rumahsekolah",
@@ -22,7 +23,8 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://app-dev.rumahsekolah.com/",
-          "isNotVisible": 0
+          "isNotVisible": 0,
+          "tags": ["AI", "Education", "Web App", "Dashboard", "School Management"]
         },
         {
           "id": "luka",
@@ -32,7 +34,8 @@
           "image": "/images/projects/luka-2.png",
           "githubLink": "https://github.com/BrianShiroe/luka",
           "itchLink": "",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["Flask", "YOLO", "OpenCV", "IoT", "Safety", "Real-time Monitoring"]
         },
         {
           "id": "sanco",
@@ -42,7 +45,8 @@
           "image": "/images/projects/sanco-2.png",
           "githubLink": "",
           "itchLink": "",
-          "demoLink": "https://aquamarine-wasp-418509.hostingersite.com/"
+          "demoLink": "https://aquamarine-wasp-418509.hostingersite.com/",
+          "tags": ["WordPress", "Elementor", "SEO", "Corporate Website", "Responsive Design"]
         },
         {
           "id": "munem",
@@ -52,7 +56,8 @@
           "image": "/images/projects/munem-2.png",
           "githubLink": "",
           "itchLink": "",
-          "demoLink": "https://munem.ae/"
+          "demoLink": "https://munem.ae/",
+          "tags": ["WordPress", "Construction", "Corporate Website", "Responsive Design"]
         },
         {
           "id": "dgc-carpentry",
@@ -62,7 +67,8 @@
           "image": "/images/projects/dgc-3.png",
           "githubLink": "",
           "itchLink": "",
-          "demoLink": "https://dgcgroup.ae/"
+          "demoLink": "https://dgcgroup.ae/",
+          "tags": ["WordPress", "Carpentry", "Furniture", "Corporate Website"]
         },
         {
           "id": "idesignsart",
@@ -73,7 +79,8 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://idesignsart.com/",
-          "isNotVisible": 0
+          "isNotVisible": 0,
+          "tags": ["Web Development", "Digital Agency", "Branding", "SEO", "Graphics"]
         },
         {
           "id": "ccweb",
@@ -84,7 +91,8 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "",
-          "isNotVisible": 1
+          "isNotVisible": 1,
+          "tags": ["Web Development", "Academic Platform"]
         }
       ]
     },
@@ -99,7 +107,8 @@
           "image": "/images/projects/collision-fire-smoke-detection-1.png",
           "githubLink": "https://github.com/BrianShiroe/yolov11-collision-fire-smoke-detection",
           "itchLink": "",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["YOLOv11", "Object Detection", "Disaster Detection", "Computer Vision", "ML"]
         },
         {
           "id": "landslide-detection",
@@ -109,7 +118,8 @@
           "image": "/images/projects/landslide-detection-1.png",
           "githubLink": "https://github.com/BrianShiroe/yolov11-landslide-detection",
           "itchLink": "",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["YOLOv11", "Object Detection", "Landslide Detection", "Computer Vision", "ML"]
         },
         {
           "id": "flood-detection",
@@ -119,7 +129,8 @@
           "image": "/images/projects/flood-detection-1.png",
           "githubLink": "https://github.com/BrianShiroe/yolov11-flood-detection",
           "itchLink": "",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["YOLOv11", "Flood Detection", "Computer Vision", "ML", "Disaster Monitoring"]
         }
       ]
     },
@@ -134,7 +145,8 @@
           "image": "/images/projects/wob-and-cob-2.png",
           "githubLink": "",
           "itchLink": "https://mun-development.itch.io/wob-cob",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["Unity", "2D Game", "Puzzle", "Platformer", "Game Development"]
         },
         {
           "id": "goddess-trial",
@@ -144,7 +156,8 @@
           "image": "/images/projects/the-goddess-trial-1.png",
           "githubLink": "",
           "itchLink": "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["2D Game", "Platformer", "SpeedJam", "Game Development", "Challenge"]
         },
         {
           "id": "shadow-monarch",
@@ -154,7 +167,8 @@
           "image": "/images/projects/shadow-monarch-1.png",
           "githubLink": "",
           "itchLink": "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
-          "demoLink": ""
+          "demoLink": "",
+          "tags": ["Godot", "2D Game", "Action", "GDScript", "Game Development"]
         }
       ]
     }

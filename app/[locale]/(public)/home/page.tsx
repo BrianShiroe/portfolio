@@ -3,7 +3,7 @@ import { useLocale } from "@/lib/useLocale";
 import Link from "next/link";
 import DominoMotion from "@/app/components/ui/DominoMotion";
 import Head from "next/head";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function HomePage() {
   const { locale, t } = useLocale();
@@ -88,8 +88,9 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-6 w-full justify-center">
             <Link
               href={`/${locale}/contacts`}
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gray-900 text-white text-lg font-medium text-center transition-all duration-200 hover:bg-gray-700 hover:shadow-lg"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gray-900 text-white text-lg font-medium text-center transition-all duration-200 hover:bg-gray-700 hover:shadow-lg"
             >
+              <FaEnvelope className="w-6 h-6" />
               {t("home.contactButton")}
             </Link>
 
