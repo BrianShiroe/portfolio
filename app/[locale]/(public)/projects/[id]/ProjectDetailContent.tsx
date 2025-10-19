@@ -72,7 +72,7 @@ export default function ProjectDetailContent({
 
         {/* Description */}
         <DominoMotion direction="up" delay={0.2} duration={0.6}>
-          <p className="text-gray-700 text-lg mb-6">{project.desc}</p>
+          <p className="text-gray-700 text-lg mb-6 text-justify">{project.desc}</p>
           {/* Divider line */}
           <div className="border-t border-gray-300 mb-6"></div>
         </DominoMotion>
