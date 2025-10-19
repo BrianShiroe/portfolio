@@ -12,7 +12,7 @@
           "githubLink": "https://github.com/BrianShiroe/barefox",
           "itchLink": "",
           "demoLink": "https://barefox.vercel.app/",
-          "tags": ["Next.js", "TailwindCSS", "Shadcn/UI", "Stripe", "E-commerce", "تطوير الويب"],
+          "tags": ["Next.js", "TailwindCSS", "Stripe", "E-commerce"],
           "isNotVisible": 0
         },
         {
@@ -24,7 +24,7 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://app-dev.rumahsekolah.com/",
-          "tags": ["AI", "تعليم", "تطبيق ويب", "لوحة تحكم", "إدارة المدارس"],
+          "tags": ["AI", "تعليم", "لوحة تحكم", "إدارة المدارس"],
           "isNotVisible": 0
         },
         {
@@ -36,7 +36,7 @@
           "githubLink": "https://github.com/BrianShiroe/luka",
           "itchLink": "",
           "demoLink": "",
-          "tags": ["Flask", "YOLO", "OpenCV", "IoT", "سلامة", "مراقبة في الوقت الحقيقي"],
+          "tags": ["Flask", "YOLO", "OpenCV", "IoT", "سلامة"],
           "isNotVisible": 0
         },
         {
@@ -48,7 +48,7 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://aquamarine-wasp-418509.hostingersite.com/",
-          "tags": ["WordPress", "Elementor", "SEO", "موقع شركات", "تصميم متجاوب"],
+          "tags": ["WordPress", "Elementor", "SEO", "موقع شركات"],
           "isNotVisible": 0
         },
         {
@@ -60,7 +60,7 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://munem.ae/",
-          "tags": ["WordPress", "إنشاءات", "موقع شركات", "تصميم متجاوب"],
+          "tags": ["WordPress", "إنشاءات", "موقع شركات"],
           "isNotVisible": 0
         },
         {
@@ -72,7 +72,7 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://dgcgroup.ae/",
-          "tags": ["WordPress", "نجارة", "أثاث", "موقع شركات"],
+          "tags": ["WordPress", "نجارة", "أثاث"],
           "isNotVisible": 0
         },
         {
@@ -84,7 +84,7 @@
           "githubLink": "",
           "itchLink": "",
           "demoLink": "https://idesignsart.com/",
-          "tags": ["تطوير الويب", "وكالة رقمية", "تصميم العلامة التجارية", "SEO", "رسوميات"],
+          "tags": ["تطوير الويب", "وكالة رقمية", "تصميم العلامة التجارية", "SEO"],
           "isNotVisible": 0
         },
         {
@@ -113,7 +113,7 @@
           "githubLink": "https://github.com/BrianShiroe/yolov11-collision-fire-smoke-detection",
           "itchLink": "",
           "demoLink": "",
-          "tags": ["YOLOv11", "كشف الأشياء", "كشف الكوارث", "رؤية حاسوبية", "تعلم الآلة"],
+          "tags": ["YOLOv11", "كشف الأشياء", "كشف الكوارث", "رؤية حاسوبية"],
           "isNotVisible": 0
         },
         {
@@ -125,7 +125,7 @@
           "githubLink": "https://github.com/BrianShiroe/yolov11-landslide-detection",
           "itchLink": "",
           "demoLink": "",
-          "tags": ["YOLOv11", "كشف الأشياء", "كشف الانهيارات الأرضية", "رؤية حاسوبية", "تعلم الآلة"],
+          "tags": ["YOLOv11", "كشف الأشياء", "كشف الانهيارات", "رؤية حاسوبية"],
           "isNotVisible": 0
         },
         {
@@ -137,7 +137,7 @@
           "githubLink": "https://github.com/BrianShiroe/yolov11-flood-detection",
           "itchLink": "",
           "demoLink": "",
-          "tags": ["YOLOv11", "كشف الفيضانات", "رؤية حاسوبية", "تعلم الآلة", "مراقبة الكوارث"],
+          "tags": ["YOLOv11", "كشف الفيضانات", "رؤية حاسوبية", "تعلم الآلة"],
           "isNotVisible": 0
         }
       ]
@@ -154,7 +154,7 @@
           "githubLink": "",
           "itchLink": "https://mun-development.itch.io/wob-cob",
           "demoLink": "",
-          "tags": ["Unity", "لعبة 2D", "ألغاز", "منصات", "تطوير الألعاب"],
+          "tags": ["Unity", "لعبة 2D", "ألغاز", "منصات"],
           "isNotVisible": 0
         },
         {
@@ -166,7 +166,7 @@
           "githubLink": "",
           "itchLink": "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
           "demoLink": "",
-          "tags": ["لعبة 2D", "منصات", "SpeedJam", "تطوير الألعاب", "تحدي"],
+          "tags": ["لعبة 2D", "منصات", "SpeedJam", "تحدي"],
           "isNotVisible": 0
         },
         {
@@ -178,7 +178,7 @@
           "githubLink": "",
           "itchLink": "https://mun-development.itch.io/shadow-monarch-the-cats-adventure",
           "demoLink": "",
-          "tags": ["Godot", "لعبة 2D", "أكشن", "GDScript", "تطوير الألعاب"],
+          "tags": ["Godot", "لعبة 2D", "أكشن", "GDScript"],
           "isNotVisible": 0
         }
       ]
