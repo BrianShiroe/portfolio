@@ -18,12 +18,15 @@ export default function SkillsPage() {
   const [skills, setSkills] = useState<
     { label: string; tools: { name: string; icon: string }[] }[] | null
   >(null);
+  const [filter, setFilter] = useState<string>("All");
+  const [categories, setCategories] = useState<string[]>([]);
 
   useEffect(() => {
     const loadSkills = async () => {
       try {
         const data = await import(`@/locales/${locale}/skills.json`);
         setSkills(data.default);
+        setCategories(data.default.map((s: any) => s.label));
       } catch (err) {
         console.error("Failed to load skills JSON:", err);
         setSkills([]);
@@ -45,6 +48,20 @@ export default function SkillsPage() {
 
   if (!skills) return <div></div>;
 
+  // Flatten all tools into one list for easier filtering
+  const allTools = skills.flatMap((section) =>
+    section.tools.map((tool) => ({
+      ...tool,
+      category: section.label,
+    }))
+  );
+
+  // Filtered tools
+  const displayedTools =
+    filter === "All"
+      ? allTools
+      : allTools.filter((tool) => tool.category === filter);
+
   return (
     <>
       <Head>
@@ -62,76 +79,68 @@ export default function SkillsPage() {
           name="keywords"
           content="Brian Ong Haw, Skills, Web Developer, Frontend, Backend, Databases, DevOps, Machine Learning, Game Development, Portfolio, WordPress"
         />
-
-        {/* Open Graph */}
-        <meta
-          property="og:title"
-          content={
-            locale === "ar"
-              ? "المهارات | Brian Ong Haw"
-              : "Skills | Brian Ong Haw"
-          }
-        />
-        <meta
-          property="og:description"
-          content="Explore the technical skills and tools mastered by Brian Ong Haw, a Web Developer, across frontend, backend, databases, DevOps, and more."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`https://yourdomain.com/${locale}/skills`}
-        />
-        <meta property="og:image" content="/images/profile.png" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content={
-            locale === "ar"
-              ? "المهارات | Brian Ong Haw"
-              : "Skills | Brian Ong Haw"
-          }
-        />
-        <meta
-          name="twitter:description"
-          content="Explore the technical skills and tools mastered by Brian Ong Haw, a Web Developer, across frontend, backend, databases, DevOps, and more."
-        />
-        <meta name="twitter:image" content="/images/profile.png" />
       </Head>
 
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="self-start text-4xl font-bold mb-10">
-          <DominoMotion
-            direction={locale === "ar" ? "right" : "left"}
-            delay={0}
-            duration={0.6}
-          >
-            <div>{locale === "ar" ? "المهارات" : "Skills"}</div>
-          </DominoMotion>
-        </h1>
+      <div className="flex flex-col items-center justify-center px-3 sm:px-6">
+        {/* Title */}
+        <DominoMotion direction={locale === "ar" ? "right" : "left"} delay={0}>
+          <h1 className="self-center sm:self-start text-3xl sm:text-4xl font-semibold mb-6 text-center sm:text-left">
+            {locale === "ar" ? "المهارات" : "Skills"}
+          </h1>
+        </DominoMotion>
 
-        <section className="w-full max-w-5xl space-y-12">
-          {skills.map((skill, index) => (
-            <DominoMotion
-              key={skill.label}
-              direction="up"
-              delay={0.3 * index}
-              duration={0.6}
-            >
-              <div className="p-12 bg-gray-50 rounded-2xl inset-shadow-gray-400 inset-shadow-sm text-2xl font-semibold mb-6">
-                <h2 className="text-xl font-light text-gray-500 mb-10 pb-4 border-b border-gray-300">
-                  {skill.label}
-                </h2>
+        {/* Category Filter Buttons */}
+        {categories.length > 0 && (
+          <div className="mb-6 w-full">
+            {/* Dropdown for mobile */}
+            <div className="sm:hidden mb-2">
+              <select
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
+              >
+                {["All", ...categories].map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {skill.tools.map((tool) => {
-                    const IconComponent = getIcon(tool.icon);
-                    return (
-                      <div
-                        key={tool.name}
-                        className="flex items-center gap-3 rounded-2xl shadow-lg p-4 hover:scale-105 transition-transform bg-white"
-                      >
+            {/* Buttons for desktop */}
+            <div className="hidden sm:flex flex-wrap justify-start gap-2">
+              {["All", ...categories].map((cat) => (
+                <button
+                  key={cat}
+                  className={`px-4 py-2 rounded-full text-sm sm:text-base transition ${
+                    filter === cat
+                      ? "bg-black text-white"
+                      : "bg-gray-200 text-gray-800 hover:bg-gray-800 hover:text-white"
+                  }`}
+                  onClick={() => setFilter(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Unified Box for All Skills */}
+        <DominoMotion direction="up" delay={0.1} duration={0.5}>
+          <div className="w-full max-w-6xl p-10 bg-gray-50 rounded-2xl shadow-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {displayedTools.map((tool, index) => {
+                const IconComponent = getIcon(tool.icon);
+                return (
+                  <DominoMotion
+                    key={`${tool.name}-${index}`}
+                    direction="up"
+                    delay={0.05 * index}
+                    duration={0.4}
+                  >
+                    <div className="flex flex-col items-center sm:items-start gap-2 rounded-2xl shadow-md p-4 hover:scale-105 transition-transform bg-white">
+                      <div className="flex items-center gap-3 w-full">
                         {IconComponent && (
                           <IconComponent className="text-4xl text-gray-700" />
                         )}
@@ -139,13 +148,16 @@ export default function SkillsPage() {
                           {tool.name}
                         </div>
                       </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </DominoMotion>
-          ))}
-        </section>
+                      <span className="text-xs text-gray-500 uppercase tracking-wide">
+                        {tool.category}
+                      </span>
+                    </div>
+                  </DominoMotion>
+                );
+              })}
+            </div>
+          </div>
+        </DominoMotion>
       </div>
     </>
   );
