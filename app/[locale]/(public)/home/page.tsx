@@ -25,7 +25,7 @@ export default function HomePage() {
           content={`Hi, I'm ${t("home.name")}, a ${t("home.role")}. ${t("home.greeting")}`}
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://yourdomain.com/${locale}`} />
+        <meta property="og:url" content={`https://brianshiroe.vercel.app/${locale}`} />
         <meta property="og:image" content="/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta

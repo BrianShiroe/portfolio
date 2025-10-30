@@ -25,7 +25,7 @@ export default function AboutPage() {
           content="Learn more about Brian Ong Haw, a Web Developer, his background, education, and experience."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/about" />
+        <meta property="og:url" content="https://brianshiroe.vercel.app/about" />
         <meta property="og:image" content="/images/profile.png" />
 
         {/* Twitter Card */}

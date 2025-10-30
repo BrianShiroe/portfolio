@@ -24,7 +24,7 @@ export default function ContactPage() {
         <meta property="og:title" content={`${t("email.title")} | Brian Ong Haw`} />
         <meta property="og:description" content="Get in touch with Brian Ong Haw, a Web Developer. Leave a message and start a conversation about your project." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/contact" />
+        <meta property="og:url" content="https://brianshiroe.vercel.app/contact" />
         <meta property="og:image" content="/images/profile.png" />
 
         {/* Twitter Card */}
