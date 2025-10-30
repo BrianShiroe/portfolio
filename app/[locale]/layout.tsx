@@ -17,7 +17,6 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const params = await awaitedParams;
-  // const locale = params.locale;
   const locale = params.locale || "en"; // default to "en"
   const dir = locale === "ar" ? "rtl" : "ltr";
 
