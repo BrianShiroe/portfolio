@@ -1,6 +1,5 @@
 "use client";
 import { motion, Transition, Variants } from "framer-motion";
-import { Character } from "./Character";
 import { useLocale } from "next-intl";
 
 export function Hero() {
@@ -213,17 +212,22 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* RIGHT SIDE: CHARACTER & ENHANCED LOCALIZATION BADGE */}
+          {/* RIGHT SIDE: PROFILE PHOTO & LOCALIZATION BADGE */}
           <motion.div variants={itemVariants} className="flex flex-col items-center relative mt-4 lg:mt-0">
             <div className="bg-white border-2 md:border-4 border-black p-3 md:p-6 rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center overflow-hidden cursor-default">
               
-              <div className="scale-[0.5] sm:scale-75 md:scale-90 lg:scale-100 origin-center">
-                <Character />
+              {/* Profile Image Wrapper */}
+              <div className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] relative rounded-xl overflow-hidden border-2 border-black/10 bg-zinc-50 mb-4">
+                <img 
+                  src="/images/profile.png" 
+                  alt="Brian Haw" 
+                  className="w-full h-full object-cover filter contrast-[1.05]"
+                />
               </div>
               
-              {/* Clean, 0.5x Larger Location Badge */}
+              {/* Clean Location Badge */}
               <div className="w-full border-t-2 border-black/10 pt-4 mt-2 text-center flex items-center justify-center">
-                <div className="flex items-center justify-center gap-2.5 scale-150 transform origin-center my-1.5">
+                <div className="flex items-center justify-center gap-2.5 scale-125 transform origin-center my-1">
                   <div className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00C950]"></span>
