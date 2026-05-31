@@ -126,7 +126,8 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6 md:py-4">
         {/* Logo */}
         <a href="#home" onClick={(e) => handleScroll(e, "#home")} className="z-[110] group flex items-center gap-2.5">
-          <div className="h-8 w-8 rounded-full flex items-center justify-center shrink-0 overflow-hidden relative border border-zinc-200">
+          {/* Increased size layout array to h-10 w-10 and detached the zinc border layout constraint */}
+          <div className="h-18 w-18 rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
             <img
               src="/logo.png"
               alt="Logo"
