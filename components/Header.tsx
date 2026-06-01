@@ -5,12 +5,11 @@ import { usePathname, useRouter } from "next/navigation";
 import { useAppStore } from "@/store/useStore";
 
 const navItems = [
-  { en: "Home", ar: "الرئيسية", href: "#home" },
-  { en: "About", ar: "من أنا", href: "#about" },
-  { en: "Projects", ar: "المشاريع", href: "#projects" },
-  { en: "Skills", ar: "المهارات", href: "#skills" },
-  { en: "Services", ar: "الخدمات", href: "#services" },
-  { en: "Contact", ar: "اتصل بنا", href: "#contact" },
+  { en: "Home", ar: "الرئيسية", href: "#home", type: "anchor" },
+  { en: "About Me", ar: "من أنا", href: "/about", type: "page" },
+  { en: "Projects / Work", ar: "المشاريع", href: "/projects", type: "page" },
+  { en: "Custom Tools", ar: "الأدوات", href: "/playground", type: "page" },
+  { en: "Contact", ar: "اتصل بنا", href: "/contact", type: "page" },
 ];
 
 export function Header() {
@@ -77,24 +76,41 @@ export function Header() {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
   }, [isOpen]);
 
-  const handleScroll = (e: React.MouseEvent, href: string) => {
+  const currentLocale = pathname?.split("/")[1] || lang;
+
+  const resolveHref = (href: string, type: string) => {
+    if (type === "page") {
+      return `/${currentLocale}${href}`;
+    }
+    return href;
+  };
+
+  const handleNavigation = (e: React.MouseEvent, href: string, type: string) => {
     e.preventDefault();
     setIsOpen(false);
 
+    if (type === "page") {
+      router.push(resolveHref(href, type));
+      return;
+    }
+
     const targetId = href.replace("#", "");
-    const elem = document.getElementById(targetId);
+    const element = document.getElementById(targetId);
+    const routeTarget = `/${currentLocale}${href}`;
+
+    if (pathname !== `/${currentLocale}`) {
+      router.push(routeTarget);
+      return;
+    }
 
     if (targetId === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } else if (elem) {
+    } else if (element) {
       const offset = 80;
-      const elementPosition = elem.getBoundingClientRect().top + window.scrollY;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
 
     window.history.pushState(null, "", href);
@@ -125,7 +141,7 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6 md:py-4">
         {/* Logo */}
-        <a href="#home" onClick={(e) => handleScroll(e, "#home")} className="z-[110] group flex items-center gap-2.5">
+        <a href="#home" onClick={(e) => handleNavigation(e, "#home", "anchor")} className="z-[110] group flex items-center gap-2.5">
           {/* Increased size layout array to h-10 w-10 and detached the zinc border layout constraint */}
           <div className="h-18 w-18 rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
             <img
@@ -147,12 +163,17 @@ export function Header() {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1 bg-zinc-100/50 p-1 rounded-full border border-zinc-200">
           {navItems.map((item) => {
-            const isActive = activeSection === item.href.replace("#", "");
+            const linkHref = resolveHref(item.href, item.type);
+            const isActive =
+              item.type === "page"
+                ? pathname?.startsWith(linkHref)
+                : activeSection === item.href.replace("#", "") && pathname === `/${currentLocale}`;
+
             return (
               <a
                 key={item.en}
-                href={item.href}
-                onClick={(e) => handleScroll(e, item.href)}
+                href={linkHref}
+                onClick={(e) => handleNavigation(e, item.href, item.type)}
                 className={`relative px-5 py-2.5 text-[10px] font-black uppercase tracking-widest transition-colors duration-300 ${
                   isActive ? "text-white" : "text-zinc-500 hover:text-black"
                 }`}
@@ -222,15 +243,19 @@ export function Header() {
           >
             <div className="flex flex-col gap-2">
               {navItems.map((item, i) => {
-                const isActive = activeSection === item.href.replace("#", "");
+                const linkHref = resolveHref(item.href, item.type);
+                const isActive =
+                  item.type === "page"
+                    ? pathname?.startsWith(linkHref)
+                    : activeSection === item.href.replace("#", "") && pathname === `/${currentLocale}`;
                 return (
                   <motion.a
                     key={item.en}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    href={item.href}
-                    onClick={(e) => handleScroll(e, item.href)}
+                    href={linkHref}
+                    onClick={(e) => handleNavigation(e, item.href, item.type)}
                     className={`flex items-center justify-between px-6 py-5 rounded-2xl border-2 transition-all ${
                       isActive ? "bg-black text-white border-black" : "bg-zinc-50 border-zinc-100 text-zinc-500"
                     }`}

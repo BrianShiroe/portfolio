@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, Variants } from "framer-motion";
 
 export function Footer() {
@@ -32,32 +33,52 @@ export function Footer() {
     },
   };
 
+  const pathname = usePathname();
+  const router = useRouter();
+  const currentLocale = locale || "en";
+
   const navLinks = [
-    { name: t("Home", "الرئيسية"), href: "#home" },
-    { name: t("Projects", "المشاريع"), href: "#projects" },
-    { name: t("About", "من أنا"), href: "#about" },
-    { name: t("Skills", "المهارات"), href: "#skills" },
-    { name: t("Services", "الخدمات"), href: "#services" },
-    // { name: t("Experience", "الخبرة"), href: "#experience" },
-    { name: t("Contact", "تواصل معي"), href: "#contact" },
+    { name: t("Home", "الرئيسية"), href: "#home", type: "anchor" },
+    { name: t("About Me", "من أنا"), href: "/about", type: "page" },
+    { name: t("Projects / Work", "المشاريع"), href: "/projects", type: "page" },
+    { name: t("Custom Tools", "الأدوات"), href: "/playground", type: "page" },
+    { name: t("Contact", "تواصل معي"), href: "/contact", type: "page" },
   ];
 
-  // التحديث: استخدام offsetTop لضمان الدقة وتجنب التحذيرات
-  const handleScroll = (e: React.MouseEvent, href: string) => {
+  const resolveHref = (href: string, type: string) => {
+    if (type === "page") {
+      return `/${currentLocale}${href}`;
+    }
+    return href;
+  };
+
+  const handleScroll = (e: React.MouseEvent, href: string, type: string) => {
     e.preventDefault();
+    const routeTarget = `/${currentLocale}${href}`;
+
+    if (type === "page") {
+      router.push(routeTarget);
+      return;
+    }
+
     const targetId = href.replace("#", "");
     const elem = document.getElementById(targetId);
+
+    if (pathname !== `/${currentLocale}`) {
+      router.push(routeTarget);
+      return;
+    }
 
     if (targetId === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (elem) {
-      const offset = 80; // يجب أن يطابق الإزاحة في الـ Header
+      const offset = 80; // should match Header offset
       const elementPosition = elem.offsetTop;
       const offsetPosition = elementPosition - offset;
 
-      window.scrollTo({ 
-        top: offsetPosition, 
-        behavior: "smooth" 
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
       });
     }
     window.history.pushState(null, "", href);
@@ -134,17 +155,20 @@ export function Footer() {
                 {t("Sitemap", "خريطة الموقع")}
               </h4>
               <div className="grid grid-cols-2 gap-x-12 gap-y-6">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={(e) => handleScroll(e, link.href)}
-                    className="text-xs font-black uppercase tracking-widest text-zinc-400 hover:text-[#00C950] transition-all flex items-center gap-2 group"
-                  >
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity text-[#00C950]">/</span>
-                    {link.name}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const linkHref = resolveHref(link.href, link.type);
+                  return (
+                    <a
+                      key={link.name}
+                      href={linkHref}
+                      onClick={(e) => handleScroll(e, link.href, link.type)}
+                      className="text-xs font-black uppercase tracking-widest text-zinc-400 hover:text-[#00C950] transition-all flex items-center gap-2 group"
+                    >
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity text-[#00C950]">/</span>
+                      {link.name}
+                    </a>
+                  );
+                })}
               </div>
             </motion.div>
 
