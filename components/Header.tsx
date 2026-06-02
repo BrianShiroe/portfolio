@@ -15,10 +15,11 @@ const navItems = [
 export function Header() {
   const router = useRouter();
   const pathname = usePathname();
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
 
   const { lang, setLang, t, activeSection, setActiveSection } = useAppStore();
   const isAr = lang === "ar";
+  const currentLocale = pathname?.split("/")[1] || lang;
 
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -30,6 +31,10 @@ export function Header() {
   // Standard Intersection Observer + GSAP Pinning Fallback Validation Engine
   useEffect(() => {
     if (!mounted) return;
+
+    if (pathname === `/${currentLocale}` && (window.location.hash === "#home" || window.scrollY === 0)) {
+      setActiveSection("home");
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -70,13 +75,11 @@ export function Header() {
       observer.disconnect();
       window.removeEventListener("scroll", handleScrollTracking);
     };
-  }, [setActiveSection, mounted, activeSection]);
+  }, [setActiveSection, mounted, activeSection, currentLocale, pathname]);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
   }, [isOpen]);
-
-  const currentLocale = pathname?.split("/")[1] || lang;
 
   const resolveHref = (href: string, type: string) => {
     if (type === "page") {
@@ -104,6 +107,7 @@ export function Header() {
     }
 
     if (targetId === "home") {
+      setActiveSection("home");
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (element) {
       const offset = 80;

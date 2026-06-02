@@ -23,7 +23,7 @@ export const useAppStore = create<AppState>()(
     (set, get) => ({
       lang: "en",
       isLoaded: false,
-      activeSection: "hero",
+      activeSection: "home",
 
       setLang: (newLang) => {
         set({ lang: newLang });
