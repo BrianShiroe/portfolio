@@ -127,7 +127,7 @@ export function Skills() {
             {isAr ? (
               <>ترسانة_<span className="text-[#00C950]">الخبرات</span></>
             ) : (
-              <>Skill_<span className="text-[#00C950]">Vault</span></>
+              <>Skill_<span className="text-[#00C950]">Set</span></>
             )}
           </h2>
         </div>
