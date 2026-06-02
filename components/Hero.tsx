@@ -113,7 +113,7 @@ export function Hero() {
               <div className="flex items-center justify-center gap-2 md:gap-3 mb-8">
                 <div className="h-[1px] w-4 md:w-8 bg-black/20" />
                 <span className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] text-black italic">
-                  Full-Stack Engineer
+                  ADMIN OFFICER | WEB DEVELOPER | DIGITAL MARKETER
                 </span>
                 <div className="h-[1px] w-4 md:w-8 bg-black/20" />
               </div>
