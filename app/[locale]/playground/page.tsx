@@ -1,6 +1,6 @@
-import { TechTicker } from '@/components/home/TechTicker';
-import { Skills } from '@/components/home/Skills';
-import { Services } from '@/components/home/Services';
+import { TechTicker } from '@/components/TechTicker';
+import { Skills } from '@/components/Skills';
+import { Services } from '@/components/Services';
 
 export default function PlaygroundPage() {
   return (

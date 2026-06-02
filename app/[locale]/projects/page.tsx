@@ -1,5 +1,5 @@
-import { TopProjects } from '@/components/home/TopProjects';
-import { AllProjects } from '@/components/home/AllProjects';
+import { TopProjects } from '@/components/TopProjects';
+import { AllProjects } from '@/components/AllProjects';
 
 export default function ProjectsPage() {
   return (

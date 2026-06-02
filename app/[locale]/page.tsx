@@ -1,12 +1,12 @@
-import { Hero } from "@/components/home/Hero";
-import { About } from "@/components/home/About";
-import { Services } from "@/components/home/Services";
-import { Skills } from "@/components/home/Skills";
-import { TopProjects } from "@/components/home/TopProjects";
-import { AllProjects } from "@/components/home/AllProjects";
-import { Experience } from "@/components/home/Experience";
-import { Contact } from "@/components/home/Contact";
-import { TechTicker } from "@/components/home/TechTicker";
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
+import { Services } from "@/components/Services";
+import { Skills } from "@/components/Skills";
+import { TopProjects } from "@/components/TopProjects";
+import { AllProjects } from "@/components/AllProjects";
+import { Experience } from "@/components/Experience";
+import { Contact } from "@/components/Contact";
+import { TechTicker } from "@/components/TechTicker";
 
 export default function Home() {
   return (

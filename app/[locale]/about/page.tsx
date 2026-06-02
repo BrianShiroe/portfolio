@@ -1,5 +1,5 @@
-import { TechTicker } from '@/components/home/TechTicker';
-import { About } from '@/components/home/About';
+import { TechTicker } from '@/components/TechTicker';
+import { About } from '@/components/About';
 
 export default function AboutPage() {
   return (
