@@ -100,6 +100,18 @@ export function Skills() {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLDivElement[]>([]);
+  const mobileNavRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll mobile nav items to center when active index updates
+  useEffect(() => {
+    if (!mounted || !mobileNavRef.current) return;
+    const activeBtn = mobileNavRef.current.children[activeIdx] as HTMLElement;
+    if (activeBtn) {
+      const container = mobileNavRef.current;
+      const leftPosition = activeBtn.offsetLeft - container.offsetWidth / 2 + activeBtn.offsetWidth / 2;
+      container.scrollTo({ left: leftPosition, behavior: "smooth" });
+    }
+  }, [activeIdx, mounted]);
 
   useEffect(() => {
     if (!mounted) return;
@@ -110,13 +122,12 @@ export function Skills() {
       if (!containerRef.current) return;
 
       ctx = gsap.context(() => {
-        // Track which card is in view to update the pinned active sidebar index
         itemsRef.current.forEach((panel, index) => {
           if (!panel) return;
           ScrollTrigger.create({
             trigger: panel,
-            start: "top center+=100",
-            end: "bottom center+=100",
+            start: "top center+=140",
+            end: "bottom center+=140",
             onToggle: (self) => {
               if (self.isActive) {
                 setActiveIdx(index);
@@ -139,7 +150,7 @@ export function Skills() {
     <section
       ref={containerRef}
       id="skills"
-      className="relative w-full min-h-screen bg-white selection:bg-[#00C950] selection:text-white py-20 lg:py-32"
+      className="relative w-full min-h-screen bg-white selection:bg-[#00C950] selection:text-white py-16 lg:py-32"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* BACKGROUND DECOR */}
@@ -148,9 +159,9 @@ export function Skills() {
         style={{ backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`, backgroundSize: "40px 40px" }}
       />
 
-      <div className="mx-auto max-w-7xl w-full px-6 md:px-12 relative z-10">
+      <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 md:px-12 relative z-10">
         {/* --- HEADER --- */}
-        <div className="mb-16 lg:mb-24">
+        <div className="mb-12 lg:mb-24">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-[3px] w-12 bg-[#00C950]" />
             <span className="text-[11px] font-black text-black uppercase tracking-[0.5em]">
@@ -159,7 +170,7 @@ export function Skills() {
           </div>
           <h2
             className={`font-black uppercase tracking-tighter text-black ${
-              isAr ? "text-4xl md:text-5xl lg:text-6xl leading-[1.2]" : "text-4xl md:text-6xl lg:text-7xl leading-none"
+              isAr ? "text-3xl md:text-5xl lg:text-6xl leading-[1.2]" : "text-4xl md:text-6xl lg:text-7xl leading-none"
             }`}
           >
             {isAr ? (
@@ -174,13 +185,42 @@ export function Skills() {
           </h2>
         </div>
 
+        {/* --- MOBILE STICKY TRACKING NAVIGATION --- */}
+        <div className="lg:hidden sticky top-0 z-40 bg-white/90 backdrop-blur-md -mx-4 px-4 py-3 mb-8 border-b border-zinc-100">
+          <div 
+            ref={mobileNavRef}
+            className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-1 w-full"
+          >
+            {groups.map((group, idx) => {
+              const isActive = activeIdx === idx;
+              return (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    itemsRef.current[idx]?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                  className={`px-4 py-2 text-xs font-black uppercase tracking-tight rounded-full whitespace-nowrap border transition-all shrink-0 ${
+                    isActive 
+                      ? "bg-black text-white border-black" 
+                      : "bg-zinc-50 text-zinc-500 border-zinc-200"
+                  }`}
+                >
+                  <span className={isActive ? "text-[#00C950] mr-1" : "text-zinc-400 mr-1"}>
+                    {String(idx + 1).padStart(2, "0")}.
+                  </span>
+                  {group.title.split(" & ")[0]} {/* Shortened labels for clean small phone grids */}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
         {/* --- MAIN SPLIT LAYOUT --- */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
           
-          {/* LEFT SIDEBAR - Pinned/Sticky on desktop layout */}
-          <div className="w-full lg:w-1/3 lg:sticky lg:top-32 h-auto max-h-[70vh] overflow-y-auto no-scrollbar lg:pr-4">
+          {/* LEFT SIDEBAR - Visible & Pinned/Sticky only on desktop layout */}
+          <div className="hidden lg:block w-full lg:w-1/3 lg:sticky lg:top-32 h-auto max-h-[70vh] overflow-y-auto no-scrollbar lg:pr-4">
             <div className="space-y-4 relative">
-              {/* Vertical connecting accent strip line */}
               <div className={`absolute top-0 bottom-0 w-[2px] bg-zinc-100 ${isAr ? "right-[11px]" : "left-[11px]"}`} />
               
               {groups.map((group, idx) => {
@@ -193,7 +233,6 @@ export function Skills() {
                     }}
                     className="w-full flex items-center gap-4 text-start group/nav focus:outline-none transition-all relative z-10"
                   >
-                    {/* Status Dot Ring */}
                     <div
                       className={`h-6 w-6 rounded-full border-2 bg-white flex items-center justify-center shrink-0 transition-all duration-300 ${
                         isActive ? "border-[#00C950] scale-110" : "border-zinc-200 group-hover/nav:border-black"
@@ -229,40 +268,40 @@ export function Skills() {
           </div>
 
           {/* RIGHT CONTENT - Dynamic Vertical Scroll Stack */}
-          <div className="w-full lg:w-2/3 space-y-20 lg:space-y-32">
+          <div className="w-full lg:w-2/3 space-y-12 lg:space-y-32">
             {groups.map((group, idx) => (
               <div
                 key={idx}
                 ref={(el) => {
                   if (el) itemsRef.current[idx] = el;
                 }}
-                className="scroll-mt-32 border border-zinc-100 rounded-2xl p-6 sm:p-10 shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col justify-between min-h-[350px]"
+                className="scroll-mt-24 lg:scroll-mt-32 border border-zinc-100 rounded-2xl p-5 sm:p-10 shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col justify-between min-h-[280px] sm:min-h-[350px]"
               >
                 <div>
-                  <div className="relative mb-8 pt-5">
+                  <div className="relative mb-6 sm:mb-8 pt-5">
                     <div className={`absolute top-0 ${isAr ? "right-0" : "left-0"} flex items-center gap-2`}>
                       <span className="text-[12px] font-black text-[#00C950]">[{String(idx + 1).padStart(2, "0")}]</span>
                       <div className={`h-1 w-8 ${group.accent}`} />
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-black uppercase text-black italic tracking-tighter break-words">
+                    <h3 className="text-xl sm:text-3xl font-black uppercase text-black italic tracking-tighter break-words">
                       {group.title}
                     </h3>
                   </div>
 
                   <div
-                    className={`grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 border-black ${
-                      isAr ? "border-r-4 pr-4 sm:pr-6 pl-0" : "border-l-4 pl-4 sm:pl-6 pr-0"
+                    className={`grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1 border-black ${
+                      isAr ? "border-r-4 pr-3 sm:pr-6 pl-0" : "border-l-4 pl-3 sm:pl-6 pr-0"
                     }`}
                   >
                     {group.items.map((item, i) => (
                       <div
                         key={i}
-                        className="group/item flex items-center justify-between py-3 border-b border-zinc-100 hover:border-[#00C950] transition-all gap-4"
+                        className="group/item flex items-center justify-between py-2.5 border-b border-zinc-50 hover:border-[#00C950] transition-all gap-4"
                       >
-                        <span className="text-base font-bold text-zinc-500 group-hover/item:text-black transition-colors uppercase tracking-tight break-words">
+                        <span className="text-sm sm:text-base font-bold text-zinc-500 group-hover/item:text-black transition-colors uppercase tracking-tight break-words">
                           {item}
                         </span>
-                        <div className="h-2 w-2 bg-zinc-200 group-hover/item:bg-[#00C950] group-hover/item:scale-150 transition-all rotate-45 shrink-0" />
+                        <div className="h-1.5 w-1.5 bg-zinc-200 group-hover/item:bg-[#00C950] group-hover/item:scale-150 transition-all rotate-45 shrink-0" />
                       </div>
                     ))}
                   </div>
@@ -270,7 +309,7 @@ export function Skills() {
 
                 {/* Bottom Asymmetric Polygon Accent */}
                 <div
-                  className={`mt-8 h-8 w-full ${group.accent} opacity-10`}
+                  className={`mt-6 sm:mt-8 h-6 sm:h-8 w-full ${group.accent} opacity-10`}
                   style={{
                     clipPath: isAr
                       ? "polygon(0 0, 100% 0, 100% 100%, 6% 100%)"
