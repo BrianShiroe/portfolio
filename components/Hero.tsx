@@ -66,7 +66,6 @@ export function Hero() {
         className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-10 flex flex-col items-center justify-center"
       >
         <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-10 lg:gap-16">
-          
           {/* LEFT SIDE: ACTIVE FOCUS */}
           <motion.div variants={itemVariants} className="hidden xl:flex flex-col gap-10 w-64">
             <div className="space-y-4">
@@ -113,7 +112,7 @@ export function Hero() {
               <div className="flex items-center justify-center gap-2 md:gap-3 mb-8">
                 <div className="h-[1px] w-4 md:w-8 bg-black/20" />
                 <span className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] text-black italic">
-                  ADMIN OFFICER | WEB DEVELOPER | DIGITAL MARKETER
+                  Admin Officer | Web Designer | Web Developer | Digital Marketer | Graphics Designer
                 </span>
                 <div className="h-[1px] w-4 md:w-8 bg-black/20" />
               </div>
@@ -216,26 +215,23 @@ export function Hero() {
           <motion.div variants={itemVariants} className="flex flex-col items-center relative mt-4 lg:mt-0">
             {/* Added 'group' class here to handle nested image states during hover */}
             <div className="group bg-white border-2 md:border-4 border-black p-3 md:p-6 rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center overflow-hidden cursor-default">
-              
               {/* Profile Image Wrapper */}
               <div className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] relative rounded-xl overflow-hidden border-2 border-black/10 bg-zinc-50 mb-4">
-                
                 {/* Default Image */}
-                <img 
-                  src="/images/profile.png" 
-                  alt="Brian Haw" 
+                <img
+                  src="/images/profile.png"
+                  alt="Brian Haw"
                   className="absolute inset-0 w-full h-full object-cover filter contrast-[1.05]"
                 />
 
                 {/* Hover Image (Smooth Opacity Cross-Fade) */}
-                <img 
-                  src="/images/profile-2.png" 
-                  alt="Brian Haw Focus" 
+                <img
+                  src="/images/profile-2.png"
+                  alt="Brian Haw Focus"
                   className="absolute inset-0 w-full h-full object-cover filter contrast-[1.05] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"
                 />
-
               </div>
-              
+
               {/* Clean Location Badge */}
               <div className="w-full border-t-2 border-black/10 pt-4 mt-2 text-center flex items-center justify-center">
                 <div className="flex items-center justify-center gap-2.5 scale-125 transform origin-center my-1">
@@ -248,10 +244,8 @@ export function Hero() {
                   </span>
                 </div>
               </div>
-
             </div>
           </motion.div>
-
         </div>
       </motion.div>
     </section>
