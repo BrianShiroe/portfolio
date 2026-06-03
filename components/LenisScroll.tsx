@@ -9,6 +9,17 @@ export function LenisScroll() {
   const pathname = usePathname();
 
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches || navigator.maxTouchPoints > 0;
+
+    if (isMobile || prefersReducedMotion) {
+      return;
+    }
+
     // 1. Initialize Lenis with refined neobrutalist-friendly easing
     const lenis = new Lenis({
       duration: 1.2,
@@ -16,7 +27,7 @@ export function LenisScroll() {
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.1, // Slightly snappier for high-density portfolios
+      wheelMultiplier: 1.1,
       touchMultiplier: 1.5,
       infinite: false,
     });
