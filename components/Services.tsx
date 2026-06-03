@@ -2,7 +2,8 @@
 import { motion, Variants, AnimatePresence } from "framer-motion";
 import { 
   ShoppingCart, Settings, Globe, Code2, Database, Layout, 
-  Target, Zap, Anchor, Cpu 
+  Target, Zap, Anchor, Cpu, Palette, Megaphone, BarChart3,
+  Paintbrush, Share2, TrendingUp, ClipboardCheck, Briefcase, FileSpreadsheet
 } from "lucide-react";
 import { useLocale } from "next-intl";
 
@@ -42,11 +43,47 @@ export function Services() {
     {
       id: "SV_04",
       title: t("Custom Apps", "تطبيقات مخصصة"),
-      description: t("Heavy-duty full-stack applications engineered with Next.js and Supabase. Robust architectural logic built for high-performance and complex business workflows.", "تبيقات فول ستاك شديدة التحمل مصممة بـ Next.js و Supabase. منطق معماري قوي مبني للأداء العالي وسير عمل الأعمال المعقد."),
+      description: t("Heavy-duty full-stack applications engineered with Next.js and Supabase. Robust architectural logic built for high-performance and complex business workflows.", "تطبيقات فول ستاك شديدة التحمل مصممة بـ Next.js و Supabase. منطق معماري قوي مبني للأداء العالي وسير عمل الأعمال المعقد."),
       features: ["Supabase", "React 19", "PostgreSQL"],
       icon: Code2,
       hoverIcon: Cpu,
       action: t("Logic_Architecture", "هيكلة_المنطق"),
+    },
+    {
+      id: "SV_05",
+      title: t("Graphics Design", "التصميم الجرافيكي"),
+      description: t("High-impact brand identity layouts, high-fidelity Figma UI/UX wireframes, and production-ready marketing assets tailored to elevate your corporate message.", "مخططات هوية تجارية عالية التأثير، وإطارات Figma UI/UX سلكية عالية الدقة، وأصول تسويقية جاهزة للإنتاج مصممة لرفع مستوى رسالة شركتك."),
+      features: ["Figma UI/UX", "Canva Pro", "Brand Assets"],
+      icon: Palette,
+      hoverIcon: Paintbrush,
+      action: t("Visual_Matrix", "مصفوفة_البصريات"),
+    },
+    {
+      id: "SV_06",
+      title: t("Social Media", "إدارة التواصل الاجتماعي"),
+      description: t("Strategic content curation, short-form CapCut video editing, and profile operations built to scale audience engagement and establish market authority.", "تنظيم المحتوى الاستراتيجي، وتحرير مقاطع الفيديو القصيرة عبر CapCut، وعمليات الملفات الشخصية المصممة لزيادة تفاعل الجمهور وتأسيس حضور قوي في السوق."),
+      features: ["Content Strategy", "CapCut Video", "Operations"],
+      icon: Megaphone,
+      hoverIcon: Share2,
+      action: t("Social_Protocol", "بروتوكول_التواصل"),
+    },
+    {
+      id: "SV_07",
+      title: t("Digital Marketing", "التسويق الرقمي"),
+      description: t("Data-driven growth deployment via comprehensive Google Ads management, Search Console index optimization, GA4 analytics setups, and Merchant Center syncs.", "تطبيق نمو قائم على البيانات من خلال إدارة شاملة لإعلانات Google، وتحسين فهارس Search Console، وإعداد تحليلات GA4، ومزامنة Merchant Center."),
+      features: ["Google Ads", "GA4 Analytics", "Merchant Center"],
+      icon: BarChart3,
+      hoverIcon: TrendingUp,
+      action: t("Growth_Engine", "محرك_النمو"),
+    },
+    {
+      id: "SV_08",
+      title: t("General Admin", "إدارة عامة"),
+      description: t("Precision corporate operations and support layout. Multi-task handling across data organization, back-office documentation, schedules, and everyday system alignment.", "عمليات الشركة الدقيقة وتخطيط الدعم. معالجة المهام المتعددة عبر تنظيم البيانات، وتوثيق المكاتب الخلفية، والجداول الزمنية، والمواءمة اليومية للنظام."),
+      features: ["Data Systems", "Documentation", "Office Flow"],
+      icon: ClipboardCheck,
+      hoverIcon: FileSpreadsheet,
+      action: t("Admin_Protocol", "بروتوكول_الإدارة"),
     },
   ];
 
@@ -61,9 +98,11 @@ export function Services() {
 
   return (
     <section id="services" className="relative w-full bg-white py-16 md:py-24 overflow-hidden font-mono selection:bg-[#00C950] selection:text-white" dir={isAr ? "rtl" : "ltr"}>
+      {/* BACKGROUND DECOR */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: `linear-gradient(#000 1.2px, transparent 1.2px), linear-gradient(90deg, #000 1.2px, transparent 1.2px)`, backgroundSize: "30px 30px" }} />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6">
+        {/* --- HEADER --- */}
         <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-[6px] border-black pb-10">
           <div className="relative">
             <div className="flex items-center gap-3 mb-6">
@@ -76,13 +115,14 @@ export function Services() {
           </div>
           <div className={`hidden md:block ${isAr ? "text-left" : "text-right"}`}>
             <p className="text-[12px] font-black text-black uppercase tracking-widest leading-tight">
-              {t("React // Odoo // Shopify", "رياكت // أودو // شوبيفاي")} <br />
+              {t("React // Odoo // Admin", "رياكت // أودو // إدارة")} <br />
               <span className="text-[#00C950]">{t("Status: Ready", "الحالة: جاهز")}</span>
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* --- SERVICES GRID --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             const HoverIcon = service.hoverIcon;
@@ -92,9 +132,9 @@ export function Services() {
                 <div className="relative h-full border-[4px] border-black bg-white p-6 md:p-8 rounded-xl transition-all group-hover:-translate-y-2 flex flex-col">
                   
                   <div className="flex justify-between items-start mb-10">
-                    <div className="h-16 w-16 bg-black flex items-center justify-center relative overflow-hidden transition-all group-hover:bg-[#00C950] group-hover:-rotate-6 shadow-[6px_6px_0px_0px_rgba(0,201,80,0.3)]">
+                    <div className="h-16 w-16 bg-black flex items-center justify-center relative overflow-hidden transition-all group-hover:bg-[#00C950] group-hover:-rotate-6 shadow-[6px_6px_0px_0px_rgba(0,201,80,0.3)] shrink-0">
                       <AnimatePresence mode="wait">
-                        <motion.div key={service.id} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} className="absolute">
+                        <motion.div key={service.id} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} className="absolute flex items-center justify-center">
                           <Icon className="h-8 w-8 text-white group-hover:hidden transition-colors" />
                           <HoverIcon className="h-8 w-8 text-black hidden group-hover:block transition-colors" />
                         </motion.div>
@@ -125,10 +165,12 @@ export function Services() {
           })}
         </div>
 
+        {/* --- FOOTER BANNER --- */}
         <div className="mt-24 py-8 border-y-2 border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2"><Layout size={14} /><span className="text-[10px] font-black uppercase tracking-widest">UI.Architecture</span></div>
             <div className="flex items-center gap-2"><Database size={14} /><span className="text-[10px] font-black uppercase tracking-widest">ERP.Systems</span></div>
+            <div className="flex items-center gap-2"><Briefcase size={14} /><span className="text-[10px] font-black uppercase tracking-widest">Office.Ops</span></div>
           </div>
           <p className="text-[10px] font-black uppercase tracking-[0.3em]">{t("Dubai_Node_Active // 2026", "عقدة_دبي_نشطة // ٢٠٢٦")}</p>
         </div>
